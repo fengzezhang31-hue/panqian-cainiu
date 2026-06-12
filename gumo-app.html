@@ -1160,65 +1160,37 @@ function refreshLiveStockPrices() {
 }
 
 async function loadMarketData() {
-    // 第一步：从 market-data.json 加载管理后台策略选定的股票
-    // 多源加载：先走本站相对路径，失败则走 jsdelivr CDN
-    // 数据源：优先GitHub Pages（部署后即时生效），次选jsdelivr CDN
-    var baseUrl = window.location.hostname === 'localhost' ? '' : 'https://fengzezhang31-hue.github.io/panqian-cainiu';
-    var sources = [
-        baseUrl + '/market-data.json?_cb=' + Date.now(),
-        'https://fengzezhang31-hue.github.io/panqian-cainiu/market-data.json?t=' + Date.now(),
-        'https://cdn.jsdelivr.net/gh/fengzezhang31-hue/panqian-cainiu@main/market-data.json?t=' + Date.now()
-    ];
-    // 去重
-    sources = sources.filter(function(v, i, a) { return a.indexOf(v) === i; });
+    // 只从本站加载 market-data.json
+    var sources = ['/market-data.json?_cb=' + Date.now()];
     var loaded = false;
     for (var si = 0; si < sources.length && !loaded; si++) {
         for (var attempt = 1; attempt <= 2 && !loaded; attempt++) {
             try {
-                console.log('📡 加载策略数据: 源' + (si+1) + ' 尝试' + attempt);
-                const resp = await fetch(sources[si], {
-                    cache: 'no-store',
-                    headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }
-                });
+                console.log('加载策略数据...');
+                const resp = await fetch(sources[si], { cache: 'no-store' });
                 if (resp.ok) {
                     const data = await resp.json();
-                    console.log('📊 加载成功 (源' + (si+1) + '/尝试' + attempt + '):', data.date, '股票数:', data.stocks ? data.stocks.length : 0);
                     if (data.stocks && data.stocks.length >= 1) {
                         marketData = data;
-                            marketNews = data.news || [];
-                            loaded = true;
-                            console.log('✅ 已加载策略选股数据:', data.date, data.stocks.map(function(s){return s.name}).join(','));
-                            // 显示数据来源日期
-                            var dateEl = document.getElementById('dataSourceDate');
-                            if (dateEl) dateEl.textContent = '策略数据: ' + data.date + ' (' + APP_VERSION + ') | stocks:' + data.stocks.length;
+                        marketNews = data.news || [];
+                        loaded = true;
+                        console.log('✅ 已加载', data.stocks.length, '只股票');
+                        var dateEl = document.getElementById('dataSourceDate');
+                        if (dateEl) dateEl.textContent = '策略数据: ' + data.date + ' stocks:' + data.stocks.length;
                     }
-                } else {
-                    console.log('⚠️ fetch返回状态:', resp.status);
                 }
-            } catch(e) {
-                console.log('ℹ️ 加载失败 (源' + (si+1) + '/尝试' + attempt + '):', e.message);
-            }
-            if (!loaded && attempt < 2) {
-                await new Promise(function(r) { setTimeout(r, 1500); });
-            }
+            } catch(e) { console.log('加载失败:', e.message); }
+            if (!loaded && attempt < 2) { await new Promise(function(r) { setTimeout(r, 1500); }); }
         }
     }
-    // 第二步：用策略选定的股票代码，实时刷新最新价格
     if (marketData && marketData.stocks) {
         try {
             var refreshed = await refreshLiveStockPrices();
-            if (refreshed && refreshed.length >= 1) {
-                marketData.stocks = refreshed;
-                console.log('✅ 实时价格已刷新');
-            }
-        } catch(e) {
-            console.log('实时刷新失败，使用缓存价格');
-        }
+            if (refreshed && refreshed.length >= 1) { marketData.stocks = refreshed; console.log('价格已刷新'); }
+        } catch(e) { console.log('价格刷新失败'); }
     }
 }
 
-// ========== 定时实时刷新 ==========
-var _refreshTimer = null;
 function startLiveRefresh() {
     if (_refreshTimer) clearInterval(_refreshTimer);
     _refreshTimer = setInterval(async function() {
