@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>ÁùÅÌÉ½ - ¹ÜÀíºóÌ¨</title>
+<title>ï¿½ï¿½ï¿½ï¿½É½ - ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0e1a;color:#e0e8f0;min-height:100vh}
@@ -39,54 +39,54 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div id="loginPage">
 <div class="login-box">
     <div class="card">
-        <h2>&#x1F512; ¹ÜÀíºóÌ¨</h2>
+        <h2>&#x1F512; ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨</h2>
         <div class="form-row">
-            <label>¹ÜÀíÃÜÂë</label>
-            <input type="password" id="adminPwd" placeholder="ÇëÊäÈë¹ÜÀíÃÜÂë">
+            <label>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</label>
+            <input type="password" id="adminPwd" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½">
         </div>
         <div class="form-row">
-            <label>GitHub Token£¨ÓÃÓÚÍÆËÍÑ¡¹ÉÊý¾Ý£©</label>
-            <input type="password" id="adminToken" placeholder="ghp_¿ªÍ·µÄGitHub¸öÈË·ÃÎÊÁîÅÆ">
+            <label>GitHub Tokenï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½</label>
+            <input type="password" id="adminToken" placeholder="ghp_ï¿½ï¿½Í·ï¿½ï¿½GitHubï¿½ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½">
         </div>
-        <button class="btn btn-primary" onclick="doLogin()">½øÈëºóÌ¨</button>
+        <button class="btn btn-primary" onclick="doLogin()">ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨</button>
     </div>
 </div>
 </div>
 
 <div id="adminPage" style="display:none">
 <div class="header">
-    <h1>&#x1F3AF; ÁùÅÌÉ½ ¡¤ ¹ÜÀíºóÌ¨</h1>
-    <p>¹ÜÀíÔ±²Ù×÷Ãæ°å</p>
+    <h1>&#x1F3AF; ï¿½ï¿½ï¿½ï¿½É½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨</h1>
+    <p>ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
 </div>
 <div class="container">
 
     <div class="tabs">
-        <div class="tab active" id="tabStock" onclick="switchTab('stock')">Ã¿ÈÕ²ßÂÔÑ¡¹É</div>
-        <div class="tab" id="tabHot" onclick="switchTab('hot')">ÅÌÇ°ÈÈµã</div>
-        <div class="tab" id="tabCredit" onclick="switchTab('credit')">³äÖµÈ·ÈÏ</div>
-        <div class="tab" id="tabHistory" onclick="switchTab('history')">²Ù×÷¼ÇÂ¼</div>
+        <div class="tab active" id="tabStock" onclick="switchTab('stock')">Ã¿ï¿½Õ²ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½</div>
+        <div class="tab" id="tabHot" onclick="switchTab('hot')">ï¿½ï¿½Ç°ï¿½Èµï¿½</div>
+        <div class="tab" id="tabCredit" onclick="switchTab('credit')">ï¿½ï¿½ÖµÈ·ï¿½ï¿½</div>
+        <div class="tab" id="tabHistory" onclick="switchTab('history')">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼</div>
     </div>
 
     <div id="panelStock">
     <div class="card">
-        <h3>&#x1F4CA; Ã¿ÈÕ²ßÂÔÑ¡¹ÉÍÆËÍ</h3>
+        <h3>&#x1F4CA; Ã¿ï¿½Õ²ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</h3>
         <p style="font-size:11px;color:#5a7a99;margin-bottom:12px;line-height:1.6">
-            °´²ßÂÔÆÀ·Ö´Ó¸ßµ½µÍ£¬ÒÀ´ÎÊäÈë6Ö»¹ÉÆ±´úÂë£¨6Î»Êý×Ö£©£¬ÏµÍ³½«×Ô¶¯×¥È¡ÊµÊ±ÐÐÇé²¢ÍÆËÍµ½APP¡£<br>
-            <span style="color:#00ccaa">Ë³Ðò¶ÔÓ¦£º³å¶¯Å£¡úÃÈÃÈÐÜ¡ú¿Ö¾åÁú¡ú¿Õ²ÖÃ¨¡ú´óêñÂ¿¡úÎòµÀÓ¥</span>
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´Ó¸ßµï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½6Ö»ï¿½ï¿½Æ±ï¿½ï¿½ï¿½ë£¨6Î»ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ô¶ï¿½×¥È¡ÊµÊ±ï¿½ï¿½ï¿½é²¢ï¿½ï¿½ï¿½Íµï¿½APPï¿½ï¿½<br>
+            <span style="color:#00ccaa">Ë³ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½å¶¯Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¡ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ²ï¿½Ã¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ï¿½ï¿½Ó¥</span>
         </p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-            <div class="form-row"><label>¢Ù³å¶¯Å££¨µÚ1Ãû£©</label><input type="text" id="stk0" maxlength="6" placeholder="Èç 300308"></div>
-            <div class="form-row"><label>¢ÚÃÈÃÈÐÜ£¨µÚ2Ãû£©</label><input type="text" id="stk1" maxlength="6" placeholder="Èç 300624"></div>
-            <div class="form-row"><label>¢Û¿Ö¾åÁú£¨µÚ3Ãû£©</label><input type="text" id="stk2" maxlength="6" placeholder="Èç 002703"></div>
-            <div class="form-row"><label>¢Ü¿Õ²ÖÃ¨£¨µÚ4Ãû£©</label><input type="text" id="stk3" maxlength="6" placeholder="Èç 300718"></div>
-            <div class="form-row"><label>¢Ý´óêñÂ¿£¨µÚ5Ãû£©</label><input type="text" id="stk4" maxlength="6" placeholder="Èç 002896"></div>
-            <div class="form-row"><label>¢ÞÎòµÀÓ¥£¨µÚ6Ãû£©</label><input type="text" id="stk5" maxlength="6" placeholder="Èç 301308"></div>
+            <div class="form-row"><label>ï¿½Ù³å¶¯Å£ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½</label><input type="text" id="stk0" maxlength="6" placeholder="ï¿½ï¿½ 300308"></div>
+            <div class="form-row"><label>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½</label><input type="text" id="stk1" maxlength="6" placeholder="ï¿½ï¿½ 300624"></div>
+            <div class="form-row"><label>ï¿½Û¿Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½</label><input type="text" id="stk2" maxlength="6" placeholder="ï¿½ï¿½ 002703"></div>
+            <div class="form-row"><label>ï¿½Ü¿Õ²ï¿½Ã¨ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½</label><input type="text" id="stk3" maxlength="6" placeholder="ï¿½ï¿½ 300718"></div>
+            <div class="form-row"><label>ï¿½Ý´ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ï¿½5ï¿½ï¿½ï¿½ï¿½</label><input type="text" id="stk4" maxlength="6" placeholder="ï¿½ï¿½ 002896"></div>
+            <div class="form-row"><label>ï¿½ï¿½ï¿½ï¿½ï¿½Ó¥ï¿½ï¿½ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½</label><input type="text" id="stk5" maxlength="6" placeholder="ï¿½ï¿½ 301308"></div>
         </div>
-        <div style="margin-top:10px"><input type="text" id="stockPaste" placeholder="ÅúÁ¿Õ³Ìù£¨¶ººÅ/¿Õ¸ñ/¶ÙºÅ·Ö¸ô£©" onchange="onPasteStocks(this.value)" style="width:100%;height:36px;background:#0a1628;border:1px solid #1a3a5a;border-radius:8px;padding:0 10px;color:#e0e8f0;font-size:12px;outline:none"></div>
-        <button class="btn btn-primary" onclick="fetchAndPreview()" id="btnFetch">×¥È¡ÊµÊ±ÐÐÇé</button>
+        <div style="margin-top:10px"><input type="text" id="stockPaste" placeholder="ï¿½ï¿½ï¿½ï¿½Õ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½Õ¸ï¿½/ï¿½ÙºÅ·Ö¸ï¿½ï¿½" onchange="onPasteStocks(this.value)" style="width:100%;height:36px;background:#0a1628;border:1px solid #1a3a5a;border-radius:8px;padding:0 10px;color:#e0e8f0;font-size:12px;outline:none"></div>
+        <button class="btn btn-primary" onclick="fetchAndPreview()" id="btnFetch">×¥È¡ÊµÊ±ï¿½ï¿½ï¿½ï¿½</button>
         <div id="stockPreview" style="display:none;margin-top:12px">
             <div style="background:#0a1628;border-radius:10px;padding:12px;font-size:12px;line-height:1.8" id="previewContent"></div>
-            <button class="btn btn-primary" onclick="pushToApp()" id="btnPush" style="margin-top:10px">È·ÈÏÍÆËÍµ½APP</button>
+            <button class="btn btn-primary" onclick="pushToApp()" id="btnPush" style="margin-top:10px">È·ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½APP</button>
         </div>
         <div id="pushStatus" style="display:none;margin-top:10px;font-size:12px;text-align:center;padding:10px;border-radius:10px"></div>
     </div>
@@ -94,54 +94,54 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
     <div id="panelHot" style="display:none">
     <div class="card">
-        <h3>&#x1F525; ÅÌÇ°ÈÈµãÂ¼Èë</h3>
+        <h3>&#x1F525; ï¿½ï¿½Ç°ï¿½Èµï¿½Â¼ï¿½ï¿½</h3>
         <p style="font-size:11px;color:#5a7a99;margin-bottom:12px;line-height:1.6">
-            ²Î¿¼À´Ô´£º<span style="color:#ffcc00">ÌÔ¹É°É²©Ö÷¡¸×¨×¢ÅÌÇ°×ÊÑ¶¡¹</span>£¨ID:3729365£©£¬Ã¿ÈÕ8:20×óÓÒ·¢²¼¡£<br>
-            ½«¹Ø¼üÈÈµã°å¿é/Ìâ²ÄÕ³Ìùµ½ÏÂ·½£¬Ã¿ÐÐÒ»Ìõ£¬ÏµÍ³½«ÍÆËÍµ½APPÊ×Ò³¡£
+            ï¿½Î¿ï¿½ï¿½ï¿½Ô´ï¿½ï¿½<span style="color:#ffcc00">ï¿½Ô¹É°É²ï¿½ï¿½ï¿½ï¿½ï¿½×¨×¢ï¿½ï¿½Ç°ï¿½ï¿½Ñ¶ï¿½ï¿½</span>ï¿½ï¿½ID:3729365ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½8:20ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+            ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½Èµï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½Õ³ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½APPï¿½ï¿½Ò³ï¿½ï¿½
         </p>
         <div class="form-row">
-            <label>ÈÈµãÄÚÈÝ£¨Ã¿ÐÐÒ»Ìõ£¬Èç£ºAIÐ¾Æ¬¡¢»úÆ÷ÈË¡¢¹â·ü£©</label>
-            <textarea id="hotContent" rows="6" style="width:100%;height:120px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:13px;line-height:1.6;resize:vertical;outline:none" placeholder="AIÐ¾Æ¬&#10;»úÆ÷ÈË&#10;µÍ¿Õ¾­¼Ã&#10;¹â·ü&#10;ÐÂÄÜÔ´³µ"></textarea>
+            <label>ï¿½Èµï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ã¿ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ç£ºAIÐ¾Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</label>
+            <textarea id="hotContent" rows="6" style="width:100%;height:120px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:13px;line-height:1.6;resize:vertical;outline:none" placeholder="AIÐ¾Æ¬&#10;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½&#10;ï¿½Í¿Õ¾ï¿½ï¿½ï¿½&#10;ï¿½ï¿½ï¿½&#10;ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½"></textarea>
         </div>
         <div class="form-row">
-            <label>²¹³äËµÃ÷£¨¿ÉÑ¡£¬Èç°µÃæÐÂÎÅ¡¢Í»·¢ÊÂ¼þ£©</label>
-            <textarea id="hotNote" rows="3" style="width:100%;height:70px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:12px;line-height:1.5;resize:vertical;outline:none" placeholder="Èç£ºÄÄß¸2Æ±·¿ÆÆ¼ÍÂ¼£¬Ô¤ÆÚ²î»ú»á"></textarea>
+            <label>ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ç°µï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½Í»ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½</label>
+            <textarea id="hotNote" rows="3" style="width:100%;height:70px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:12px;line-height:1.5;resize:vertical;outline:none" placeholder="ï¿½ç£ºï¿½ï¿½ß¸2Æ±ï¿½ï¿½ï¿½Æ¼ï¿½Â¼ï¿½ï¿½Ô¤ï¿½Ú²ï¿½ï¿½ï¿½ï¿½"></textarea>
         </div>
-        <button class="btn btn-primary" onclick="pushHotTopics()" id="btnHotPush">ÍÆËÍÈÈµãµ½APP</button>
+        <button class="btn btn-primary" onclick="pushHotTopics()" id="btnHotPush">ï¿½ï¿½ï¿½ï¿½ï¿½Èµãµ½APP</button>
         <div id="hotStatus" style="display:none;margin-top:10px;font-size:12px;text-align:center;padding:10px;border-radius:10px"></div>
     </div>
     </div>
 
     <div id="panelCredit" style="display:none">
     <div class="card">
-        <h3>&#x1F4B0; Éú³É³äÖµ¶Ò»»Âë</h3>
-        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px">ÓÃ»§¸¶¿îºó£¬ÊäÈëÊÖ»úºÅºÍ½ð¶î£¬Éú³É¶Ò»»Âë·¢¸øÓÃ»§£¬ÓÃ»§ÔÚAPPÄÚÊäÈë¶Ò»»Âë¼´¿Éµ½ÕË</p>
+        <h3>&#x1F4B0; ï¿½ï¿½ï¿½É³ï¿½Öµï¿½Ò»ï¿½ï¿½ï¿½</h3>
+        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px">ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ÅºÍ½ï¿½î£¬ï¿½ï¿½ï¿½É¶Ò»ï¿½ï¿½ë·¢ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½APPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ë¼´ï¿½Éµï¿½ï¿½ï¿½</p>
         <div class="form-row">
-            <label>ÓÃ»§ÊÖ»úºÅ£¨ºó4Î»¼´¿É£©</label>
-            <input type="text" id="creditPhone" maxlength="4" placeholder="Àý£º5678">
+            <label>ï¿½Ã»ï¿½ï¿½Ö»ï¿½ï¿½Å£ï¿½ï¿½ï¿½4Î»ï¿½ï¿½ï¿½É£ï¿½</label>
+            <input type="text" id="creditPhone" maxlength="4" placeholder="ï¿½ï¿½ï¿½ï¿½5678">
         </div>
         <div class="form-row">
-            <label>³äÖµ»ý·ÖÊý</label>
-            <input type="number" id="creditPts" placeholder="Àý£º1000">
+            <label>ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</label>
+            <input type="number" id="creditPts" placeholder="ï¿½ï¿½ï¿½ï¿½1000">
         </div>
         <div class="form-row">
-            <label>±¸×¢£¨¿ÉÑ¡£©</label>
-            <input type="text" id="creditNote" placeholder="Àý£ºÎ¢ÐÅÊÕ¿î100Ôª">
+            <label>ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½</label>
+            <input type="text" id="creditNote" placeholder="ï¿½ï¿½ï¿½ï¿½Î¢ï¿½ï¿½ï¿½Õ¿ï¿½100Ôª">
         </div>
-        <button class="btn btn-primary" onclick="generateCode()">Éú³É¶Ò»»Âë</button>
+        <button class="btn btn-primary" onclick="generateCode()">ï¿½ï¿½ï¿½É¶Ò»ï¿½ï¿½ï¿½</button>
         <div class="code-display" id="codeDisplay">
             <div class="code" id="generatedCode"></div>
             <div class="info" id="codeInfo"></div>
-            <button class="copy-btn" onclick="copyCode()">¸´ÖÆ¶Ò»»Âë</button>
+            <button class="copy-btn" onclick="copyCode()">ï¿½ï¿½ï¿½Æ¶Ò»ï¿½ï¿½ï¿½</button>
         </div>
     </div>
     </div>
 
     <div id="panelHistory" style="display:none">
     <div class="card">
-        <h3>&#x1F4CB; ²Ù×÷¼ÇÂ¼</h3>
-        <div id="historyList"><p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">ÔÝÎÞ¼ÇÂ¼</p></div>
-        <button class="btn btn-danger" onclick="clearHistory()" style="margin-top:12px">Çå¿Õ¼ÇÂ¼</button>
+        <h3>&#x1F4CB; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼</h3>
+        <div id="historyList"><p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">ï¿½ï¿½ï¿½Þ¼ï¿½Â¼</p></div>
+        <button class="btn btn-danger" onclick="clearHistory()" style="margin-top:12px">ï¿½ï¿½Õ¼ï¿½Â¼</button>
     </div>
     </div>
 
@@ -153,7 +153,7 @@ var ADMIN_PWD = '888888';
 var GITHUB_TOKEN = '';
 var GITHUB_OWNER = 'fengzezhang31-hue';
 var GITHUB_REPO = 'panqian-cainiu';
-var PET_NAMES = ['³å¶¯Å£','ÃÈÃÈÐÜ','¿Ö¾åÁú','¿Õ²ÖÃ¨','´óêñÂ¿','ÎòµÀÓ¥'];
+var PET_NAMES = ['ï¿½å¶¯Å£','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½Ö¾ï¿½ï¿½ï¿½','ï¿½Õ²ï¿½Ã¨','ï¿½ï¿½ï¿½ï¿½Â¿','ï¿½ï¿½ï¿½Ó¥'];
 var fetchedStocks = null;
 
 var safeStorage = {
@@ -170,7 +170,7 @@ function doLogin() {
         document.getElementById('loginPage').style.display = 'none';
         document.getElementById('adminPage').style.display = 'block';
     } else {
-        alert('ÃÜÂë´íÎó');
+        alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');
     }
 }
 
@@ -186,18 +186,18 @@ function switchTab(tab) {
     if (tab === 'history') loadHistory();
 }
 
-// ========== ²ßÂÔÑ¡¹É£º´úÂë×ª¶«·½²Æ¸» secid ==========
+// ========== ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½Æ¸ï¿½ secid ==========
 function codeToSecid(code) {
-    // 6¿ªÍ·=»¦ÊÐ(sh), 0/3¿ªÍ·=ÉîÊÐ(sz), 68¿ªÍ·=¿Æ´´°å(sh)
+    // 6ï¿½ï¿½Í·=ï¿½ï¿½ï¿½ï¿½(sh), 0/3ï¿½ï¿½Í·=ï¿½ï¿½ï¿½ï¿½(sz), 68ï¿½ï¿½Í·=ï¿½Æ´ï¿½ï¿½ï¿½(sh)
     if (code.startsWith('6')) return '1.' + code;
     return '0.' + code;
 }
 
-// ========== ²ßÂÔÑ¡¹É£º×¥È¡ÊµÊ±ÐÐÇé ==========
+// ========== ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½É£ï¿½×¥È¡ÊµÊ±ï¿½ï¿½ï¿½ï¿½ ==========
 
 function onPasteStocks(v) {
     if (!v) return;
-    var items = v.split(/[ï¼å³s]+/).filter(function(x) { return x.trim(); });
+    var items = v.split(/[ï¿½ï¿½s]+/).filter(function(x) { return x.trim(); });
     for (var i = 0; i < Math.min(6, items.length); i++) {
         var el = document.getElementById('stk' + i);
         if (el) el.value = items[i].trim();
@@ -206,20 +206,20 @@ function onPasteStocks(v) {
 function fetchAndPreview() {
     var codes = [];
     if (!document.getElementById('stk0').value.trim() && !document.getElementById('stk1').value.trim() && !document.getElementById('stk2').value.trim() && !document.getElementById('stk3').value.trim() && !document.getElementById('stk4').value.trim() && !document.getElementById('stk5').value.trim()) {
-        alert('ÇëÖÁÉÙÊäÈëÒ»Ö»¹ÉÆ±´úÂë');
+        alert('è¯·è‡³å°‘è¾“å…¥ä¸€åªè‚¡ç¥¨ä»£ç ');
         return;
     }
     for (var i = 0; i < 6; i++) {
         var c = document.getElementById('stk' + i).value.trim();
         if (!c) continue;
         if (c.length !== 6 || !/^\d{6}$/.test(c)) {
-            alert('µÚ' + (i+1) + 'Ö»¹ÉÆ±´úÂë²»ÕýÈ·£¬ÇëÊäÈë6Î»Êý×Ö');
+            alert('ï¿½ï¿½' + (i+1) + 'Ö»ï¿½ï¿½Æ±ï¿½ï¿½ï¿½ë²»ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½6Î»ï¿½ï¿½ï¿½ï¿½');
             return;
         }
         codes.push(c);
     }
     document.getElementById('btnFetch').disabled = true;
-    document.getElementById('btnFetch').textContent = '×¥È¡ÖÐ...';
+    document.getElementById('btnFetch').textContent = '×¥È¡ï¿½ï¿½...';
 
     var secids = codes.map(codeToSecid).join(',');
     var cbName = '_admcb_' + Date.now();
@@ -229,22 +229,22 @@ function fetchAndPreview() {
         var script = document.getElementById('_fetchScript');
         if (script) script.parentNode.removeChild(script);
         document.getElementById('btnFetch').disabled = false;
-        document.getElementById('btnFetch').textContent = '×¥È¡ÊµÊ±ÐÐÇé';
+        document.getElementById('btnFetch').textContent = '×¥È¡ÊµÊ±ï¿½ï¿½ï¿½ï¿½';
 
         if (!json || !json.data || !json.data.diff || codes.length !== json.data.diff.length) {
-            alert('ÐÐÇéÊý¾Ý»ñÈ¡²»ÍêÕû£¬Çë¼ì²é¹ÉÆ±´úÂë');
+            alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ±ï¿½ï¿½ï¿½ï¿½');
             return;
         }
-        // °´ÊäÈëË³ÐòÆ¥Åä£¨API¿ÉÄÜÂÒÐò£©
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½Æ¥ï¿½ä£¨APIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         var stockMap = {};
         json.data.diff.forEach(function(s) { stockMap[s.f12] = s; });
 
         fetchedStocks = [];
-        var html = '<div style="color:#00ccaa;font-weight:700;margin-bottom:8px">×¥È¡³É¹¦£¬ÇëÈ·ÈÏ£º</div>';
+        var html = '<div style="color:#00ccaa;font-weight:700;margin-bottom:8px">×¥È¡ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï£ï¿½</div>';
         for (var i = 0; i < codes.length; i++) {
             var s = stockMap[codes[i]];
             if (!s) {
-                alert('¹ÉÆ± ' + codes[i] + ' Î´ÕÒµ½Êý¾Ý');
+                alert('ï¿½ï¿½Æ± ' + codes[i] + ' Î´ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½');
                 return;
             }
             fetchedStocks.push({
@@ -262,7 +262,7 @@ function fetchAndPreview() {
             html += '<div style="border-bottom:1px solid #1a3a5a;padding:4px 0">' +
                 '<span style="color:#ffd966">' + PET_NAMES[i] + '</span>@' +
                 '<b>' + s.f14 + '</b>(' + s.f12 + ') ' +
-                '×òÊÕ:' + s.f18 + ' ÏÖ¼Û:<b>' + s.f2 + '</b> ' +
+                'ï¿½ï¿½ï¿½ï¿½:' + s.f18 + ' ï¿½Ö¼ï¿½:<b>' + s.f2 + '</b> ' +
                 '<span style="' + cls + '">' + sign + s.f3 + '%</span></div>';
         }
         document.getElementById('previewContent').innerHTML = html;
@@ -277,29 +277,29 @@ function fetchAndPreview() {
     script.onerror = function() {
         try { delete window[cbName]; } catch(e) {}
         document.getElementById('btnFetch').disabled = false;
-        document.getElementById('btnFetch').textContent = '×¥È¡ÊµÊ±ÐÐÇé';
-        alert('ÐÐÇéAPI¼ÓÔØÊ§°Ü£¬Çë¼ì²éÍøÂç');
+        document.getElementById('btnFetch').textContent = '×¥È¡ÊµÊ±ï¿½ï¿½ï¿½ï¿½';
+        alert('ï¿½ï¿½ï¿½ï¿½APIï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');
     };
     document.head.appendChild(script);
 }
 
-// ========== ²ßÂÔÑ¡¹É£ºÍÆËÍµ½ GitHub ==========
+// ========== ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½É£ï¿½ï¿½ï¿½ï¿½Íµï¿½ GitHub ==========
 function pushToApp() {
     if (!fetchedStocks || fetchedStocks.length < 1) {
-        alert('ÇëÏÈ×¥È¡ÐÐÇé');
+        alert('ï¿½ï¿½ï¿½ï¿½×¥È¡ï¿½ï¿½ï¿½ï¿½');
         return;
     }
     if (!GITHUB_TOKEN) {
-        alert('ÇëÏÈÔÚµÇÂ¼Ò³ÌîÐ´ GitHub Token');
+        alert('ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Â¼Ò³ï¿½ï¿½Ð´ GitHub Token');
         return;
     }
     document.getElementById('btnPush').disabled = true;
-    document.getElementById('btnPush').textContent = 'ÍÆËÍÖÐ...';
+    document.getElementById('btnPush').textContent = 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...';
     var statusEl = document.getElementById('pushStatus');
     statusEl.style.display = 'block';
     statusEl.style.background = '#1a2a40';
     statusEl.style.color = '#88aacc';
-    statusEl.innerHTML = 'ÕýÔÚÍÆËÍµ½ GitHub...';
+    statusEl.innerHTML = 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ GitHub...';
 
     var today = new Date();
     var dateStr = today.getFullYear() + '-' +
@@ -327,14 +327,14 @@ function pushToApp() {
     var jsonStr = JSON.stringify(marketData, null, 2);
     var b64 = btoa(unescape(encodeURIComponent(jsonStr)));
 
-    // ÏÈ»ñÈ¡µ±Ç°ÎÄ¼þ SHA
+    // ï¿½È»ï¿½È¡ï¿½ï¿½Ç°ï¿½Ä¼ï¿½ SHA
     fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/market-data.json', {
         headers: { 'Authorization': 'token ' + GITHUB_TOKEN }
     })
     .then(function(r) { return r.json(); })
     .then(function(info) {
         var body = {
-            message: '²ßÂÔÑ¡¹É ' + dateStr + ': ' + fetchedStocks.map(function(s){return s.name}).join(','),
+            message: 'ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ ' + dateStr + ': ' + fetchedStocks.map(function(s){return s.name}).join(','),
             content: b64,
             sha: info.sha
         };
@@ -350,16 +350,16 @@ function pushToApp() {
     .then(function(r) { return r.json(); })
     .then(function(result) {
         document.getElementById('btnPush').disabled = false;
-        document.getElementById('btnPush').textContent = 'È·ÈÏÍÆËÍµ½APP';
+        document.getElementById('btnPush').textContent = 'È·ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½APP';
         if (result.content) {
             statusEl.style.background = '#0a2a1a';
             statusEl.style.color = '#44cc88';
-            statusEl.innerHTML = 'ÍÆËÍ³É¹¦£¡APP½«ÔÚ¼¸·ÖÖÓÄÚ¸üÐÂ¡£<br><span style="font-size:11px;color:#5a7a99">' +
-                dateStr + ' ¡¤ ' + fetchedStocks.map(function(s){return s.name}).join('¡¢') + '</span>';
-            // ±£´æ¼ÇÂ¼
+            statusEl.innerHTML = 'ï¿½ï¿½ï¿½Í³É¹ï¿½ï¿½ï¿½APPï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½Â¡ï¿½<br><span style="font-size:11px;color:#5a7a99">' +
+                dateStr + ' ï¿½ï¿½ ' + fetchedStocks.map(function(s){return s.name}).join('ï¿½ï¿½') + '</span>';
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Â¼
             var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
             records.unshift({
-                code: '²ßÂÔÑ¡¹É',
+                code: 'ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½',
                 phone: '-',
                 pts: 0,
                 note: fetchedStocks.map(function(s){return s.name + '(' + s.changePercent + '%)'}).join(', '),
@@ -370,24 +370,24 @@ function pushToApp() {
         } else {
             statusEl.style.background = '#2a0a0a';
             statusEl.style.color = '#ff4466';
-            statusEl.innerHTML = 'ÍÆËÍÊ§°Ü: ' + (result.message || 'Î´Öª´íÎó');
+            statusEl.innerHTML = 'ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½: ' + (result.message || 'Î´Öªï¿½ï¿½ï¿½ï¿½');
         }
     })
     .catch(function(e) {
         document.getElementById('btnPush').disabled = false;
-        document.getElementById('btnPush').textContent = 'È·ÈÏÍÆËÍµ½APP';
+        document.getElementById('btnPush').textContent = 'È·ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½APP';
         statusEl.style.background = '#2a0a0a';
         statusEl.style.color = '#ff4466';
-        statusEl.innerHTML = 'ÍÆËÍÊ§°Ü: ' + e.message;
+        statusEl.innerHTML = 'ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½: ' + e.message;
     });
 }
 
-// ========== ÅÌÇ°ÈÈµãÍÆËÍ ==========
+// ========== ï¿½ï¿½Ç°ï¿½Èµï¿½ï¿½ï¿½ï¿½ï¿½ ==========
 function pushHotTopics() {
     var content = document.getElementById('hotContent').value.trim();
     var note = document.getElementById('hotNote').value.trim();
-    if (!content) { alert('ÇëÊäÈëÈÈµãÄÚÈÝ'); return; }
-    if (!GITHUB_TOKEN) { alert('ÇëÏÈÔÚµÇÂ¼Ò³ÌîÐ´ GitHub Token'); return; }
+    if (!content) { alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½ï¿½'); return; }
+    if (!GITHUB_TOKEN) { alert('ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Â¼Ò³ï¿½ï¿½Ð´ GitHub Token'); return; }
 
     var trends = content.split('\n').map(function(line) {
         return line.trim();
@@ -400,11 +400,11 @@ function pushHotTopics() {
     var btn = document.getElementById('btnHotPush');
     var statusEl = document.getElementById('hotStatus');
     btn.disabled = true;
-    btn.textContent = 'ÍÆËÍÖÐ...';
+    btn.textContent = 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...';
     statusEl.style.display = 'block';
     statusEl.style.background = '#1a2a40';
     statusEl.style.color = '#88aacc';
-    statusEl.innerHTML = 'ÕýÔÚÍÆËÍÈÈµãµ½ GitHub...';
+    statusEl.innerHTML = 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Èµãµ½ GitHub...';
 
     var today = new Date();
     var dateStr = today.getFullYear() + '-' +
@@ -440,15 +440,15 @@ function pushHotTopics() {
     .then(function(r) { return r.json(); })
     .then(function(result) {
         btn.disabled = false;
-        btn.textContent = 'ÍÆËÍÈÈµãµ½APP';
+        btn.textContent = 'ï¿½ï¿½ï¿½ï¿½ï¿½Èµãµ½APP';
         if (result.content) {
             statusEl.style.background = '#0a2a1a';
             statusEl.style.color = '#44cc88';
-            statusEl.innerHTML = 'ÍÆËÍ³É¹¦£¡APP½«ÔÚ¼¸·ÖÖÓÄÚ¸üÐÂÈÈµã¡£<br><span style="font-size:11px;color:#5a7a99">' +
-                dateStr + ' ¡¤ ' + trends.length + 'ÌõÈÈµã' + (note ? ' ¡¤ ' + note : '') + '</span>';
+            statusEl.innerHTML = 'ï¿½ï¿½ï¿½Í³É¹ï¿½ï¿½ï¿½APPï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½Èµã¡£<br><span style="font-size:11px;color:#5a7a99">' +
+                dateStr + ' ï¿½ï¿½ ' + trends.length + 'ï¿½ï¿½ï¿½Èµï¿½' + (note ? ' ï¿½ï¿½ ' + note : '') + '</span>';
             var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
             records.unshift({
-                code: 'ÅÌÇ°ÈÈµã', phone: '-', pts: 0,
+                code: 'ï¿½ï¿½Ç°ï¿½Èµï¿½', phone: '-', pts: 0,
                 note: trends.map(function(t){return t.title}).join(', ') + (note ? ' | ' + note : ''),
                 time: new Date().toLocaleString('zh-CN'), ts: Date.now()
             });
@@ -456,32 +456,32 @@ function pushHotTopics() {
         } else {
             statusEl.style.background = '#2a0a0a';
             statusEl.style.color = '#ff4466';
-            statusEl.innerHTML = 'ÍÆËÍÊ§°Ü: ' + (result.message || 'Î´Öª´íÎó');
+            statusEl.innerHTML = 'ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½: ' + (result.message || 'Î´Öªï¿½ï¿½ï¿½ï¿½');
         }
     })
     .catch(function(e) {
         btn.disabled = false;
-        btn.textContent = 'ÍÆËÍÈÈµãµ½APP';
+        btn.textContent = 'ï¿½ï¿½ï¿½ï¿½ï¿½Èµãµ½APP';
         statusEl.style.background = '#2a0a0a';
         statusEl.style.color = '#ff4466';
-        statusEl.innerHTML = 'ÍÆËÍÊ§°Ü: ' + e.message;
+        statusEl.innerHTML = 'ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½: ' + e.message;
     });
 }
 
-// ========== ³äÖµ¶Ò»»Âë ==========
+// ========== ï¿½ï¿½Öµï¿½Ò»ï¿½ï¿½ï¿½ ==========
 function generateCode() {
     var phone = document.getElementById('creditPhone').value.trim();
     var pts = parseInt(document.getElementById('creditPts').value);
     var note = document.getElementById('creditNote').value.trim();
-    if (!phone || phone.length < 4) { alert('ÇëÊäÈëÊÖ»úºÅºó4Î»'); return; }
-    if (!pts || pts <= 0) { alert('ÇëÊäÈëÕýÈ·µÄ»ý·ÖÊý'); return; }
+    if (!phone || phone.length < 4) { alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Åºï¿½4Î»'); return; }
+    if (!pts || pts <= 0) { alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½'); return; }
     var ts = Date.now();
     var code = 'PQCN-' + phone + '-' + pts + '-' + ('' + ts).slice(-6);
     var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
     records.unshift({ code: code, phone: phone, pts: pts, note: note, time: new Date().toLocaleString('zh-CN'), ts: ts });
     safeStorage.setItem('pqcn_admin_records', JSON.stringify(records));
     document.getElementById('generatedCode').textContent = code;
-    document.getElementById('codeInfo').innerHTML = 'ÊÖ»úÎ²ºÅ ' + phone + ' ¡¤ ' + pts + '»ý·Ö' + (note ? ' ¡¤ ' + note : '') + '<br>Çë½«´Ë¶Ò»»Âë·¢¸øÓÃ»§£¬ÔÚAPP"¶Ò»»»ý·Ö"´¦ÊäÈë¼´¿Éµ½ÕË';
+    document.getElementById('codeInfo').innerHTML = 'ï¿½Ö»ï¿½Î²ï¿½ï¿½ ' + phone + ' ï¿½ï¿½ ' + pts + 'ï¿½ï¿½ï¿½ï¿½' + (note ? ' ï¿½ï¿½ ' + note : '') + '<br>ï¿½ë½«ï¿½Ë¶Ò»ï¿½ï¿½ë·¢ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½APP"ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½"ï¿½ï¿½ï¿½ï¿½ï¿½ë¼´ï¿½Éµï¿½ï¿½ï¿½';
     document.getElementById('codeDisplay').style.display = 'block';
     document.getElementById('creditPhone').value = '';
     document.getElementById('creditPts').value = '';
@@ -491,11 +491,11 @@ function generateCode() {
 function copyCode() {
     var code = document.getElementById('generatedCode').textContent;
     if (navigator.clipboard) {
-        navigator.clipboard.writeText(code).then(function() { alert('ÒÑ¸´ÖÆ: ' + code); });
+        navigator.clipboard.writeText(code).then(function() { alert('ï¿½Ñ¸ï¿½ï¿½ï¿½: ' + code); });
     } else {
         var ta = document.createElement('textarea'); ta.value = code;
         document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-        alert('ÒÑ¸´ÖÆ: ' + code);
+        alert('ï¿½Ñ¸ï¿½ï¿½ï¿½: ' + code);
     }
 }
 
@@ -503,21 +503,21 @@ function loadHistory() {
     var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
     var html = '';
     if (records.length === 0) {
-        html = '<p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">ÔÝÎÞ¼ÇÂ¼</p>';
+        html = '<p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">ï¿½ï¿½ï¿½Þ¼ï¿½Â¼</p>';
     } else {
         for (var i = 0; i < records.length; i++) {
             var r = records[i];
-            if (r.code === '²ßÂÔÑ¡¹É') {
-                html += '<div class="record-item"><span style="color:#00ccaa;font-weight:700">?? ²ßÂÔÑ¡¹É</span><br>' +
+            if (r.code === 'ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½') {
+                html += '<div class="record-item"><span style="color:#00ccaa;font-weight:700">?? ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½</span><br>' +
                     r.note + '<br><span class="time">' + r.time + '</span></div>';
-            } else if (r.code === 'ÅÌÇ°ÈÈµã') {
-                html += '<div class="record-item"><span style="color:#ffaa00;font-weight:700">?? ÅÌÇ°ÈÈµã</span><br>' +
+            } else if (r.code === 'ï¿½ï¿½Ç°ï¿½Èµï¿½') {
+                html += '<div class="record-item"><span style="color:#ffaa00;font-weight:700">?? ï¿½ï¿½Ç°ï¿½Èµï¿½</span><br>' +
                     r.note + '<br><span class="time">' + r.time + '</span></div>';
             } else {
                 html += '<div class="record-item">' +
-                    '<span class="pts">+' + r.pts + '»ý·Ö</span> ¡ú ÊÖ»úÎ²ºÅ ' + r.phone +
-                    (r.note ? '<br>±¸×¢: ' + r.note : '') +
-                    '<br>¶Ò»»Âë: <span style="color:#ffd966">' + r.code + '</span>' +
+                    '<span class="pts">+' + r.pts + 'ï¿½ï¿½ï¿½ï¿½</span> ï¿½ï¿½ ï¿½Ö»ï¿½Î²ï¿½ï¿½ ' + r.phone +
+                    (r.note ? '<br>ï¿½ï¿½×¢: ' + r.note : '') +
+                    '<br>ï¿½Ò»ï¿½ï¿½ï¿½: <span style="color:#ffd966">' + r.code + '</span>' +
                     '<br><span class="time">' + r.time + '</span></div>';
             }
         }
@@ -526,7 +526,7 @@ function loadHistory() {
 }
 
 function clearHistory() {
-    if (confirm('È·¶¨Çå¿ÕËùÓÐ²Ù×÷¼ÇÂ¼£¿')) {
+    if (confirm('È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½')) {
         safeStorage.removeItem('pqcn_admin_records');
         loadHistory();
     }
