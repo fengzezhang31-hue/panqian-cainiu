@@ -1163,11 +1163,10 @@ async function loadMarketData() {
     // 第一步：从 market-data.json 加载管理后台策略选定的股票
     // 多源加载：先走本站相对路径，失败则走 jsdelivr CDN
     // 数据源：优先GitHub Pages（部署后即时生效），次选jsdelivr CDN
-    var baseUrl = window.location.hostname === 'localhost' ? '' : 'https://fengzezhang31-hue.github.io/panqian-cainiu';
+    var baseUrl = '';
     var sources = [
-        baseUrl + '/market-data.json?t=' + Date.now(),
-        'https://fengzezhang31-hue.github.io/panqian-cainiu/market-data.json?t=' + Date.now(),
-        'https://cdn.jsdelivr.net/gh/fengzezhang31-hue/panqian-cainiu@main/market-data.json?t=' + Date.now()
+        '/market-data.json?t=' + Date.now(),
+        'https://raw.githubusercontent.com/fengzezhang31-hue/panqian-cainiu/main/market-data.json?t=' + Date.now()
     ];
     // 去重
     sources = sources.filter(function(v, i, a) { return a.indexOf(v) === i; });
