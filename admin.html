@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>éî… æ´ç?- ç» ï¼„æ‚Šéšåº¡å½´</title>
+<title>ÁùÅÌÉ½ - ¹ÜÀíºóÌ¨</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0e1a;color:#e0e8f0;min-height:100vh}
@@ -39,53 +39,54 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div id="loginPage">
 <div class="login-box">
     <div class="card">
-        <h2>&#x1F512; ç» ï¼„æ‚Šéšåº¡å½´</h2>
+        <h2>&#x1F512; ¹ÜÀíºóÌ¨</h2>
         <div class="form-row">
-            <label>ç» ï¼„æ‚Šç€µå—™çˆœ</label>
-            <input type="password" id="adminPwd" placeholder="ç’‡ç–¯ç·­éãƒ§î…¸éå——ç˜‘é®?>
+            <label>¹ÜÀíÃÜÂë</label>
+            <input type="password" id="adminPwd" placeholder="ÇëÊäÈë¹ÜÀíÃÜÂë">
         </div>
         <div class="form-row">
-            <label>GitHub Tokené”›å ¢æ•¤æµœåº¢å¸¹é–«ä¾€â‚¬å¤å‚éç‰ˆåµé”›?/label>
-            <input type="password" id="adminToken" placeholder="ghp_å¯®â‚¬æ¾¶å¯¸æ®‘GitHubæ¶“îƒæ±‰ç’å—æ£¶æµ ã‚‡å¢">
+            <label>GitHub Token£¨ÓÃÓÚÍÆËÍÑ¡¹ÉÊı¾İ£©</label>
+            <input type="password" id="adminToken" placeholder="ghp_¿ªÍ·µÄGitHub¸öÈË·ÃÎÊÁîÅÆ">
         </div>
-        <button class="btn btn-primary" onclick="doLogin()">æ©æ¶˜å†éšåº¡å½´</button>
+        <button class="btn btn-primary" onclick="doLogin()">½øÈëºóÌ¨</button>
     </div>
 </div>
 </div>
 
 <div id="adminPage" style="display:none">
 <div class="header">
-    <h1>&#x1F3AF; éî… æ´ç?è·¯ ç» ï¼„æ‚Šéšåº¡å½´</h1>
-    <p>ç» ï¼„æ‚Šé›æ¨»æ·æµ£æ»ˆæ½°é‰?/p>
+    <h1>&#x1F3AF; ÁùÅÌÉ½ ¡¤ ¹ÜÀíºóÌ¨</h1>
+    <p>¹ÜÀíÔ±²Ù×÷Ãæ°å</p>
 </div>
 <div class="container">
 
     <div class="tabs">
-        <div class="tab active" id="tabStock" onclick="switchTab('stock')">å§£å¿”æ£©ç»›æ «æšé–«å¤å‚</div>
-        <div class="tab" id="tabHot" onclick="switchTab('hot')">é©æ¨ºå¢ é‘î… å£</div>
-        <div class="tab" id="tabCredit" onclick="switchTab('credit')">éå‘­â‚¬è‚©â€˜ç’?/div>
-        <div class="tab" id="tabHistory" onclick="switchTab('history')">é¿å¶„ç¶”ç’æ¿ç¶</div>
+        <div class="tab active" id="tabStock" onclick="switchTab('stock')">Ã¿ÈÕ²ßÂÔÑ¡¹É</div>
+        <div class="tab" id="tabHot" onclick="switchTab('hot')">ÅÌÇ°ÈÈµã</div>
+        <div class="tab" id="tabCredit" onclick="switchTab('credit')">³äÖµÈ·ÈÏ</div>
+        <div class="tab" id="tabHistory" onclick="switchTab('history')">²Ù×÷¼ÇÂ¼</div>
     </div>
 
     <div id="panelStock">
     <div class="card">
-        <h3>&#x1F4CA; å§£å¿”æ£©ç»›æ «æšé–«å¤å‚éºã„©â‚¬?/h3>
+        <h3>&#x1F4CA; Ã¿ÈÕ²ßÂÔÑ¡¹ÉÍÆËÍ</h3>
         <p style="font-size:11px;color:#5a7a99;margin-bottom:12px;line-height:1.6">
-            é¸å¤Œç“¥é£ãƒ¨ç˜é’å—•ç² æ¥‚æ¨ºåŸŒæµ£åº¯ç´æ¸šæ¿‡î‚¼æˆæ’³å†6é™î‡å‚ç»ã„¤å”¬é®ä¾Šç´™6æµ£å¶†æšŸç€›æ¥‹ç´šé”›å²€éƒ´ç¼ç†·çš¢é‘·î„å§©é¶æ’³å½‡ç€¹ç‚´æ¤‚ç›å±¾å„éªèˆµå¸¹é–«ä½¸åŸŒAPPéŠ†?br>
-            <span style="color:#00ccaa">æ¤¤å“„ç°­ç€µç‘°ç°²é”›æ°¬å•¿é”ã„§å¢°éˆ«æ•æ‚“é’€å²€å”ºéˆ«æ“äº¹é¯Ñ‡ç·³éˆ«æ”â”–æµ æ’¶å°—éˆ«æ‘ã‡é˜ç†¼â”éˆ«æ“å€é–¬æ’»æ‹±</span>
+            °´²ßÂÔÆÀ·Ö´Ó¸ßµ½µÍ£¬ÒÀ´ÎÊäÈë6Ö»¹ÉÆ±´úÂë£¨6Î»Êı×Ö£©£¬ÏµÍ³½«×Ô¶¯×¥È¡ÊµÊ±ĞĞÇé²¢ÍÆËÍµ½APP¡£<br>
+            <span style="color:#00ccaa">Ë³Ğò¶ÔÓ¦£º³å¶¯Å£¡úÃÈÃÈĞÜ¡ú¿Ö¾åÁú¡ú¿Õ²ÖÃ¨¡ú´óêñÂ¿¡úÎòµÀÓ¥</span>
         </p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-            <div class="form-row"><label>éˆ¶çŠ²å•¿é”ã„§å¢°é”›å ¢îƒ‡1éšå¶ç´š</label><input type="text" id="stk0" maxlength="6" placeholder="æ¿¡?300308"></div>
-            <div class="form-row"><label>éˆ¶Â¤æ‚“é’€å²€å”ºé”›å ¢îƒ‡2éšå¶ç´š</label><input type="text" id="stk1" maxlength="6" placeholder="æ¿¡?300624"></div>
-            <div class="form-row"><label>éˆ¶ãˆ¡äº¹é¯Ñ‡ç·³é”›å ¢îƒ‡3éšå¶ç´š</label><input type="text" id="stk2" maxlength="6" placeholder="æ¿¡?002703"></div>
-            <div class="form-row"><label>éˆ¶ï½‡â”–æµ æ’¶å°—é”›å ¢îƒ‡4éšå¶ç´š</label><input type="text" id="stk3" maxlength="6" placeholder="æ¿¡?300718"></div>
-            <div class="form-row"><label>éˆ¶ã‚…ã‡é˜ç†¼â”é”›å ¢îƒ‡5éšå¶ç´š</label><input type="text" id="stk4" maxlength="6" placeholder="æ¿¡?002896"></div>
-            <div class="form-row"><label>éˆ¶ãƒ¦å€é–¬æ’»æ‹±é”›å ¢îƒ‡6éšå¶ç´š</label><input type="text" id="stk5" maxlength="6" placeholder="æ¿¡?301308"></div>
+            <div class="form-row"><label>¢Ù³å¶¯Å££¨µÚ1Ãû£©</label><input type="text" id="stk0" maxlength="6" placeholder="Èç 300308"></div>
+            <div class="form-row"><label>¢ÚÃÈÃÈĞÜ£¨µÚ2Ãû£©</label><input type="text" id="stk1" maxlength="6" placeholder="Èç 300624"></div>
+            <div class="form-row"><label>¢Û¿Ö¾åÁú£¨µÚ3Ãû£©</label><input type="text" id="stk2" maxlength="6" placeholder="Èç 002703"></div>
+            <div class="form-row"><label>¢Ü¿Õ²ÖÃ¨£¨µÚ4Ãû£©</label><input type="text" id="stk3" maxlength="6" placeholder="Èç 300718"></div>
+            <div class="form-row"><label>¢İ´óêñÂ¿£¨µÚ5Ãû£©</label><input type="text" id="stk4" maxlength="6" placeholder="Èç 002896"></div>
+            <div class="form-row"><label>¢ŞÎòµÀÓ¥£¨µÚ6Ãû£©</label><input type="text" id="stk5" maxlength="6" placeholder="Èç 301308"></div>
         </div>
-        <button class="btn btn-primary" onclick="fetchAndPreview()" id="btnFetch">é¶æ’³å½‡ç€¹ç‚´æ¤‚ç›å±¾å„</button>
+        <div style="margin-top:10px"><input type="text" id="stockPaste" placeholder="ÅúÁ¿Õ³Ìù£¨¶ººÅ/¿Õ¸ñ/¶ÙºÅ·Ö¸ô£©" onchange="onPasteStocks(this.value)" style="width:100%;height:36px;background:#0a1628;border:1px solid #1a3a5a;border-radius:8px;padding:0 10px;color:#e0e8f0;font-size:12px;outline:none"></div>
+        <button class="btn btn-primary" onclick="fetchAndPreview()" id="btnFetch">×¥È¡ÊµÊ±ĞĞÇé</button>
         <div id="stockPreview" style="display:none;margin-top:12px">
             <div style="background:#0a1628;border-radius:10px;padding:12px;font-size:12px;line-height:1.8" id="previewContent"></div>
-            <button class="btn btn-primary" onclick="pushToApp()" id="btnPush" style="margin-top:10px">çº­î†¿î…»éºã„©â‚¬ä½¸åŸŒAPP</button>
+            <button class="btn btn-primary" onclick="pushToApp()" id="btnPush" style="margin-top:10px">È·ÈÏÍÆËÍµ½APP</button>
         </div>
         <div id="pushStatus" style="display:none;margin-top:10px;font-size:12px;text-align:center;padding:10px;border-radius:10px"></div>
     </div>
@@ -93,54 +94,54 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
     <div id="panelHot" style="display:none">
     <div class="card">
-        <h3>&#x1F525; é©æ¨ºå¢ é‘î… å£è¤°æ›å†</h3>
+        <h3>&#x1F525; ÅÌÇ°ÈÈµãÂ¼Èë</h3>
         <p style="font-size:11px;color:#5a7a99;margin-bottom:12px;line-height:1.6">
-            é™å‚â‚¬å†©æ½µå©§æ„¶ç´°<span style="color:#ffcc00">å¨£æ¨¿å‚éšÑƒå´¥æ¶“æ±‡â‚¬å±¼ç¬“å¨‰ã„§æ´é“å¶ˆç¥«ç’îˆ˜â‚¬?/span>é”›åœ›D:3729365é”›å¤›ç´å§£å¿”æ£©8:20å®¸ï¹€å½¸é™æˆç«·éŠ†?br>
-            çå——å§é–¿î†¾å„¹éè§„æ¾˜é§?æ£°æ¨»æ½—ç»®æ¨¿åˆ›é’é¢ç¬…é‚ç™¸ç´å§£å¿šî”‘æ¶“â‚¬é‰â˜…ç´ç»¯è¤ç²ºçå—˜å¸¹é–«ä½¸åŸŒAPPæ££æ ­ã€‰éŠ†?
+            ²Î¿¼À´Ô´£º<span style="color:#ffcc00">ÌÔ¹É°É²©Ö÷¡¸×¨×¢ÅÌÇ°×ÊÑ¶¡¹</span>£¨ID:3729365£©£¬Ã¿ÈÕ8:20×óÓÒ·¢²¼¡£<br>
+            ½«¹Ø¼üÈÈµã°å¿é/Ìâ²ÄÕ³Ìùµ½ÏÂ·½£¬Ã¿ĞĞÒ»Ìõ£¬ÏµÍ³½«ÍÆËÍµ½APPÊ×Ò³¡£
         </p>
         <div class="form-row">
-            <label>é‘î… å£éå‘­î†é”›å Ÿç˜¡ç›å±¼ç«´é‰â˜…ç´æ¿¡å‚¦ç´°AIé‘ºîˆœå¢–éŠ†ä½¹æº€é£ã„¤æ±‰éŠ†ä½¸åœæµ¼å¿¥ç´š</label>
-            <textarea id="hotContent" rows="6" style="width:100%;height:120px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:13px;line-height:1.6;resize:vertical;outline:none" placeholder="AIé‘ºîˆœå¢–&#10;éˆå“„æ«’æµœ?#10;æµ£åº£â”–ç¼å¿”ç¥¹&#10;éå¤‰ç´¡&#10;é‚æ‹Œå…˜å©§æ„¯æº…"></textarea>
+            <label>ÈÈµãÄÚÈİ£¨Ã¿ĞĞÒ»Ìõ£¬Èç£ºAIĞ¾Æ¬¡¢»úÆ÷ÈË¡¢¹â·ü£©</label>
+            <textarea id="hotContent" rows="6" style="width:100%;height:120px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:13px;line-height:1.6;resize:vertical;outline:none" placeholder="AIĞ¾Æ¬&#10;»úÆ÷ÈË&#10;µÍ¿Õ¾­¼Ã&#10;¹â·ü&#10;ĞÂÄÜÔ´³µ"></textarea>
         </div>
         <div class="form-row">
-            <label>ç›ãƒ¥å–ç’‡å­˜æ§‘é”›å å½²é–«å¤›ç´æ¿¡å‚›æ®«é—ˆãˆ¡æŸŠé—‚æ±‡â‚¬ä½ºçŠé™æˆœç°¨æµ è®¹ç´š</label>
-            <textarea id="hotNote" rows="3" style="width:100%;height:70px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:12px;line-height:1.5;resize:vertical;outline:none" placeholder="æ¿¡å‚¦ç´°éî„æ‚2ç»ã„¦åŸ§é®å¯¸é‚¯è¤°æ›ªç´æ£°å‹¬æ¹¡å®¸î†½æº€æµ¼?></textarea>
+            <label>²¹³äËµÃ÷£¨¿ÉÑ¡£¬Èç°µÃæĞÂÎÅ¡¢Í»·¢ÊÂ¼ş£©</label>
+            <textarea id="hotNote" rows="3" style="width:100%;height:70px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:12px;line-height:1.5;resize:vertical;outline:none" placeholder="Èç£ºÄÄß¸2Æ±·¿ÆÆ¼ÍÂ¼£¬Ô¤ÆÚ²î»ú»á"></textarea>
         </div>
-        <button class="btn btn-primary" onclick="pushHotTopics()" id="btnHotPush">éºã„©â‚¬ä½ºå„¹éç‘°åŸŒAPP</button>
+        <button class="btn btn-primary" onclick="pushHotTopics()" id="btnHotPush">ÍÆËÍÈÈµãµ½APP</button>
         <div id="hotStatus" style="display:none;margin-top:10px;font-size:12px;text-align:center;padding:10px;border-radius:10px"></div>
     </div>
     </div>
 
     <div id="panelCredit" style="display:none">
     <div class="card">
-        <h3>&#x1F4B0; é¢ç†¸åšéå‘­â‚¬ç…å¬é¹ãˆ¢çˆœ</h3>
-        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px">é¢ã„¦åŸ›æµ æ¨»îƒ™éšåº¯ç´æˆæ’³å†éµå¬«æº€é™å³°æ‹°é–²æˆ¦î–‚é”›å²€æ•“é´æ„¬å¬é¹ãˆ¢çˆœé™æˆ ç²°é¢ã„¦åŸ›é”›å²€æ•¤é´å³°æ¹ªAPPéå‘°ç·­éãƒ¥å¬é¹ãˆ¢çˆœé—å†²å½²é’æ‹Œå¤„</p>
+        <h3>&#x1F4B0; Éú³É³äÖµ¶Ò»»Âë</h3>
+        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px">ÓÃ»§¸¶¿îºó£¬ÊäÈëÊÖ»úºÅºÍ½ğ¶î£¬Éú³É¶Ò»»Âë·¢¸øÓÃ»§£¬ÓÃ»§ÔÚAPPÄÚÊäÈë¶Ò»»Âë¼´¿Éµ½ÕË</p>
         <div class="form-row">
-            <label>é¢ã„¦åŸ›éµå¬«æº€é™å‡¤ç´™éš?æµ£å¶…åµ†é™îˆ¤ç´š</label>
-            <input type="text" id="creditPhone" maxlength="4" placeholder="æ¸šå¬¶ç´°5678">
+            <label>ÓÃ»§ÊÖ»úºÅ£¨ºó4Î»¼´¿É£©</label>
+            <input type="text" id="creditPhone" maxlength="4" placeholder="Àı£º5678">
         </div>
         <div class="form-row">
-            <label>éå‘­â‚¬è‚©Ğé’å—˜æšŸ</label>
-            <input type="number" id="creditPts" placeholder="æ¸šå¬¶ç´°1000">
+            <label>³äÖµ»ı·ÖÊı</label>
+            <input type="number" id="creditPts" placeholder="Àı£º1000">
         </div>
         <div class="form-row">
-            <label>æ¾¶å›¨æ•é”›å å½²é–«å¤›ç´š</label>
-            <input type="text" id="creditNote" placeholder="æ¸šå¬¶ç´°å¯°î†»ä¿Šé€èˆµîƒ™100é?>
+            <label>±¸×¢£¨¿ÉÑ¡£©</label>
+            <input type="text" id="creditNote" placeholder="Àı£ºÎ¢ĞÅÊÕ¿î100Ôª">
         </div>
-        <button class="btn btn-primary" onclick="generateCode()">é¢ç†¸åšéæˆå´²é®?/button>
+        <button class="btn btn-primary" onclick="generateCode()">Éú³É¶Ò»»Âë</button>
         <div class="code-display" id="codeDisplay">
             <div class="code" id="generatedCode"></div>
             <div class="info" id="codeInfo"></div>
-            <button class="copy-btn" onclick="copyCode()">æ¾¶å¶…åŸ—éæˆå´²é®?/button>
+            <button class="copy-btn" onclick="copyCode()">¸´ÖÆ¶Ò»»Âë</button>
         </div>
     </div>
     </div>
 
     <div id="panelHistory" style="display:none">
     <div class="card">
-        <h3>&#x1F4CB; é¿å¶„ç¶”ç’æ¿ç¶</h3>
-        <div id="historyList"><p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">é†å‚›æ£¤ç’æ¿ç¶</p></div>
-        <button class="btn btn-danger" onclick="clearHistory()" style="margin-top:12px">å¨“å‘¯â”–ç’æ¿ç¶</button>
+        <h3>&#x1F4CB; ²Ù×÷¼ÇÂ¼</h3>
+        <div id="historyList"><p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">ÔİÎŞ¼ÇÂ¼</p></div>
+        <button class="btn btn-danger" onclick="clearHistory()" style="margin-top:12px">Çå¿Õ¼ÇÂ¼</button>
     </div>
     </div>
 
@@ -152,7 +153,7 @@ var ADMIN_PWD = '888888';
 var GITHUB_TOKEN = '';
 var GITHUB_OWNER = 'fengzezhang31-hue';
 var GITHUB_REPO = 'panqian-cainiu';
-var PET_NAMES = ['éæ’å§©é—?,'é’€å²ƒæ‚“é”?,'é­æ„­å„³æ¦«?,'ç»Œè½°ç²¨éš?,'æ¾¶Ñ…å§›æ¤¹?,'é®ç†¼äº¾æ¥£?];
+var PET_NAMES = ['³å¶¯Å£','ÃÈÃÈĞÜ','¿Ö¾åÁú','¿Õ²ÖÃ¨','´óêñÂ¿','ÎòµÀÓ¥'];
 var fetchedStocks = null;
 
 var safeStorage = {
@@ -169,7 +170,7 @@ function doLogin() {
         document.getElementById('loginPage').style.display = 'none';
         document.getElementById('adminPage').style.display = 'block';
     } else {
-        alert('ç€µå—™çˆœé–¿æ¬’î‡¤');
+        alert('ÃÜÂë´íÎó');
     }
 }
 
@@ -185,26 +186,40 @@ function switchTab(tab) {
     if (tab === 'history') loadHistory();
 }
 
-// ========== ç»›æ «æšé–«å¤å‚é”›æ°«å”¬é®ä½½æµ†æ¶“æ»„æŸŸç’ãˆ ç˜œ secid ==========
+// ========== ²ßÂÔÑ¡¹É£º´úÂë×ª¶«·½²Æ¸» secid ==========
 function codeToSecid(code) {
-    // 6å¯®â‚¬æ¾¶?å¨Œî„ç«¶(sh), 0/3å¯®â‚¬æ¾¶?å¨£åç«¶(sz), 68å¯®â‚¬æ¾¶?ç»‰æˆå±é‰?sh)
+    // 6¿ªÍ·=»¦ÊĞ(sh), 0/3¿ªÍ·=ÉîÊĞ(sz), 68¿ªÍ·=¿Æ´´°å(sh)
     if (code.startsWith('6')) return '1.' + code;
     return '0.' + code;
 }
 
-// ========== ç»›æ «æšé–«å¤å‚é”›æ°­å§„é™æ §ç–„éƒæƒ°î”‘é¯?==========
+// ========== ²ßÂÔÑ¡¹É£º×¥È¡ÊµÊ±ĞĞÇé ==========
+
+function onPasteStocks(v) {
+    if (!v) return;
+    var items = v.split(/[ï¼å³s]+/).filter(function(x) { return x.trim(); });
+    for (var i = 0; i < Math.min(6, items.length); i++) {
+        var el = document.getElementById('stk' + i);
+        if (el) el.value = items[i].trim();
+    }
+}
 function fetchAndPreview() {
     var codes = [];
+    if (!document.getElementById('stk0').value.trim() && !document.getElementById('stk1').value.trim() && !document.getElementById('stk2').value.trim() && !document.getElementById('stk3').value.trim() && !document.getElementById('stk4').value.trim() && !document.getElementById('stk5').value.trim()) {
+        alert('ÇëÖÁÉÙÊäÈëÒ»Ö»¹ÉÆ±´úÂë');
+        return;
+    }
     for (var i = 0; i < 6; i++) {
         var c = document.getElementById('stk' + i).value.trim();
-        if (!c || c.length !== 6 || !/^\d{6}$/.test(c)) {
-            alert('ç»—? + (i+1) + 'é™î‡å‚ç»ã„¤å”¬é®ä½·ç¬‰å§ï½‡â€˜é”›å²ƒî‡¬æˆæ’³å†6æµ£å¶†æšŸç€›?);
+        if (!c) continue;
+        if (c.length !== 6 || !/^\d{6}$/.test(c)) {
+            alert('µÚ' + (i+1) + 'Ö»¹ÉÆ±´úÂë²»ÕıÈ·£¬ÇëÊäÈë6Î»Êı×Ö');
             return;
         }
         codes.push(c);
     }
     document.getElementById('btnFetch').disabled = true;
-    document.getElementById('btnFetch').textContent = 'é¶æ’³å½‡æ¶“?..';
+    document.getElementById('btnFetch').textContent = '×¥È¡ÖĞ...';
 
     var secids = codes.map(codeToSecid).join(',');
     var cbName = '_admcb_' + Date.now();
@@ -214,22 +229,22 @@ function fetchAndPreview() {
         var script = document.getElementById('_fetchScript');
         if (script) script.parentNode.removeChild(script);
         document.getElementById('btnFetch').disabled = false;
-        document.getElementById('btnFetch').textContent = 'é¶æ’³å½‡ç€¹ç‚´æ¤‚ç›å±¾å„';
+        document.getElementById('btnFetch').textContent = '×¥È¡ÊµÊ±ĞĞÇé';
 
-        if (!json || !json.data || !json.data.diff || json.data.diff.length < 6) {
-            alert('ç›å±¾å„éç‰ˆåµé‘¾å³°å½‡æ¶“å¶…ç•¬éè¾¾ç´ç’‡é”‹î—…éŒãƒ¨å‚ç»ã„¤å”¬é®?);
+        if (!json || !json.data || !json.data.diff || codes.length !== json.data.diff.length) {
+            alert('ĞĞÇéÊı¾İ»ñÈ¡²»ÍêÕû£¬Çë¼ì²é¹ÉÆ±´úÂë');
             return;
         }
-        // é¸å¤ç·­éãƒ©ã€æ´å¿“å°®é–°å¶ç´™APIé™îˆå…˜æ¶”åç°­é”›?
+        // °´ÊäÈëË³ĞòÆ¥Åä£¨API¿ÉÄÜÂÒĞò£©
         var stockMap = {};
         json.data.diff.forEach(function(s) { stockMap[s.f12] = s; });
 
         fetchedStocks = [];
-        var html = '<div style="color:#00ccaa;font-weight:700;margin-bottom:8px">é¶æ’³å½‡é´æ„¬å§›é”›å²ƒî‡¬çº­î†¿î…»é”›?/div>';
+        var html = '<div style="color:#00ccaa;font-weight:700;margin-bottom:8px">×¥È¡³É¹¦£¬ÇëÈ·ÈÏ£º</div>';
         for (var i = 0; i < codes.length; i++) {
             var s = stockMap[codes[i]];
             if (!s) {
-                alert('é‘²ï¼„ã‚¨ ' + codes[i] + ' éˆî…å£˜é’ç‰ˆæšŸé¹?);
+                alert('¹ÉÆ± ' + codes[i] + ' Î´ÕÒµ½Êı¾İ');
                 return;
             }
             fetchedStocks.push({
@@ -247,7 +262,7 @@ function fetchAndPreview() {
             html += '<div style="border-bottom:1px solid #1a3a5a;padding:4px 0">' +
                 '<span style="color:#ffd966">' + PET_NAMES[i] + '</span>@' +
                 '<b>' + s.f14 + '</b>(' + s.f12 + ') ' +
-                'é„ã„¦æ•¹:' + s.f18 + ' éœé¢ç¯:<b>' + s.f2 + '</b> ' +
+                '×òÊÕ:' + s.f18 + ' ÏÖ¼Û:<b>' + s.f2 + '</b> ' +
                 '<span style="' + cls + '">' + sign + s.f3 + '%</span></div>';
         }
         document.getElementById('previewContent').innerHTML = html;
@@ -262,29 +277,29 @@ function fetchAndPreview() {
     script.onerror = function() {
         try { delete window[cbName]; } catch(e) {}
         document.getElementById('btnFetch').disabled = false;
-        document.getElementById('btnFetch').textContent = 'é¶æ’³å½‡ç€¹ç‚´æ¤‚ç›å±¾å„';
-        alert('ç›å±¾å„APIé”çŠºæµ‡æ¾¶è¾«è§¦é”›å²ƒî‡¬å¦«â‚¬éŒãƒ§ç¶‰ç¼?);
+        document.getElementById('btnFetch').textContent = '×¥È¡ÊµÊ±ĞĞÇé';
+        alert('ĞĞÇéAPI¼ÓÔØÊ§°Ü£¬Çë¼ì²éÍøÂç');
     };
     document.head.appendChild(script);
 }
 
-// ========== ç»›æ «æšé–«å¤å‚é”›æ°­å¸¹é–«ä½¸åŸŒ GitHub ==========
+// ========== ²ßÂÔÑ¡¹É£ºÍÆËÍµ½ GitHub ==========
 function pushToApp() {
-    if (!fetchedStocks || fetchedStocks.length !== 6) {
-        alert('ç’‡å³°å›é¶æ’³å½‡ç›å±¾å„');
+    if (!fetchedStocks || fetchedStocks.length < 1) {
+        alert('ÇëÏÈ×¥È¡ĞĞÇé');
         return;
     }
     if (!GITHUB_TOKEN) {
-        alert('ç’‡å³°å›é¦ã„§æ«¥è¤°æ›¢ã€‰æ¿‰î‚¢å•“ GitHub Token');
+        alert('ÇëÏÈÔÚµÇÂ¼Ò³ÌîĞ´ GitHub Token');
         return;
     }
     document.getElementById('btnPush').disabled = true;
-    document.getElementById('btnPush').textContent = 'éºã„©â‚¬ä½·è…‘...';
+    document.getElementById('btnPush').textContent = 'ÍÆËÍÖĞ...';
     var statusEl = document.getElementById('pushStatus');
     statusEl.style.display = 'block';
     statusEl.style.background = '#1a2a40';
     statusEl.style.color = '#88aacc';
-    statusEl.innerHTML = 'å§ï½…æ¹ªéºã„©â‚¬ä½¸åŸŒ GitHub...';
+    statusEl.innerHTML = 'ÕıÔÚÍÆËÍµ½ GitHub...';
 
     var today = new Date();
     var dateStr = today.getFullYear() + '-' +
@@ -312,14 +327,14 @@ function pushToApp() {
     var jsonStr = JSON.stringify(marketData, null, 2);
     var b64 = btoa(unescape(encodeURIComponent(jsonStr)));
 
-    // éå £å¹é™æ §ç¶‹é“å¶†æƒæµ ?SHA
+    // ÏÈ»ñÈ¡µ±Ç°ÎÄ¼ş SHA
     fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/market-data.json', {
         headers: { 'Authorization': 'token ' + GITHUB_TOKEN }
     })
     .then(function(r) { return r.json(); })
     .then(function(info) {
         var body = {
-            message: 'ç»›æ «æšé–«å¤å‚ ' + dateStr + ': ' + fetchedStocks.map(function(s){return s.name}).join(','),
+            message: '²ßÂÔÑ¡¹É ' + dateStr + ': ' + fetchedStocks.map(function(s){return s.name}).join(','),
             content: b64,
             sha: info.sha
         };
@@ -335,16 +350,16 @@ function pushToApp() {
     .then(function(r) { return r.json(); })
     .then(function(result) {
         document.getElementById('btnPush').disabled = false;
-        document.getElementById('btnPush').textContent = 'çº­î†¿î…»éºã„©â‚¬ä½¸åŸŒAPP';
+        document.getElementById('btnPush').textContent = 'È·ÈÏÍÆËÍµ½APP';
         if (result.content) {
             statusEl.style.background = '#0a2a1a';
             statusEl.style.color = '#44cc88';
-            statusEl.innerHTML = 'éºã„©â‚¬ä½¹åšé”ç‡‚ç´’APPçå——æ¹ªé‘çŠ²åé–½ç†·å”´é‡å­˜æŸŠéŠ†?br><span style="font-size:11px;color:#5a7a99">' +
-                dateStr + ' è·¯ ' + fetchedStocks.map(function(s){return s.name}).join('éŠ†?) + '</span>';
-            // æ·‡æ¿†ç“¨ç’æ¿ç¶
+            statusEl.innerHTML = 'ÍÆËÍ³É¹¦£¡APP½«ÔÚ¼¸·ÖÖÓÄÚ¸üĞÂ¡£<br><span style="font-size:11px;color:#5a7a99">' +
+                dateStr + ' ¡¤ ' + fetchedStocks.map(function(s){return s.name}).join('¡¢') + '</span>';
+            // ±£´æ¼ÇÂ¼
             var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
             records.unshift({
-                code: 'ç»›æ «æšé–«å¤å‚',
+                code: '²ßÂÔÑ¡¹É',
                 phone: '-',
                 pts: 0,
                 note: fetchedStocks.map(function(s){return s.name + '(' + s.changePercent + '%)'}).join(', '),
@@ -355,24 +370,24 @@ function pushToApp() {
         } else {
             statusEl.style.background = '#2a0a0a';
             statusEl.style.color = '#ff4466';
-            statusEl.innerHTML = 'éºã„©â‚¬ä½¸ã‘ç’? ' + (result.message || 'éˆî†ç…¡é–¿æ¬’î‡¤');
+            statusEl.innerHTML = 'ÍÆËÍÊ§°Ü: ' + (result.message || 'Î´Öª´íÎó');
         }
     })
     .catch(function(e) {
         document.getElementById('btnPush').disabled = false;
-        document.getElementById('btnPush').textContent = 'çº­î†¿î…»éºã„©â‚¬ä½¸åŸŒAPP';
+        document.getElementById('btnPush').textContent = 'È·ÈÏÍÆËÍµ½APP';
         statusEl.style.background = '#2a0a0a';
         statusEl.style.color = '#ff4466';
-        statusEl.innerHTML = 'éºã„©â‚¬ä½¸ã‘ç’? ' + e.message;
+        statusEl.innerHTML = 'ÍÆËÍÊ§°Ü: ' + e.message;
     });
 }
 
-// ========== é©æ¨ºå¢ é‘î… å£éºã„©â‚¬?==========
+// ========== ÅÌÇ°ÈÈµãÍÆËÍ ==========
 function pushHotTopics() {
     var content = document.getElementById('hotContent').value.trim();
     var note = document.getElementById('hotNote').value.trim();
-    if (!content) { alert('ç’‡ç–¯ç·­éãƒ§å„¹éç‘°å”´ç€¹?); return; }
-    if (!GITHUB_TOKEN) { alert('ç’‡å³°å›é¦ã„§æ«¥è¤°æ›¢ã€‰æ¿‰î‚¢å•“ GitHub Token'); return; }
+    if (!content) { alert('ÇëÊäÈëÈÈµãÄÚÈİ'); return; }
+    if (!GITHUB_TOKEN) { alert('ÇëÏÈÔÚµÇÂ¼Ò³ÌîĞ´ GitHub Token'); return; }
 
     var trends = content.split('\n').map(function(line) {
         return line.trim();
@@ -385,11 +400,11 @@ function pushHotTopics() {
     var btn = document.getElementById('btnHotPush');
     var statusEl = document.getElementById('hotStatus');
     btn.disabled = true;
-    btn.textContent = 'éºã„©â‚¬ä½·è…‘...';
+    btn.textContent = 'ÍÆËÍÖĞ...';
     statusEl.style.display = 'block';
     statusEl.style.background = '#1a2a40';
     statusEl.style.color = '#88aacc';
-    statusEl.innerHTML = 'å§ï½…æ¹ªéºã„©â‚¬ä½ºå„¹éç‘°åŸŒ GitHub...';
+    statusEl.innerHTML = 'ÕıÔÚÍÆËÍÈÈµãµ½ GitHub...';
 
     var today = new Date();
     var dateStr = today.getFullYear() + '-' +
@@ -425,15 +440,15 @@ function pushHotTopics() {
     .then(function(r) { return r.json(); })
     .then(function(result) {
         btn.disabled = false;
-        btn.textContent = 'éºã„©â‚¬ä½ºå„¹éç‘°åŸŒAPP';
+        btn.textContent = 'ÍÆËÍÈÈµãµ½APP';
         if (result.content) {
             statusEl.style.background = '#0a2a1a';
             statusEl.style.color = '#44cc88';
-            statusEl.innerHTML = 'éºã„©â‚¬ä½¹åšé”ç‡‚ç´’APPçå——æ¹ªé‘çŠ²åé–½ç†·å”´é‡å­˜æŸŠé‘î… å£éŠ†?br><span style="font-size:11px;color:#5a7a99">' +
-                dateStr + ' è·¯ ' + trends.length + 'é‰ï¼„å„¹é? + (note ? ' è·¯ ' + note : '') + '</span>';
+            statusEl.innerHTML = 'ÍÆËÍ³É¹¦£¡APP½«ÔÚ¼¸·ÖÖÓÄÚ¸üĞÂÈÈµã¡£<br><span style="font-size:11px;color:#5a7a99">' +
+                dateStr + ' ¡¤ ' + trends.length + 'ÌõÈÈµã' + (note ? ' ¡¤ ' + note : '') + '</span>';
             var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
             records.unshift({
-                code: 'é©æ¨ºå¢ é‘î… å£', phone: '-', pts: 0,
+                code: 'ÅÌÇ°ÈÈµã', phone: '-', pts: 0,
                 note: trends.map(function(t){return t.title}).join(', ') + (note ? ' | ' + note : ''),
                 time: new Date().toLocaleString('zh-CN'), ts: Date.now()
             });
@@ -441,32 +456,32 @@ function pushHotTopics() {
         } else {
             statusEl.style.background = '#2a0a0a';
             statusEl.style.color = '#ff4466';
-            statusEl.innerHTML = 'éºã„©â‚¬ä½¸ã‘ç’? ' + (result.message || 'éˆî†ç…¡é–¿æ¬’î‡¤');
+            statusEl.innerHTML = 'ÍÆËÍÊ§°Ü: ' + (result.message || 'Î´Öª´íÎó');
         }
     })
     .catch(function(e) {
         btn.disabled = false;
-        btn.textContent = 'éºã„©â‚¬ä½ºå„¹éç‘°åŸŒAPP';
+        btn.textContent = 'ÍÆËÍÈÈµãµ½APP';
         statusEl.style.background = '#2a0a0a';
         statusEl.style.color = '#ff4466';
-        statusEl.innerHTML = 'éºã„©â‚¬ä½¸ã‘ç’? ' + e.message;
+        statusEl.innerHTML = 'ÍÆËÍÊ§°Ü: ' + e.message;
     });
 }
 
-// ========== éå‘­â‚¬ç…å¬é¹ãˆ¢çˆœ ==========
+// ========== ³äÖµ¶Ò»»Âë ==========
 function generateCode() {
     var phone = document.getElementById('creditPhone').value.trim();
     var pts = parseInt(document.getElementById('creditPts').value);
     var note = document.getElementById('creditNote').value.trim();
-    if (!phone || phone.length < 4) { alert('ç’‡ç–¯ç·­éãƒ¦å¢œéˆå“„å½¿éš?æµ£?); return; }
-    if (!pts || pts <= 0) { alert('ç’‡ç–¯ç·­éãƒ¦î„œçº­î†¾æ®‘ç»‰îˆšåé?); return; }
+    if (!phone || phone.length < 4) { alert('ÇëÊäÈëÊÖ»úºÅºó4Î»'); return; }
+    if (!pts || pts <= 0) { alert('ÇëÊäÈëÕıÈ·µÄ»ı·ÖÊı'); return; }
     var ts = Date.now();
     var code = 'PQCN-' + phone + '-' + pts + '-' + ('' + ts).slice(-6);
     var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
     records.unshift({ code: code, phone: phone, pts: pts, note: note, time: new Date().toLocaleString('zh-CN'), ts: ts });
     safeStorage.setItem('pqcn_admin_records', JSON.stringify(records));
     document.getElementById('generatedCode').textContent = code;
-    document.getElementById('codeInfo').innerHTML = 'éµå¬«æº€çæƒ§å½¿ ' + phone + ' è·¯ ' + pts + 'ç»‰îˆšå' + (note ? ' è·¯ ' + note : '') + '<br>ç’‡å³°çš¢å§ã‚…å¬é¹ãˆ¢çˆœé™æˆ ç²°é¢ã„¦åŸ›é”›å±½æ¹ªAPP"éæˆå´²ç»‰îˆšå"æ¾¶å‹®ç·­éãƒ¥åµ†é™îˆšåŸŒç’?;
+    document.getElementById('codeInfo').innerHTML = 'ÊÖ»úÎ²ºÅ ' + phone + ' ¡¤ ' + pts + '»ı·Ö' + (note ? ' ¡¤ ' + note : '') + '<br>Çë½«´Ë¶Ò»»Âë·¢¸øÓÃ»§£¬ÔÚAPP"¶Ò»»»ı·Ö"´¦ÊäÈë¼´¿Éµ½ÕË';
     document.getElementById('codeDisplay').style.display = 'block';
     document.getElementById('creditPhone').value = '';
     document.getElementById('creditPts').value = '';
@@ -476,11 +491,11 @@ function generateCode() {
 function copyCode() {
     var code = document.getElementById('generatedCode').textContent;
     if (navigator.clipboard) {
-        navigator.clipboard.writeText(code).then(function() { alert('å®¸æ’î˜²é’? ' + code); });
+        navigator.clipboard.writeText(code).then(function() { alert('ÒÑ¸´ÖÆ: ' + code); });
     } else {
         var ta = document.createElement('textarea'); ta.value = code;
         document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-        alert('å®¸æ’î˜²é’? ' + code);
+        alert('ÒÑ¸´ÖÆ: ' + code);
     }
 }
 
@@ -488,21 +503,21 @@ function loadHistory() {
     var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
     var html = '';
     if (records.length === 0) {
-        html = '<p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">é†å‚›æ£¤ç’æ¿ç¶</p>';
+        html = '<p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">ÔİÎŞ¼ÇÂ¼</p>';
     } else {
         for (var i = 0; i < records.length; i++) {
             var r = records[i];
-            if (r.code === 'ç»›æ «æšé–«å¤å‚') {
-                html += '<div class="record-item"><span style="color:#00ccaa;font-weight:700">é¦ƒæ³ ç»›æ «æšé–«å¤å‚</span><br>' +
+            if (r.code === '²ßÂÔÑ¡¹É') {
+                html += '<div class="record-item"><span style="color:#00ccaa;font-weight:700">?? ²ßÂÔÑ¡¹É</span><br>' +
                     r.note + '<br><span class="time">' + r.time + '</span></div>';
-            } else if (r.code === 'é©æ¨ºå¢ é‘î… å£') {
-                html += '<div class="record-item"><span style="color:#ffaa00;font-weight:700">é¦ƒæ•Ÿ é©æ¨ºå¢ é‘î… å£</span><br>' +
+            } else if (r.code === 'ÅÌÇ°ÈÈµã') {
+                html += '<div class="record-item"><span style="color:#ffaa00;font-weight:700">?? ÅÌÇ°ÈÈµã</span><br>' +
                     r.note + '<br><span class="time">' + r.time + '</span></div>';
             } else {
                 html += '<div class="record-item">' +
-                    '<span class="pts">+' + r.pts + 'ç»‰îˆšå</span> éˆ«?éµå¬«æº€çæƒ§å½¿ ' + r.phone +
-                    (r.note ? '<br>æ¾¶å›¨æ•: ' + r.note : '') +
-                    '<br>éæˆå´²é®? <span style="color:#ffd966">' + r.code + '</span>' +
+                    '<span class="pts">+' + r.pts + '»ı·Ö</span> ¡ú ÊÖ»úÎ²ºÅ ' + r.phone +
+                    (r.note ? '<br>±¸×¢: ' + r.note : '') +
+                    '<br>¶Ò»»Âë: <span style="color:#ffd966">' + r.code + '</span>' +
                     '<br><span class="time">' + r.time + '</span></div>';
             }
         }
@@ -511,7 +526,7 @@ function loadHistory() {
 }
 
 function clearHistory() {
-    if (confirm('çº­î†¼ç•¾å¨“å‘¯â”–éµâ‚¬éˆå¤‹æ·æµ£æ»†î†‡è¤°æ›ªç´µ')) {
+    if (confirm('È·¶¨Çå¿ÕËùÓĞ²Ù×÷¼ÇÂ¼£¿')) {
         safeStorage.removeItem('pqcn_admin_records');
         loadHistory();
     }
