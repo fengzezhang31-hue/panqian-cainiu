@@ -1512,6 +1512,7 @@ function doScore() {
         var ss = document.getElementById('secondStock');
         if(ss) ss.textContent = '— 待晋级 —';
         guessIdx = null;
+        startLiveRefresh();
         if(stocks.length === 0) {
             showModal('今日无顶级机会', '策略严谨筛选后，今日无标的通过全部验证。<br><span style="font-size:11px;color:#5a7a99">宁缺毋滥，建议观望。空仓也是一种策略。</span>');
         } else if(stocks.length < 6) {
