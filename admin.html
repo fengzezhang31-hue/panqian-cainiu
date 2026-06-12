@@ -240,7 +240,7 @@ function pushToApp() {
 
   var d=new Date();
   var ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-  var data={date:ds,stocks:fetchedStocks.map(function(s){return{name:s.name,code:s.code,bidPrice:s.bidPrice,currentPrice:s.currentPrice,openPrice:s.openPrice,yesterdayClose:s.yesterdayClose,changePercent:s.changePercent,entityGain:s.entityGain};}),news:[],twitterTrends:[]};
+  var data={date:ds,phase:'manual',phaseTime:new Date().toISOString().replace('T',' ').substring(0,19),totalCandidates:6,stocks:fetchedStocks.map(function(s){return{name:s.name,code:s.code,bidPrice:s.bidPrice,currentPrice:s.currentPrice,openPrice:s.openPrice,yesterdayClose:s.yesterdayClose,changePercent:s.changePercent,entityGain:s.entityGain,v6Score:100,v3LogicScore:70,v4AuctionScore:30,eagleExempt:false,passed:true,buyStrength:50,hotMatch:true,hotSector:'管理后台推送'};}),news:[],hotTopics:[],darkEvents:[],hotSectors:[]};
   var json=JSON.stringify(data,null,2);
   var b64=btoa(unescape(encodeURIComponent(json)));
 
