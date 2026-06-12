@@ -173,8 +173,8 @@ function resolveNameToCode(name) {
       if(done)return; done=true;
       try{
         if(json&&json.QuotationCodeTable&&json.QuotationCodeTable.Data){
-          var r=json.QuotationCodeTable.Data.filter(function(d){return d.SecurityTypeName&&(d.SecurityTypeName.indexOf('A')>=0||d.SecurityTypeName.indexOf('深')>=0||d.SecurityTypeName.indexOf('沪')>=0)});
-          if(r.length>0){for(var i=0;i<r.length;i++){if(r[i].Name===clean||r[i].Code.indexOf(clean)>=0){cleanup();resolve(r[i].Code);return}}cleanup();resolve(r[0].Code);return}
+          var r=json.QuotationCodeTable.Data.filter(function(d){return d.Code&&d.Code.length===6&&/^\d{6}$/.test(d.Code)&&(d.Market==='SH'||d.Market==='SZ'||d.MktNum==='0'||d.MktNum==='1')});
+          if(r.length>0){for(var i=0;i<r.length;i++){if(r[i].Name===clean){cleanup();resolve(r[i].Code);return}}cleanup();resolve(r[0].Code);return}
         }
         cleanup();resolve(null);
       }catch(e){cleanup();resolve(null);}
