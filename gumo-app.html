@@ -1165,7 +1165,7 @@ async function loadMarketData() {
     // 数据源：优先GitHub Pages（部署后即时生效），次选jsdelivr CDN
     var baseUrl = window.location.hostname === 'localhost' ? '' : 'https://fengzezhang31-hue.github.io/panqian-cainiu';
     var sources = [
-        baseUrl + '/market-data.json?t=' + Date.now(),
+        baseUrl + '/market-data.json?_cb=' + Date.now(),
         'https://fengzezhang31-hue.github.io/panqian-cainiu/market-data.json?t=' + Date.now(),
         'https://cdn.jsdelivr.net/gh/fengzezhang31-hue/panqian-cainiu@main/market-data.json?t=' + Date.now()
     ];
@@ -1190,7 +1190,7 @@ async function loadMarketData() {
                             console.log('✅ 已加载策略选股数据:', data.date, data.stocks.map(function(s){return s.name}).join(','));
                             // 显示数据来源日期
                             var dateEl = document.getElementById('dataSourceDate');
-                            if (dateEl) dateEl.textContent = '策略数据: ' + data.date + ' (' + APP_VERSION + ')';
+                            if (dateEl) dateEl.textContent = '策略数据: ' + data.date + ' (' + APP_VERSION + ') | stocks:' + data.stocks.length;
                     }
                 } else {
                     console.log('⚠️ fetch返回状态:', resp.status);

@@ -1,7 +1,7 @@
 // 鍏洏灞?- Service Worker v59.0
 // 缃戠粶浼樺厛 + JSON鏁版嵁姘镐笉缂撳瓨 + 寮哄埗鏇存柊
 
-const CACHE_NAME = 'liupanshan-v60';
+const CACHE_NAME = 'liupanshan-v61';
 const CORE_ASSETS = [
   './',
   './manifest.json',
@@ -52,13 +52,7 @@ self.addEventListener('fetch', event => {
   if (!event.request.url.startsWith(self.location.origin)) return;
 
   if (isDataFile(event.request.url)) {
-    event.respondWith(
-      fetch(event.request).catch(() => {
-        return new Response('{"error":"offline"}', {
-          headers: { 'Content-Type': 'application/json' }
-        });
-      })
-    );
+    event.respondWith(fetch(event.request));
     return;
   }
 
