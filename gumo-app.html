@@ -1088,7 +1088,7 @@ function codeToSecid(code) {
 // 用市场数据中的股票代码，从东方财富刷新实时价格
 function refreshLiveStockPrices() {
     return new Promise(function(resolve) {
-        if (!marketData || !marketData.stocks || marketData.stocks.length < 6) {
+        if (!marketData || !marketData.stocks || marketData.stocks.length < 1) {
             resolve(null); return;
         }
         var codes = marketData.stocks.map(function(s) { return s.code; });
@@ -1183,21 +1183,14 @@ async function loadMarketData() {
                 if (resp.ok) {
                     const data = await resp.json();
                     console.log('📊 加载成功 (源' + (si+1) + '/尝试' + attempt + '):', data.date, '股票数:', data.stocks ? data.stocks.length : 0);
-                    if (data.stocks && data.stocks.length >= 6) {
-                        const dataDate = new Date(data.date);
-                        const todayDate = new Date(getTodayStr());
-                        const daysDiff = Math.floor((todayDate - dataDate) / (1000*60*60*24));
-                        if (daysDiff >= 0 && daysDiff <= 3) {
-                            marketData = data;
+                    if (data.stocks && data.stocks.length >= 1) {
+                        marketData = data;
                             marketNews = data.news || [];
                             loaded = true;
                             console.log('✅ 已加载策略选股数据:', data.date, data.stocks.map(function(s){return s.name}).join(','));
                             // 显示数据来源日期
                             var dateEl = document.getElementById('dataSourceDate');
                             if (dateEl) dateEl.textContent = '策略数据: ' + data.date + ' (' + APP_VERSION + ')';
-                        } else {
-                            console.log('⚠️ 数据日期超限:', data.date, 'daysDiff=' + daysDiff);
-                        }
                     }
                 } else {
                     console.log('⚠️ fetch返回状态:', resp.status);
@@ -1214,7 +1207,7 @@ async function loadMarketData() {
     if (marketData && marketData.stocks) {
         try {
             var refreshed = await refreshLiveStockPrices();
-            if (refreshed && refreshed.length >= 6) {
+            if (refreshed && refreshed.length >= 1) {
                 marketData.stocks = refreshed;
                 console.log('✅ 实时价格已刷新');
             }
@@ -1229,11 +1222,11 @@ var _refreshTimer = null;
 function startLiveRefresh() {
     if (_refreshTimer) clearInterval(_refreshTimer);
     _refreshTimer = setInterval(async function() {
-        if (!marketData || !marketData.stocks || marketData.stocks.length < 6) return;
+        if (!marketData || !marketData.stocks || marketData.stocks.length < 1) return;
         if (!scoreDone) return;
         try {
             var refreshed = await refreshLiveStockPrices();
-            if (refreshed && refreshed.length >= 6) {
+            if (refreshed && refreshed.length >= 1) {
                 marketData.stocks = refreshed;
                 stocks = generateStocks();
                 renderPetGrid();
@@ -1517,7 +1510,7 @@ function doScore() {
         guessIdx = null;
         if(stocks.length === 0) {
             showModal('今日无顶级机会', '策略严谨筛选后，今日无标的通过全部验证。<br><span style="font-size:11px;color:#5a7a99">宁缺毋滥，建议观望。空仓也是一种策略。</span>');
-        } else if(stocks.length < 6) {
+        } else if(stocks.length < 1) {
             showModal('策略选股完成', '仅' + stocks.length + '只标的通过策略筛选，宁缺毋滥。<br><span style="font-size:11px;color:#5a7a99">数据来自实时行情，等待 9:26 后可点击「六进二晋级」。</span>');
         } else {
             showModal('6强现身完成', '6强已现身！（数据来自实时行情）<br>等待 9:26 后可点击「六进二晋级」。');
@@ -2262,7 +2255,7 @@ function doSelect2() {
         var mins = h * 60 + m;
         if(mins < 9*60+26) { showModal('未开放', '六进二晋级将在 9:26 开放，当前时间 ' + h + ':' + (m<10?'0':'') + m); return; }
         // 检查后台数据是否就绪
-        if(!marketData || !marketData.stocks || marketData.stocks.length < 6) {
+        if(!marketData || !marketData.stocks || marketData.stocks.length < 1) {
             showModal('请稍等', '后台数据正在更新中，请稍候再试...<br><span style="font-size:11px;color:#5a7a99">系统正在获取最新竞价行情数据</span>');
             // 后台自动尝试加载数据
             loadMarketData();
