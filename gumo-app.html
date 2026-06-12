@@ -392,7 +392,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
 <span>登录即表示同意<a onclick="showAgreement()">《免责声明》《隐私政策》</a></span>
 </div>
 <button class="login-btn" onclick="doAccountLogin()">进入</button>
-<div style="text-align:center;margin-top:14px;color:#5a7a99;font-size:11px;line-height:1.7">新用户需填写邀请码注册，老用户填手机号+密码即可登录</div>
+<div style="text-align:center;margin-top:14px;color:#5a7a99;font-size:11px;line-height:1.7">新用户注册即送 <span style="color:#ffd966;font-weight:700">9527</span> 初始积分<br><span style="font-size:10px;color:#5a7a99">8:36免费查看6强 | 9:26消耗527积分查看潜力标</span></div>
 <div style="text-align:center;margin-top:18px;padding:0 8px;color:#5a7a99;font-size:10px;line-height:1.6">📌 使用本软件即表示您已阅读并同意全部免责声明</div>
 </div>
 
@@ -447,7 +447,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
     <div style="text-align:center;font-size:10px;color:#5a7a99;margin-bottom:6px;opacity:0.8" id="dataSourceDate"></div>
     <div class="hero-row">
         <div class="hero-btn" id="btnPig" onclick="doScore()" style="flex:1">
-            <div class="tip">&#x1F449; 点击此处 6强现身（每日8:36后可用）</div>
+            <div class="tip">&#x1F449; 点击此处 6强现身（每日8:36后免费查看）</div>
             <div class="progress"><div class="progress-fill" id="progPig"></div></div>
         </div>
     </div>
@@ -465,7 +465,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
 
     <!-- 6选2晋级 -->
     <div class="hero-btn shenniu-btn" id="btnShenniu" onclick="doSelect2()" style="margin:0 4px 4px;padding:14px 6px">
-        <div class="tip" style="font-size:14px">&#x1F402; 9:26 点击此处 六进二晋级看谁强 <span style="color:#ff6688;font-size:11px;margin-left:6px">消耗188积分/次</span></div>
+        <div class="tip" style="font-size:14px">&#x1F402; 9:26 点击此处 六进二晋级看谁强 <span style="color:#ff6688;font-size:11px;margin-left:6px">消耗527积分/次</span></div>
         <div class="progress"><div class="progress-fill" id="progShenniu"></div></div>
     </div>
     <div class="deity-row">
@@ -507,7 +507,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
         <div class="points-display">
             <span class="points-label">&#x2728; 我的积分</span>
             <span class="points-value" id="ptsVal">0</span>
-            <span class="points-hint">10积分=1元</span>
+            <span class="points-hint" style="font-size:10px">1000积分=100元（捐赠）</span>
         </div>
         <div class="reg-row" style="margin-top:8px">
             <span style="font-size:13px">&#x1F3AB;</span>
@@ -762,6 +762,18 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
 <div class="about-links">
 <a onclick="showPage('page-disclaimer')">免责声明</a>
 <a onclick="showPage('page-privacy')">隐私政策</a>
+</div>
+<div style="text-align:left;margin:16px 0;padding:12px;background:rgba(6,14,26,0.85);border-radius:12px;border:1px solid rgba(255,204,0,0.15);font-size:11px;color:#88aacc;line-height:1.8">
+<div style="color:#ffd966;font-weight:700;margin-bottom:8px;font-size:13px">&#x1F4CB; 积分账号规则</div>
+1. 新号赠送 <span style="color:#ffd966;font-weight:700">9527</span> 初始积分<br>
+2. 8:36 <span style="color:#44cc88">免费</span> 查看6支潜在标<br>
+3. 9:26 查看2支潜力标，消耗 <span style="color:#ff6688;font-weight:700">527</span> 积分<br>
+4. 积分耗尽后，自愿捐赠兑换，比例：<span style="color:#ffd966">1000积分=100元</span>。用于运维、算法升级提升精准度
+<div style="color:#ff6688;margin-top:8px;font-size:10px">&#x26A0; 温馨提示：积分作为回馈用户的福利，仅用于运维建设，不可现金兑换或提现。</div>
+</div>
+<div style="text-align:left;margin:16px 0;padding:12px;background:rgba(6,14,26,0.85);border-radius:12px;border:1px solid rgba(0,200,255,0.15);font-size:11px;color:#88aacc;line-height:1.8">
+<div style="color:#00ccff;font-weight:700;margin-bottom:8px;font-size:13px">&#x1F4C8; 模式说明</div>
+<span style="color:#b0d8ff">1-3天超短</span>；判优标准：当日竞价/次日收盘中有正向即为优。核心是止盈止损时机。
 </div>
 <div class="about-company">六盘山 &middot; 内部娱乐工具</div>
 <div class="about-copy">仅供模拟学习，不构成投资建议</div>
@@ -1069,7 +1081,7 @@ async function enterApp() {
 }
 
 // ========== Game State ==========
-let gameUser = { phone: null, points: 1888 };
+let gameUser = { phone: null, points: 9527 };
 let stocks = [];
 let scanDone = true, scoreDone = false; // 暗盘扫描由定时任务自动完成
 let guessIdx = null;
