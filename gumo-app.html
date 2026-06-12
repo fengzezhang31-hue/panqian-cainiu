@@ -2235,6 +2235,8 @@ function animateDeityReveal(canvasId, stageId, petIdx) {
 function doSelect2() {
     try {
         if(!scoreDone) { showModal('提示', '请先完成6强现身！'); return; }
+        // 按天计费，同一交易日只扣一次
+        var select2Key = 'panqian_select2_' + (appState.inviteCode || 'anon');
         var now = new Date(), h = now.getHours(), m = now.getMinutes();
         var mins = h * 60 + m;
         if(mins < 9*60+26) { showModal('未开放', '六进二晋级将在 9:26 开放，当前时间 ' + h + ':' + (m<10?'0':'') + m); return; }
@@ -2247,7 +2249,10 @@ function doSelect2() {
         }
         document.title = 'S2:pts=' + gameUser.points;
         if(gameUser.points < 527) { showModal('积分不足', '六进二晋级需要527积分，当前积分'+gameUser.points+'！'); return; }
-        gameUser.points -= 527;
+        if (safeStorage.getItem(select2Key) !== getTodayStr()) {
+            gameUser.points -= 527;
+            safeStorage.setItem(select2Key, getTodayStr());
+        }
         updatePointsUI();
         try {
             var s2key = 'panqian_select2_count_' + (appState.inviteCode || 'anon');
