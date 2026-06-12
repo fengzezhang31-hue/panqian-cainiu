@@ -680,7 +680,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
 </div>
 <div class="vip-tier-card" id="vip-card-diamond">
 <div class="vip-tier-title" style="color:#cc88ff">钻石会员</div>
-<div class="vip-tier-desc">每日1次竞猜 + 每日9:26六进二晋级（消耗188积分）<br>高级数据分析报告<br>电子商城消费一次机会<br>专属宠物皮肤特效</div>
+<div class="vip-tier-desc">每日1次竞猜 + 每日9:26六进二晋级（消耗527积分）<br>高级数据分析报告<br>电子商城消费一次机会<br>专属宠物皮肤特效</div>
 <div class="vip-tier-condition">升级条件：累计竞猜100次 + 六进二晋级10次以上 + 盘感级别3级以上</div>
 </div>
 </div>
@@ -1051,10 +1051,10 @@ async function enterApp() {
     // 从localStorage加载用户积分
     var savedPts = safeStorage.getItem('pqcn_pts_' + appState.inviteCode);
     if (savedPts !== null) {
-        gameUser.points = parseInt(savedPts) || 1888;
+        gameUser.points = parseInt(savedPts) || 9527;
     } else {
-        gameUser.points = 1888;
-        safeStorage.setItem('pqcn_pts_' + appState.inviteCode, '1888');
+        gameUser.points = 9527;
+        safeStorage.setItem('pqcn_pts_' + appState.inviteCode, '9527');
     }
     // 检查是否有待领取的充值积分
     var pendingCredits = safeStorage.getItem('pqcn_credit_' + appState.inviteCode);
@@ -2235,6 +2235,11 @@ function animateDeityReveal(canvasId, stageId, petIdx) {
 function doSelect2() {
     try {
         if(!scoreDone) { showModal('提示', '请先完成6强现身！'); return; }
+    // 按天计费，同一交易日只扣一次
+    var select2Key = 'panqian_select2_' + (appState.inviteCode || 'anon');
+    if (safeStorage.getItem(select2Key) === getTodayStr()) {
+        // 今天已经扣过了，直接进入不重复扣分
+    } else {
         var now = new Date(), h = now.getHours(), m = now.getMinutes();
         var mins = h * 60 + m;
         if(mins < 9*60+26) { showModal('未开放', '六进二晋级将在 9:26 开放，当前时间 ' + h + ':' + (m<10?'0':'') + m); return; }
@@ -2246,9 +2251,11 @@ function doSelect2() {
             return;
         }
         document.title = 'S2:pts=' + gameUser.points;
-        if(gameUser.points < 188) { showModal('积分不足', '六进二晋级需要188积分，当前积分'+gameUser.points+'！'); return; }
-        gameUser.points -= 188;
-        updatePointsUI();
+        if(gameUser.points < 527) { showModal('积分不足', '六进二晋级需要527积分，当前积分'+gameUser.points+'！'); return; }
+        if (safeStorage.getItem(select2Key) !== getTodayStr()) {
+            gameUser.points -= 527;
+            safeStorage.setItem(select2Key, getTodayStr());
+        }        updatePointsUI();
         try {
             var s2key = 'panqian_select2_count_' + (appState.inviteCode || 'anon');
             var s2count = parseInt(safeStorage.getItem(s2key) || '0') + 1;
