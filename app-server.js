@@ -119,7 +119,7 @@ var server = http.createServer((req, res) => {
   }
 
   var urlPath = (new URL(req.url, 'http://localhost')).pathname;
-  if (urlPath === '/') urlPath = '/index.html';
+  if (urlPath === '/') urlPath = '/gumo-app.html';
 
   // API routes
   if (urlPath === "/api/run-phase1" && req.method === "POST") {
