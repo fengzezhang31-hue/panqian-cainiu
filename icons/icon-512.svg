@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0044ff"/><stop offset="50%" style="stop-color:#00bbff"/><stop offset="100%" style="stop-color:#00ffff"/></linearGradient></defs>
+  <rect width="512" height="512" rx="64" fill="#030609"/>
+  <text x="256" y="210" text-anchor="middle" font-size="180" font-weight="bold" fill="url(#g)" font-family="sans-serif">六</text>
+  <text x="256" y="370" text-anchor="middle" font-size="130" font-weight="bold" fill="#66ccff" font-family="sans-serif">盘山</text>
+  <circle cx="256" cy="256" r="225" fill="none" stroke="rgba(0,220,255,0.2)" stroke-width="4"/>
+  <circle cx="256" cy="256" r="235" fill="none" stroke="rgba(0,220,255,0.1)" stroke-width="2"/>
+</svg>

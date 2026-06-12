@@ -1,0 +1,14 @@
+{
+  "name": "liupanshan",
+  "version": "3.0.0",
+  "description": "六盘山 - 盘感修炼营 V3.0",
+  "main": "app-server.js",
+  "scripts": {
+    "start": "node app-server.js",
+    "fetch": "node scripts/fetch-data.js"
+  },
+  "dependencies": {
+    "ws": "^8.21.0",
+    "localtunnel": "^2.0.2"
+  }
+}
