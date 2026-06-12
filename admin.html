@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>六盘山 - 管理后台</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -20,92 +20,131 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .btn{width:100%;height:44px;border:none;border-radius:22px;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px}
 .btn-primary{background:linear-gradient(135deg,#00ccaa,#00aa88);color:#000}
 .btn-danger{background:linear-gradient(135deg,#ff3355,#ff6600);color:#fff}
-.tabs{display:flex;gap:4px;margin-bottom:16px}
-.tab{flex:1;text-align:center;padding:10px;background:#0a1628;border-radius:10px;font-size:13px;color:#5a7a99;cursor:pointer;border:1px solid transparent}
-.tab.active{background:#0c1e30;border-color:#00ccaa;color:#00ccaa}
-.panel{display:none}
-.panel.active{display:block}
+.code-display{background:#0a1628;border:2px dashed #00ccaa;border-radius:12px;padding:16px;text-align:center;margin:12px 0;display:none}
+.code-display .code{font-size:22px;font-weight:900;color:#ffd966;letter-spacing:2px;word-break:break-all}
+.code-display .info{font-size:11px;color:#5a7a99;margin-top:8px;line-height:1.5}
+.record-item{background:#0a1628;border-radius:10px;padding:12px;margin-bottom:8px;font-size:12px;color:#88aacc;line-height:1.6}
+.record-item .pts{color:#ffd966;font-weight:700;font-size:14px}
+.record-item .time{color:#5a7a99;font-size:11px}
 .login-box{max-width:360px;margin:80px auto;padding:24px}
 .login-box h2{text-align:center;color:#00ccaa;margin-bottom:20px}
-.preview-item{padding:6px 0;border-bottom:1px solid #1a3a5a;font-size:13px}
-.status{display:none;padding:12px;border-radius:10px;margin-top:12px;font-size:13px}
+.tabs{display:flex;gap:0;margin-bottom:16px}
+.tab{flex:1;padding:10px;text-align:center;cursor:pointer;font-size:13px;font-weight:700;border:1px solid #1a3a5a;background:#0a1628;color:#5a7a99}
+.tab.active{background:#0c1e30;color:#00ccaa;border-color:#00ccaa}
+.copy-btn{display:inline-block;background:#00ccaa;color:#000;border:none;border-radius:8px;padding:4px 12px;font-size:11px;font-weight:700;cursor:pointer;margin-top:6px}
 </style>
 </head>
 <body>
+
 <div id="loginPage">
-  <div class="login-box">
+<div class="login-box">
     <div class="card">
-      <h2>&#x1F512; 管理后台</h2>
-      <div class="form-row">
-        <label>管理密码</label>
-        <input type="password" id="adminPwd" placeholder="请输入管理密码">
-      </div>
-      <div class="form-row">
-        <label>GitHub Token（用于推送选股数据）</label>
-        <input type="password" id="adminToken" placeholder="ghp_开头的GitHub个人访问令牌">
-      </div>
-      <button class="btn btn-primary" onclick="doLogin()">进入后台</button>
+        <h2>&#x1F512; 管理后台</h2>
+        <div class="form-row">
+            <label>管理密码</label>
+            <input type="password" id="adminPwd" placeholder="请输入管理密码">
+        </div>
+        <div class="form-row">
+            <label>GitHub Token（用于推送选股数据）</label>
+            <input type="password" id="adminToken" placeholder="ghp_开头的GitHub个人访问令牌">
+        </div>
+        <button class="btn btn-primary" onclick="doLogin()">进入后台</button>
     </div>
-  </div>
+</div>
 </div>
 
 <div id="adminPage" style="display:none">
-  <div class="header">
+<div class="header">
     <h1>&#x1F3AF; 六盘山 · 管理后台</h1>
     <p>管理员操作面板</p>
-  </div>
-  <div class="container">
+</div>
+<div class="container">
+
     <div class="tabs">
-      <div class="tab active" id="tabStock" onclick="switchTab('stock')">策略选股</div>
-      <div class="tab" id="tabHot" onclick="switchTab('hot')">盘前热点</div>
-      <div class="tab" id="tabCredit" onclick="switchTab('credit')">充值确认</div>
-      <div class="tab" id="tabHistory" onclick="switchTab('history')">操作记录</div>
+        <div class="tab active" id="tabStock" onclick="switchTab('stock')">每日策略选股</div>
+        <div class="tab" id="tabHot" onclick="switchTab('hot')">盘前热点</div>
+        <div class="tab" id="tabCredit" onclick="switchTab('credit')">充值确认</div>
+        <div class="tab" id="tabHistory" onclick="switchTab('history')">操作记录</div>
     </div>
 
-    <div class="panel active" id="panelStock">
-      <div class="card">
-        <h3>&#x1F534; 8:36 六强现身</h3>
-        <p style="font-size:12px;color:#5a7a99;margin-bottom:12px">输入股票名称或6位代码，支持逗号/空格/换行分隔</p>
-        <div id="stockInputs"></div>
-        <div style="margin-top:4px">
-          <input type="text" id="stockPaste" placeholder="或在此粘贴多只股票（名称或代码，逗号分隔）" style="width:100%;height:36px;background:#0a1628;border:1px solid #1a3a5a;border-radius:8px;padding:0 10px;color:#e0e8f0;font-size:13px" onchange="onPasteStocks(this.value)">
+    <div id="panelStock">
+    <div class="card">
+        <h3>&#x1F4CA; 每日策略选股推送</h3>
+        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px;line-height:1.6">
+            按策略评分从高到低，依次输入6只股票代码（6位数字），系统将自动抓取实时行情并推送到APP。<br>
+            <span style="color:#00ccaa">顺序对应：冲动牛→萌萌熊→恐惧龙→空仓猫→大犟驴→悟道鹰</span>
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="form-row"><label>①冲动牛（第1名）</label><input type="text" id="stk0" maxlength="6" placeholder="如 300308"></div>
+            <div class="form-row"><label>②萌萌熊（第2名）</label><input type="text" id="stk1" maxlength="6" placeholder="如 300624"></div>
+            <div class="form-row"><label>③恐惧龙（第3名）</label><input type="text" id="stk2" maxlength="6" placeholder="如 002703"></div>
+            <div class="form-row"><label>④空仓猫（第4名）</label><input type="text" id="stk3" maxlength="6" placeholder="如 300718"></div>
+            <div class="form-row"><label>⑤大犟驴（第5名）</label><input type="text" id="stk4" maxlength="6" placeholder="如 002896"></div>
+            <div class="form-row"><label>⑥悟道鹰（第6名）</label><input type="text" id="stk5" maxlength="6" placeholder="如 301308"></div>
         </div>
-        <button class="btn btn-primary" id="btnFetch" onclick="fetchAndPreview()">抓取实时行情</button>
+        <button class="btn btn-primary" onclick="fetchAndPreview()" id="btnFetch">抓取实时行情</button>
         <div id="stockPreview" style="display:none;margin-top:12px">
-          <div id="previewContent"></div>
-          <button class="btn btn-danger" id="btnPush" onclick="pushToApp()">推送到APP</button>
+            <div style="background:#0a1628;border-radius:10px;padding:12px;font-size:12px;line-height:1.8" id="previewContent"></div>
+            <button class="btn btn-primary" onclick="pushToApp()" id="btnPush" style="margin-top:10px">确认推送到APP</button>
         </div>
-        <div class="status" id="pushStatus"></div>
-      </div>
+        <div id="pushStatus" style="display:none;margin-top:10px;font-size:12px;text-align:center;padding:10px;border-radius:10px"></div>
+    </div>
     </div>
 
-    <div class="panel" id="panelHot">
-      <div class="card">
-        <h3>&#x1F4F0; 盘前热点推送</h3>
-        <div class="form-row"><label>热点标题</label><input type="text" id="hotTitle"></div>
-        <div class="form-row"><label>热点描述</label><input type="text" id="hotDesc"></div>
-        <div class="form-row"><label>相关股票（逗号分隔）</label><input type="text" id="hotStocks"></div>
-        <button class="btn btn-primary" onclick="pushHotTopics()">推送热点</button>
-      </div>
+    <div id="panelHot" style="display:none">
+    <div class="card">
+        <h3>&#x1F525; 盘前热点录入</h3>
+        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px;line-height:1.6">
+            参考来源：<span style="color:#ffcc00">淘股吧博主「专注盘前资讯」</span>（ID:3729365），每日8:20左右发布。<br>
+            将关键热点板块/题材粘贴到下方，每行一条，系统将推送到APP首页。
+        </p>
+        <div class="form-row">
+            <label>热点内容（每行一条，如：AI芯片、机器人、光伏）</label>
+            <textarea id="hotContent" rows="6" style="width:100%;height:120px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:13px;line-height:1.6;resize:vertical;outline:none" placeholder="AI芯片&#10;机器人&#10;低空经济&#10;光伏&#10;新能源车"></textarea>
+        </div>
+        <div class="form-row">
+            <label>补充说明（可选，如暗面新闻、突发事件）</label>
+            <textarea id="hotNote" rows="3" style="width:100%;height:70px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:12px;line-height:1.5;resize:vertical;outline:none" placeholder="如：哪吒2票房破纪录，预期差机会"></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="pushHotTopics()" id="btnHotPush">推送热点到APP</button>
+        <div id="hotStatus" style="display:none;margin-top:10px;font-size:12px;text-align:center;padding:10px;border-radius:10px"></div>
+    </div>
     </div>
 
-    <div class="panel" id="panelCredit">
-      <div class="card">
-        <h3>&#x1F4B0; 充值确认</h3>
-        <div class="form-row"><label>用户手机号</label><input type="text" id="creditPhone"></div>
-        <div class="form-row"><label>充值积分</label><input type="number" id="creditPts"></div>
-        <button class="btn btn-primary" onclick="confirmCredit()">确认充值</button>
-        <div class="status" id="creditStatus"></div>
-      </div>
+    <div id="panelCredit" style="display:none">
+    <div class="card">
+        <h3>&#x1F4B0; 生成充值兑换码</h3>
+        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px">用户付款后，输入手机号和金额，生成兑换码发给用户，用户在APP内输入兑换码即可到账</p>
+        <div class="form-row">
+            <label>用户手机号（后4位即可）</label>
+            <input type="text" id="creditPhone" maxlength="4" placeholder="例：5678">
+        </div>
+        <div class="form-row">
+            <label>充值积分数</label>
+            <input type="number" id="creditPts" placeholder="例：1000">
+        </div>
+        <div class="form-row">
+            <label>备注（可选）</label>
+            <input type="text" id="creditNote" placeholder="例：微信收款100元">
+        </div>
+        <button class="btn btn-primary" onclick="generateCode()">生成兑换码</button>
+        <div class="code-display" id="codeDisplay">
+            <div class="code" id="generatedCode"></div>
+            <div class="info" id="codeInfo"></div>
+            <button class="copy-btn" onclick="copyCode()">复制兑换码</button>
+        </div>
+    </div>
     </div>
 
-    <div class="panel" id="panelHistory">
-      <div class="card">
+    <div id="panelHistory" style="display:none">
+    <div class="card">
         <h3>&#x1F4CB; 操作记录</h3>
-        <div id="historyList"></div>
-      </div>
+        <div id="historyList"><p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">暂无记录</p></div>
+        <button class="btn btn-danger" onclick="clearHistory()" style="margin-top:12px">清空记录</button>
     </div>
-  </div>
+    </div>
+
+</div>
 </div>
 
 <script>
@@ -116,186 +155,371 @@ var GITHUB_REPO = 'panqian-cainiu';
 var PET_NAMES = ['冲动牛','萌萌熊','恐惧龙','空仓猫','大犟驴','悟道鹰'];
 var fetchedStocks = null;
 
-// 初始化6个输入框
-(function(){
-  var html = '';
-  for (var i = 0; i < 6; i++) {
-    html += '<div class="form-row"><label>'+PET_NAMES[i]+'（第'+(i+1)+'只）</label><input type="text" id="stk'+i+'" placeholder="股票名称或6位代码"></div>';
-  }
-  document.getElementById('stockInputs').innerHTML = html;
-})();
+var safeStorage = {
+    getItem: function(key) { try { return localStorage.getItem(key); } catch(e) { return null; } },
+    setItem: function(key, val) { try { localStorage.setItem(key, val); } catch(e) {} },
+    removeItem: function(key) { try { localStorage.removeItem(key); } catch(e) {} }
+};
 
 function doLogin() {
-  var pwd = document.getElementById('adminPwd').value.trim();
-  var token = document.getElementById('adminToken').value.trim();
-  if (pwd === ADMIN_PWD) {
-    if (token) GITHUB_TOKEN = token;
-    document.getElementById('loginPage').style.display = 'none';
-    document.getElementById('adminPage').style.display = 'block';
-  } else {
-    alert('密码错误');
-  }
+    var pwd = document.getElementById('adminPwd').value.trim();
+    var token = document.getElementById('adminToken').value.trim();
+    if (pwd === ADMIN_PWD) {
+        if (token) GITHUB_TOKEN = token;
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('adminPage').style.display = 'block';
+    } else {
+        alert('密码错误');
+    }
 }
 
 function switchTab(tab) {
-  ['stock','hot','credit','history'].forEach(function(t){
-    document.getElementById('tab'+t.charAt(0).toUpperCase()+t.slice(1)).className = t===tab?'tab active':'tab';
-    document.getElementById('panel'+t.charAt(0).toUpperCase()+t.slice(1)).className = t===tab?'panel active':'panel';
-  });
-  if (tab === 'history') loadHistory();
+    document.getElementById('tabStock').className = tab === 'stock' ? 'tab active' : 'tab';
+    document.getElementById('tabHot').className = tab === 'hot' ? 'tab active' : 'tab';
+    document.getElementById('tabCredit').className = tab === 'credit' ? 'tab active' : 'tab';
+    document.getElementById('tabHistory').className = tab === 'history' ? 'tab active' : 'tab';
+    document.getElementById('panelStock').style.display = tab === 'stock' ? 'block' : 'none';
+    document.getElementById('panelHot').style.display = tab === 'hot' ? 'block' : 'none';
+    document.getElementById('panelCredit').style.display = tab === 'credit' ? 'block' : 'none';
+    document.getElementById('panelHistory').style.display = tab === 'history' ? 'block' : 'none';
+    if (tab === 'history') loadHistory();
 }
 
-function onPasteStocks(val) {
-  if (!val) return;
-  var names = val.split(/[,，\s\n]+/).filter(function(n){return n.trim()});
-  for (var i = 0; i < Math.min(6, names.length); i++) {
-    var el = document.getElementById('stk'+i);
-    if (el) el.value = names[i].trim();
-  }
-}
-
+// ========== 策略选股：代码转东方财富 secid ==========
 function codeToSecid(code) {
-  if (code.startsWith('6')) return '1.' + code;
-  return '0.' + code;
+    // 6开头=沪市(sh), 0/3开头=深市(sz), 68开头=科创板(sh)
+    if (code.startsWith('6')) return '1.' + code;
+    return '0.' + code;
 }
 
-// 名称→代码 用JSONP
-function resolveNameToCode(name) {
-  return new Promise(function(resolve) {
-    name = name.trim();
-    if (/^\d{6}$/.test(name)) { resolve(name); return; }
-    var clean = name.replace(/[\.\s,，、]+/g, '');
-    var cb = '_srcb_' + Date.now();
-    var done = false;
-    var t = setTimeout(function(){ if(!done){done=true;cleanup();resolve(null);} }, 5000);
-    function cleanup(){ clearTimeout(t); try{delete window[cb];}catch(e){} var s=document.getElementById('_ss'); if(s&&s.parentNode)s.parentNode.removeChild(s); }
-    window[cb] = function(json){
-      if(done)return; done=true;
-      try{
-        if(json&&json.QuotationCodeTable&&json.QuotationCodeTable.Data){
-          var r=json.QuotationCodeTable.Data.filter(function(d){return d.Code&&d.Code.length===6&&/^\d{6}$/.test(d.Code)&&(d.Market==='SH'||d.Market==='SZ'||d.MktNum==='0'||d.MktNum==='1')});
-          if(r.length>0){for(var i=0;i<r.length;i++){if(r[i].Name===clean){cleanup();resolve(r[i].Code);return}}cleanup();resolve(r[0].Code);return}
+// ========== 策略选股：抓取实时行情 ==========
+function fetchAndPreview() {
+    var codes = [];
+    for (var i = 0; i < 6; i++) {
+        var c = document.getElementById('stk' + i).value.trim();
+        if (!c || c.length !== 6 || !/^\d{6}$/.test(c)) {
+            alert('第' + (i+1) + '只股票代码不正确，请输入6位数字');
+            return;
         }
-        cleanup();resolve(null);
-      }catch(e){cleanup();resolve(null);}
+        codes.push(c);
+    }
+    document.getElementById('btnFetch').disabled = true;
+    document.getElementById('btnFetch').textContent = '抓取中...';
+
+    var secids = codes.map(codeToSecid).join(',');
+    var cbName = '_admcb_' + Date.now();
+
+    window[cbName] = function(json) {
+        try { delete window[cbName]; } catch(e) {}
+        var script = document.getElementById('_fetchScript');
+        if (script) script.parentNode.removeChild(script);
+        document.getElementById('btnFetch').disabled = false;
+        document.getElementById('btnFetch').textContent = '抓取实时行情';
+
+        if (!json || !json.data || !json.data.diff || json.data.diff.length < 6) {
+            alert('行情数据获取不完整，请检查股票代码');
+            return;
+        }
+        // 按输入顺序匹配（API可能乱序）
+        var stockMap = {};
+        json.data.diff.forEach(function(s) { stockMap[s.f12] = s; });
+
+        fetchedStocks = [];
+        var html = '<div style="color:#00ccaa;font-weight:700;margin-bottom:8px">抓取成功，请确认：</div>';
+        for (var i = 0; i < codes.length; i++) {
+            var s = stockMap[codes[i]];
+            if (!s) {
+                alert('股票 ' + codes[i] + ' 未找到数据');
+                return;
+            }
+            fetchedStocks.push({
+                name: s.f14,
+                code: s.f12,
+                bidPrice: s.f18,
+                currentPrice: s.f2,
+                openPrice: s.f17,
+                yesterdayClose: s.f18,
+                changePercent: s.f3,
+                entityGain: s.f3
+            });
+            var cls = s.f3 >= 0 ? 'color:#ff4466' : 'color:#44cc88';
+            var sign = s.f3 >= 0 ? '+' : '';
+            html += '<div style="border-bottom:1px solid #1a3a5a;padding:4px 0">' +
+                '<span style="color:#ffd966">' + PET_NAMES[i] + '</span>@' +
+                '<b>' + s.f14 + '</b>(' + s.f12 + ') ' +
+                '昨收:' + s.f18 + ' 现价:<b>' + s.f2 + '</b> ' +
+                '<span style="' + cls + '">' + sign + s.f3 + '%</span></div>';
+        }
+        document.getElementById('previewContent').innerHTML = html;
+        document.getElementById('stockPreview').style.display = 'block';
+        document.getElementById('pushStatus').style.display = 'none';
     };
-    var s=document.createElement('script');s.id='_ss';
-    s.src='https://searchapi.eastmoney.com/api/suggest/get?input='+encodeURIComponent(clean)+'&type=14&token=D43BF722C8E33BDC906FB84D85E326E8&count=5&cb='+cb;
-    s.onerror=function(){if(!done){done=true;cleanup();resolve(null);}};
-    document.head.appendChild(s);
-  });
+
+    var script = document.createElement('script');
+    script.id = '_fetchScript';
+    script.src = 'https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&secids=' + secids +
+        '&fields=f2,f3,f12,f14,f17,f18&cb=' + cbName;
+    script.onerror = function() {
+        try { delete window[cbName]; } catch(e) {}
+        document.getElementById('btnFetch').disabled = false;
+        document.getElementById('btnFetch').textContent = '抓取实时行情';
+        alert('行情API加载失败，请检查网络');
+    };
+    document.head.appendChild(script);
 }
 
-async function fetchAndPreview() {
-  var codes = [];
-  var btn = document.getElementById('btnFetch');
-  btn.disabled = true;
-  btn.textContent = '识别中...';
-
-  for (var i = 0; i < 6; i++) {
-    var c = document.getElementById('stk'+i).value.trim();
-    if (!c) { alert('第'+(i+1)+'只股票信息为空'); btn.disabled=false; btn.textContent='抓取实时行情'; return; }
-    if (!/^\d{6}$/.test(c)) {
-      var resolved = await resolveNameToCode(c);
-      if (!resolved) { alert('无法识别: '+c+'\n请直接输入6位数字代码'); btn.disabled=false; btn.textContent='抓取实时行情'; return; }
-      c = resolved;
-    }
-    codes.push(c);
-  }
-
-  btn.textContent = '抓取中...';
-  var cb = '_admcb_' + Date.now();
-
-  window[cb] = function(json) {
-    try{delete window[cb];}catch(e){}
-    var s=document.getElementById('_fs');if(s&&s.parentNode)s.parentNode.removeChild(s);
-    btn.disabled=false;btn.textContent='抓取实时行情';
-    if(!json||!json.data||!json.data.diff||json.data.diff.length<6){alert('行情数据不完整，请检查股票代码');return;}
-    var map={};json.data.diff.forEach(function(d){map[d.f12]=d;});
-    fetchedStocks=[];
-    var html='<div style="color:#00ccaa;font-weight:700;margin-bottom:8px">抓取成功，请确认：</div>';
-    for(var i=0;i<codes.length;i++){
-      var d=map[codes[i]];
-      if(!d){alert('股票'+codes[i]+'未找到');return;}
-      fetchedStocks.push({name:d.f14,code:d.f12,bidPrice:d.f18,currentPrice:d.f2,openPrice:d.f17,yesterdayClose:d.f18,changePercent:d.f3,entityGain:d.f3});
-      var cls=d.f3>=0?'color:#ff4466':'color:#44cc88';
-      html+='<div class="preview-item"><span style="color:#ffd966">'+PET_NAMES[i]+'</span>@<b>'+d.f14+'</b>('+d.f12+') 昨收:'+d.f18+' 现价:<b>'+d.f2+'</b> <span style="'+cls+'">'+(d.f3>=0?'+':'')+d.f3+'%</span></div>';
-    }
-    document.getElementById('previewContent').innerHTML=html;
-    document.getElementById('stockPreview').style.display='block';
-    document.getElementById('pushStatus').style.display='none';
-  };
-
-  var s=document.createElement('script');s.id='_fs';
-  s.src='https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&secids='+codes.map(codeToSecid).join(',')+'&fields=f2,f3,f12,f14,f17,f18&cb='+cb;
-  s.onerror=function(){try{delete window[cb];}catch(e){}btn.disabled=false;btn.textContent='抓取实时行情';alert('网络请求失败，请重试');var x=document.getElementById('_fs');if(x&&x.parentNode)x.parentNode.removeChild(x);};
-  document.head.appendChild(s);
-}
-
+// ========== 策略选股：推送到 GitHub ==========
 function pushToApp() {
-  if(!fetchedStocks||fetchedStocks.length!==6){alert('请先抓取行情');return;}
-  if(!GITHUB_TOKEN){alert('请先填写GitHub Token');return;}
-  var btn=document.getElementById('btnPush');btn.disabled=true;btn.textContent='推送中...';
-  var st=document.getElementById('pushStatus');st.style.display='block';st.style.background='#1a2a40';st.style.color='#88aacc';st.innerHTML='正在推送到 GitHub...';
-
-  var d=new Date();
-  var ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-  var data={date:ds,phase:'manual',phaseTime:new Date().toISOString().replace('T',' ').substring(0,19),totalCandidates:6,stocks:fetchedStocks.map(function(s){return{name:s.name,code:s.code,bidPrice:s.bidPrice,currentPrice:s.currentPrice,openPrice:s.openPrice,yesterdayClose:s.yesterdayClose,changePercent:s.changePercent,entityGain:s.entityGain,v6Score:100,v3LogicScore:70,v4AuctionScore:30,eagleExempt:false,passed:true,buyStrength:50,hotMatch:true,hotSector:'管理后台推送'};}),news:[],hotTopics:[],darkEvents:[],hotSectors:[]};
-  var json=JSON.stringify(data,null,2);
-  var b64=btoa(unescape(encodeURIComponent(json)));
-
-  fetch('https://api.github.com/repos/'+GITHUB_OWNER+'/'+GITHUB_REPO+'/contents/market-data.json',{headers:{'Authorization':'token '+GITHUB_TOKEN}})
-  .then(function(r){return r.json();})
-  .then(function(info){
-    return fetch('https://api.github.com/repos/'+GITHUB_OWNER+'/'+GITHUB_REPO+'/contents/market-data.json',{
-      method:'PUT',
-      headers:{'Authorization':'token '+GITHUB_TOKEN,'Content-Type':'application/json'},
-      body:JSON.stringify({message:'管理后台推送 '+ds+': '+fetchedStocks.map(function(s){return s.name}).join(','),content:b64,sha:info.sha})
-    });
-  })
-  .then(function(r){return r.json();})
-  .then(function(result){
-    btn.disabled=false;btn.textContent='推送到APP';
-    if(result.content){
-      st.style.background='#0a2a1a';st.style.color='#44cc88';st.innerHTML='推送成功！前端将在1-2分钟内更新。';
-    }else{
-      st.style.background='#2a0a1a';st.style.color='#ff4466';st.innerHTML='推送失败：'+JSON.stringify(result);
+    if (!fetchedStocks || fetchedStocks.length !== 6) {
+        alert('请先抓取行情');
+        return;
     }
-  })
-  .catch(function(e){
-    btn.disabled=false;btn.textContent='推送到APP';
-    st.style.background='#2a0a1a';st.style.color='#ff4466';st.innerHTML='推送失败：'+e.message;
-  });
+    if (!GITHUB_TOKEN) {
+        alert('请先在登录页填写 GitHub Token');
+        return;
+    }
+    document.getElementById('btnPush').disabled = true;
+    document.getElementById('btnPush').textContent = '推送中...';
+    var statusEl = document.getElementById('pushStatus');
+    statusEl.style.display = 'block';
+    statusEl.style.background = '#1a2a40';
+    statusEl.style.color = '#88aacc';
+    statusEl.innerHTML = '正在推送到 GitHub...';
+
+    var today = new Date();
+    var dateStr = today.getFullYear() + '-' +
+        String(today.getMonth()+1).padStart(2,'0') + '-' +
+        String(today.getDate()).padStart(2,'0');
+
+    var marketData = {
+        date: dateStr,
+        stocks: fetchedStocks.map(function(s) {
+            return {
+                name: s.name,
+                code: s.code,
+                bidPrice: s.bidPrice,
+                currentPrice: s.currentPrice,
+                openPrice: s.openPrice,
+                yesterdayClose: s.yesterdayClose,
+                changePercent: s.changePercent,
+                entityGain: s.entityGain
+            };
+        }),
+        news: [],
+        twitterTrends: []
+    };
+
+    var jsonStr = JSON.stringify(marketData, null, 2);
+    var b64 = btoa(unescape(encodeURIComponent(jsonStr)));
+
+    // 先获取当前文件 SHA
+    fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/market-data.json', {
+        headers: { 'Authorization': 'token ' + GITHUB_TOKEN }
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(info) {
+        var body = {
+            message: '策略选股 ' + dateStr + ': ' + fetchedStocks.map(function(s){return s.name}).join(','),
+            content: b64,
+            sha: info.sha
+        };
+        return fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/market-data.json', {
+            method: 'PUT',
+            headers: {
+                'Authorization': 'token ' + GITHUB_TOKEN,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(result) {
+        document.getElementById('btnPush').disabled = false;
+        document.getElementById('btnPush').textContent = '确认推送到APP';
+        if (result.content) {
+            statusEl.style.background = '#0a2a1a';
+            statusEl.style.color = '#44cc88';
+            statusEl.innerHTML = '推送成功！APP将在几分钟内更新。<br><span style="font-size:11px;color:#5a7a99">' +
+                dateStr + ' · ' + fetchedStocks.map(function(s){return s.name}).join('、') + '</span>';
+            // 保存记录
+            var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
+            records.unshift({
+                code: '策略选股',
+                phone: '-',
+                pts: 0,
+                note: fetchedStocks.map(function(s){return s.name + '(' + s.changePercent + '%)'}).join(', '),
+                time: new Date().toLocaleString('zh-CN'),
+                ts: Date.now()
+            });
+            safeStorage.setItem('pqcn_admin_records', JSON.stringify(records));
+        } else {
+            statusEl.style.background = '#2a0a0a';
+            statusEl.style.color = '#ff4466';
+            statusEl.innerHTML = '推送失败: ' + (result.message || '未知错误');
+        }
+    })
+    .catch(function(e) {
+        document.getElementById('btnPush').disabled = false;
+        document.getElementById('btnPush').textContent = '确认推送到APP';
+        statusEl.style.background = '#2a0a0a';
+        statusEl.style.color = '#ff4466';
+        statusEl.innerHTML = '推送失败: ' + e.message;
+    });
 }
 
-function pushHotTopics(){
-  alert('热点推送功能开发中');
+// ========== 盘前热点推送 ==========
+function pushHotTopics() {
+    var content = document.getElementById('hotContent').value.trim();
+    var note = document.getElementById('hotNote').value.trim();
+    if (!content) { alert('请输入热点内容'); return; }
+    if (!GITHUB_TOKEN) { alert('请先在登录页填写 GitHub Token'); return; }
+
+    var trends = content.split('\n').map(function(line) {
+        return line.trim();
+    }).filter(function(line) {
+        return line.length > 0;
+    }).map(function(title) {
+        return { title: title, gain: 0, source: 'tgb_manual' };
+    });
+
+    var btn = document.getElementById('btnHotPush');
+    var statusEl = document.getElementById('hotStatus');
+    btn.disabled = true;
+    btn.textContent = '推送中...';
+    statusEl.style.display = 'block';
+    statusEl.style.background = '#1a2a40';
+    statusEl.style.color = '#88aacc';
+    statusEl.innerHTML = '正在推送热点到 GitHub...';
+
+    var today = new Date();
+    var dateStr = today.getFullYear() + '-' +
+        String(today.getMonth()+1).padStart(2,'0') + '-' +
+        String(today.getDate()).padStart(2,'0');
+
+    var hotData = {
+        date: dateStr,
+        trends: trends,
+        note: note,
+        updateTime: new Date().toISOString()
+    };
+
+    var jsonStr = JSON.stringify(hotData, null, 2);
+    var b64 = btoa(unescape(encodeURIComponent(jsonStr)));
+
+    fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/hot-topics.json', {
+        headers: { 'Authorization': 'token ' + GITHUB_TOKEN }
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(info) {
+        var body = {
+            message: 'hot: ' + dateStr + ' ' + trends.map(function(t){return t.title}).join(','),
+            content: b64
+        };
+        if (info.sha) body.sha = info.sha;
+        return fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/hot-topics.json', {
+            method: 'PUT',
+            headers: { 'Authorization': 'token ' + GITHUB_TOKEN, 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        });
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(result) {
+        btn.disabled = false;
+        btn.textContent = '推送热点到APP';
+        if (result.content) {
+            statusEl.style.background = '#0a2a1a';
+            statusEl.style.color = '#44cc88';
+            statusEl.innerHTML = '推送成功！APP将在几分钟内更新热点。<br><span style="font-size:11px;color:#5a7a99">' +
+                dateStr + ' · ' + trends.length + '条热点' + (note ? ' · ' + note : '') + '</span>';
+            var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
+            records.unshift({
+                code: '盘前热点', phone: '-', pts: 0,
+                note: trends.map(function(t){return t.title}).join(', ') + (note ? ' | ' + note : ''),
+                time: new Date().toLocaleString('zh-CN'), ts: Date.now()
+            });
+            safeStorage.setItem('pqcn_admin_records', JSON.stringify(records));
+        } else {
+            statusEl.style.background = '#2a0a0a';
+            statusEl.style.color = '#ff4466';
+            statusEl.innerHTML = '推送失败: ' + (result.message || '未知错误');
+        }
+    })
+    .catch(function(e) {
+        btn.disabled = false;
+        btn.textContent = '推送热点到APP';
+        statusEl.style.background = '#2a0a0a';
+        statusEl.style.color = '#ff4466';
+        statusEl.innerHTML = '推送失败: ' + e.message;
+    });
 }
 
-function confirmCredit(){
-  var phone=document.getElementById('creditPhone').value.trim();
-  var pts=parseInt(document.getElementById('creditPts').value)||0;
-  if(!phone){alert('请输入手机号');return;}
-  if(!pts||pts<=0){alert('请输入有效积分');return;}
-  var records=JSON.parse(localStorage.getItem('panqian_recharge_records')||'[]');
-  records.push({phone:phone,pts:pts,time:new Date().toISOString(),status:'confirmed'});
-  localStorage.setItem('panqian_recharge_records',JSON.stringify(records));
-  document.getElementById('creditStatus').style.display='block';
-  document.getElementById('creditStatus').style.background='#0a2a1a';
-  document.getElementById('creditStatus').style.color='#44cc88';
-  document.getElementById('creditStatus').innerHTML='已确认充值 '+pts+' 积分给 '+phone;
+// ========== 充值兑换码 ==========
+function generateCode() {
+    var phone = document.getElementById('creditPhone').value.trim();
+    var pts = parseInt(document.getElementById('creditPts').value);
+    var note = document.getElementById('creditNote').value.trim();
+    if (!phone || phone.length < 4) { alert('请输入手机号后4位'); return; }
+    if (!pts || pts <= 0) { alert('请输入正确的积分数'); return; }
+    var ts = Date.now();
+    var code = 'PQCN-' + phone + '-' + pts + '-' + ('' + ts).slice(-6);
+    var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
+    records.unshift({ code: code, phone: phone, pts: pts, note: note, time: new Date().toLocaleString('zh-CN'), ts: ts });
+    safeStorage.setItem('pqcn_admin_records', JSON.stringify(records));
+    document.getElementById('generatedCode').textContent = code;
+    document.getElementById('codeInfo').innerHTML = '手机尾号 ' + phone + ' · ' + pts + '积分' + (note ? ' · ' + note : '') + '<br>请将此兑换码发给用户，在APP"兑换积分"处输入即可到账';
+    document.getElementById('codeDisplay').style.display = 'block';
+    document.getElementById('creditPhone').value = '';
+    document.getElementById('creditPts').value = '';
+    document.getElementById('creditNote').value = '';
 }
 
-function loadHistory(){
-  var records=JSON.parse(localStorage.getItem('panqian_recharge_records')||'[]');
-  var html='';
-  records.reverse().forEach(function(r){
-    html+='<div class="preview-item">'+r.phone+' +'+r.pts+'积分 <span style="color:#5a7a99;font-size:11px">'+new Date(r.time).toLocaleString()+'</span></div>';
-  });
-  document.getElementById('historyList').innerHTML=html||'暂无记录';
+function copyCode() {
+    var code = document.getElementById('generatedCode').textContent;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(function() { alert('已复制: ' + code); });
+    } else {
+        var ta = document.createElement('textarea'); ta.value = code;
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+        alert('已复制: ' + code);
+    }
 }
 
-document.addEventListener('keydown',function(e){if(e.key==='Enter')doLogin();});
+function loadHistory() {
+    var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
+    var html = '';
+    if (records.length === 0) {
+        html = '<p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">暂无记录</p>';
+    } else {
+        for (var i = 0; i < records.length; i++) {
+            var r = records[i];
+            if (r.code === '策略选股') {
+                html += '<div class="record-item"><span style="color:#00ccaa;font-weight:700">📊 策略选股</span><br>' +
+                    r.note + '<br><span class="time">' + r.time + '</span></div>';
+            } else if (r.code === '盘前热点') {
+                html += '<div class="record-item"><span style="color:#ffaa00;font-weight:700">🔥 盘前热点</span><br>' +
+                    r.note + '<br><span class="time">' + r.time + '</span></div>';
+            } else {
+                html += '<div class="record-item">' +
+                    '<span class="pts">+' + r.pts + '积分</span> → 手机尾号 ' + r.phone +
+                    (r.note ? '<br>备注: ' + r.note : '') +
+                    '<br>兑换码: <span style="color:#ffd966">' + r.code + '</span>' +
+                    '<br><span class="time">' + r.time + '</span></div>';
+            }
+        }
+    }
+    document.getElementById('historyList').innerHTML = html;
+}
+
+function clearHistory() {
+    if (confirm('确定清空所有操作记录？')) {
+        safeStorage.removeItem('pqcn_admin_records');
+        loadHistory();
+    }
+}
+
+document.getElementById('adminPwd').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doLogin();
+});
 </script>
 </body>
 </html>

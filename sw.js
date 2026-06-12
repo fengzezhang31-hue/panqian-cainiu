@@ -1,7 +1,7 @@
-// 鍏洏灞?- Service Worker v59.0
-// 缃戠粶浼樺厛 + JSON鏁版嵁姘镐笉缂撳瓨 + 寮哄埗鏇存柊
+// 六盘山 - Service Worker v59.0
+// 网络优先 + JSON数据永不缓存 + 强制更新
 
-const CACHE_NAME = 'liupanshan-v61';
+const CACHE_NAME = 'liupanshan-v59';
 const CORE_ASSETS = [
   './',
   './manifest.json',
@@ -15,7 +15,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(CORE_ASSETS).catch(err => {
-        console.warn('SW: 棰勭紦瀛樿祫婧愬け璐?, err);
+        console.warn('SW: 预缓存资源失败', err);
       });
     })
   );
@@ -52,7 +52,13 @@ self.addEventListener('fetch', event => {
   if (!event.request.url.startsWith(self.location.origin)) return;
 
   if (isDataFile(event.request.url)) {
-    event.respondWith(fetch(event.request));
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return new Response('{"error":"offline"}', {
+          headers: { 'Content-Type': 'application/json' }
+        });
+      })
+    );
     return;
   }
 
