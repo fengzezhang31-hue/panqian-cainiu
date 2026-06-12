@@ -2247,8 +2247,7 @@ function animateDeityReveal(canvasId, stageId, petIdx) {
 function doSelect2() {
     try {
         if(!scoreDone) { showModal('提示', '请先完成6强现身！'); return; }
-        // 按天计费，同一交易日只扣一次
-        var select2Key = 'panqian_select2_' + (appState.inviteCode || 'anon');
+        var select2Key = "panqian_select2_" + (appState.inviteCode || "anon");
         var now = new Date(), h = now.getHours(), m = now.getMinutes();
         var mins = h * 60 + m;
         if(mins < 9*60+26) { showModal('未开放', '六进二晋级将在 9:26 开放，当前时间 ' + h + ':' + (m<10?'0':'') + m); return; }
