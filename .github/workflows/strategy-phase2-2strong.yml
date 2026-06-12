@@ -1,0 +1,35 @@
+﻿# 六盘山 - 策略引擎 Phase2
+# 每工作日 09:25 北京时间 执行
+# 输出: top2.json (含2强竞价评分)
+name: Strategy Engine Phase2 (2强)
+
+on:
+  schedule:
+    - cron: '25 1 * * 1-5'  # 09:25 CST = 01:25 UTC CST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Run Strategy Engine Phase2
+      run: node scripts/strategy-engine.js phase2
+    
+    - name: Commit top2.json
+      run: |
+        git config user.name "六盘山 Bot"
+        git config user.email "bot@liupanshan.app"
+        git add top2.json market-data.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "[2强] 竞价V4.0评分完成 $(date '+%Y-%m-%d %H:%M')" && git push)
+        echo "✅ 2强已推送到仓库"

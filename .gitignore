@@ -1,4 +1,4 @@
-﻿# 六盘山 .gitignore
+# 六盘山 .gitignore
 node_modules/
 cache/
 data/

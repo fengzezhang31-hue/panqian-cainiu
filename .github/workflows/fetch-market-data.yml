@@ -1,0 +1,30 @@
+# 六盘山 - 定时刷新数据
+# 每工作日 08:26 北京时间 (UTC 0:26) 执行
+name: Fetch Market Data
+
+on:
+  schedule:
+    - cron: '26 0 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: Fetch Market Data
+      run: node scripts/fetch-data.js
+    - name: Commit and Push
+      run: |
+        git config user.name "六盘山 Bot"
+        git config user.email "bot@liupanshan.app"
+        git add market-data.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "[auto] 刷新行情数据 $(date '+%Y-%m-%d %H:%M')" && git push)

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>鍏洏灞?- 绠＄悊鍚庡彴</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0e1a;color:#e0e8f0;min-height:100vh}
+.header{background:linear-gradient(135deg,#1a0030,#0a2040);padding:20px;text-align:center;border-bottom:2px solid #00ccaa}
+.header h1{font-size:20px;color:#00ccaa;margin-bottom:4px}
+.header p{font-size:12px;color:#5a7a99}
+.container{max-width:500px;margin:0 auto;padding:16px}
+.card{background:#0c1e30;border:1px solid #1a3a5a;border-radius:16px;padding:20px;margin-bottom:16px}
+.card h3{font-size:15px;color:#00ccaa;margin-bottom:14px;border-bottom:1px solid #1a3a5a;padding-bottom:8px}
+.form-row{margin-bottom:12px}
+.form-row label{display:block;font-size:12px;color:#5a7a99;margin-bottom:4px}
+.form-row input,.form-row select{width:100%;height:42px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:0 12px;color:#e0e8f0;font-size:14px;outline:none}
+.form-row input:focus{border-color:#00ccaa}
+.btn{width:100%;height:44px;border:none;border-radius:22px;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-primary{background:linear-gradient(135deg,#00ccaa,#00aa88);color:#000}
+.btn-danger{background:linear-gradient(135deg,#ff3355,#ff6600);color:#fff}
+.code-display{background:#0a1628;border:2px dashed #00ccaa;border-radius:12px;padding:16px;text-align:center;margin:12px 0;display:none}
+.code-display .code{font-size:22px;font-weight:900;color:#ffd966;letter-spacing:2px;word-break:break-all}
+.code-display .info{font-size:11px;color:#5a7a99;margin-top:8px;line-height:1.5}
+.record-item{background:#0a1628;border-radius:10px;padding:12px;margin-bottom:8px;font-size:12px;color:#88aacc;line-height:1.6}
+.record-item .pts{color:#ffd966;font-weight:700;font-size:14px}
+.record-item .time{color:#5a7a99;font-size:11px}
+.login-box{max-width:360px;margin:80px auto;padding:24px}
+.login-box h2{text-align:center;color:#00ccaa;margin-bottom:20px}
+.tabs{display:flex;gap:0;margin-bottom:16px}
+.tab{flex:1;padding:10px;text-align:center;cursor:pointer;font-size:13px;font-weight:700;border:1px solid #1a3a5a;background:#0a1628;color:#5a7a99}
+.tab.active{background:#0c1e30;color:#00ccaa;border-color:#00ccaa}
+.copy-btn{display:inline-block;background:#00ccaa;color:#000;border:none;border-radius:8px;padding:4px 12px;font-size:11px;font-weight:700;cursor:pointer;margin-top:6px}
+</style>
+</head>
+<body>
+
+<div id="loginPage">
+<div class="login-box">
+    <div class="card">
+        <h2>&#x1F512; 绠＄悊鍚庡彴</h2>
+        <div class="form-row">
+            <label>绠＄悊瀵嗙爜</label>
+            <input type="password" id="adminPwd" placeholder="璇疯緭鍏ョ鐞嗗瘑鐮?>
+        </div>
+        <div class="form-row">
+            <label>GitHub Token锛堢敤浜庢帹閫侀€夎偂鏁版嵁锛?/label>
+            <input type="password" id="adminToken" placeholder="ghp_寮€澶寸殑GitHub涓汉璁块棶浠ょ墝">
+        </div>
+        <button class="btn btn-primary" onclick="doLogin()">杩涘叆鍚庡彴</button>
+    </div>
+</div>
+</div>
+
+<div id="adminPage" style="display:none">
+<div class="header">
+    <h1>&#x1F3AF; 鍏洏灞?路 绠＄悊鍚庡彴</h1>
+    <p>绠＄悊鍛樻搷浣滈潰鏉?/p>
+</div>
+<div class="container">
+
+    <div class="tabs">
+        <div class="tab active" id="tabStock" onclick="switchTab('stock')">姣忔棩绛栫暐閫夎偂</div>
+        <div class="tab" id="tabHot" onclick="switchTab('hot')">鐩樺墠鐑偣</div>
+        <div class="tab" id="tabCredit" onclick="switchTab('credit')">鍏呭€肩‘璁?/div>
+        <div class="tab" id="tabHistory" onclick="switchTab('history')">鎿嶄綔璁板綍</div>
+    </div>
+
+    <div id="panelStock">
+    <div class="card">
+        <h3>&#x1F4CA; 姣忔棩绛栫暐閫夎偂鎺ㄩ€?/h3>
+        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px;line-height:1.6">
+            鎸夌瓥鐣ヨ瘎鍒嗕粠楂樺埌浣庯紝渚濇杈撳叆6鍙偂绁ㄤ唬鐮侊紙6浣嶆暟瀛楋級锛岀郴缁熷皢鑷姩鎶撳彇瀹炴椂琛屾儏骞舵帹閫佸埌APP銆?br>
+            <span style="color:#00ccaa">椤哄簭瀵瑰簲锛氬啿鍔ㄧ墰鈫掕悓钀岀唺鈫掓亹鎯ч緳鈫掔┖浠撶尗鈫掑ぇ鐘熼┐鈫掓偀閬撻拱</span>
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="form-row"><label>鈶犲啿鍔ㄧ墰锛堢1鍚嶏級</label><input type="text" id="stk0" maxlength="6" placeholder="濡?300308"></div>
+            <div class="form-row"><label>鈶¤悓钀岀唺锛堢2鍚嶏級</label><input type="text" id="stk1" maxlength="6" placeholder="濡?300624"></div>
+            <div class="form-row"><label>鈶㈡亹鎯ч緳锛堢3鍚嶏級</label><input type="text" id="stk2" maxlength="6" placeholder="濡?002703"></div>
+            <div class="form-row"><label>鈶ｇ┖浠撶尗锛堢4鍚嶏級</label><input type="text" id="stk3" maxlength="6" placeholder="濡?300718"></div>
+            <div class="form-row"><label>鈶ゅぇ鐘熼┐锛堢5鍚嶏級</label><input type="text" id="stk4" maxlength="6" placeholder="濡?002896"></div>
+            <div class="form-row"><label>鈶ユ偀閬撻拱锛堢6鍚嶏級</label><input type="text" id="stk5" maxlength="6" placeholder="濡?301308"></div>
+        </div>
+        <button class="btn btn-primary" onclick="fetchAndPreview()" id="btnFetch">鎶撳彇瀹炴椂琛屾儏</button>
+        <div id="stockPreview" style="display:none;margin-top:12px">
+            <div style="background:#0a1628;border-radius:10px;padding:12px;font-size:12px;line-height:1.8" id="previewContent"></div>
+            <button class="btn btn-primary" onclick="pushToApp()" id="btnPush" style="margin-top:10px">纭鎺ㄩ€佸埌APP</button>
+        </div>
+        <div id="pushStatus" style="display:none;margin-top:10px;font-size:12px;text-align:center;padding:10px;border-radius:10px"></div>
+    </div>
+    </div>
+
+    <div id="panelHot" style="display:none">
+    <div class="card">
+        <h3>&#x1F525; 鐩樺墠鐑偣褰曞叆</h3>
+        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px;line-height:1.6">
+            鍙傝€冩潵婧愶細<span style="color:#ffcc00">娣樿偂鍚у崥涓汇€屼笓娉ㄧ洏鍓嶈祫璁€?/span>锛圛D:3729365锛夛紝姣忔棩8:20宸﹀彸鍙戝竷銆?br>
+            灏嗗叧閿儹鐐规澘鍧?棰樻潗绮樿创鍒颁笅鏂癸紝姣忚涓€鏉★紝绯荤粺灏嗘帹閫佸埌APP棣栭〉銆?
+        </p>
+        <div class="form-row">
+            <label>鐑偣鍐呭锛堟瘡琛屼竴鏉★紝濡傦細AI鑺墖銆佹満鍣ㄤ汉銆佸厜浼忥級</label>
+            <textarea id="hotContent" rows="6" style="width:100%;height:120px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:13px;line-height:1.6;resize:vertical;outline:none" placeholder="AI鑺墖&#10;鏈哄櫒浜?#10;浣庣┖缁忔祹&#10;鍏変紡&#10;鏂拌兘婧愯溅"></textarea>
+        </div>
+        <div class="form-row">
+            <label>琛ュ厖璇存槑锛堝彲閫夛紝濡傛殫闈㈡柊闂汇€佺獊鍙戜簨浠讹級</label>
+            <textarea id="hotNote" rows="3" style="width:100%;height:70px;background:#0a1628;border:1px solid #1a3a5a;border-radius:10px;padding:10px;color:#e0e8f0;font-size:12px;line-height:1.5;resize:vertical;outline:none" placeholder="濡傦細鍝悞2绁ㄦ埧鐮寸邯褰曪紝棰勬湡宸満浼?></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="pushHotTopics()" id="btnHotPush">鎺ㄩ€佺儹鐐瑰埌APP</button>
+        <div id="hotStatus" style="display:none;margin-top:10px;font-size:12px;text-align:center;padding:10px;border-radius:10px"></div>
+    </div>
+    </div>
+
+    <div id="panelCredit" style="display:none">
+    <div class="card">
+        <h3>&#x1F4B0; 鐢熸垚鍏呭€煎厬鎹㈢爜</h3>
+        <p style="font-size:11px;color:#5a7a99;margin-bottom:12px">鐢ㄦ埛浠樻鍚庯紝杈撳叆鎵嬫満鍙峰拰閲戦锛岀敓鎴愬厬鎹㈢爜鍙戠粰鐢ㄦ埛锛岀敤鎴峰湪APP鍐呰緭鍏ュ厬鎹㈢爜鍗冲彲鍒拌处</p>
+        <div class="form-row">
+            <label>鐢ㄦ埛鎵嬫満鍙凤紙鍚?浣嶅嵆鍙級</label>
+            <input type="text" id="creditPhone" maxlength="4" placeholder="渚嬶細5678">
+        </div>
+        <div class="form-row">
+            <label>鍏呭€肩Н鍒嗘暟</label>
+            <input type="number" id="creditPts" placeholder="渚嬶細1000">
+        </div>
+        <div class="form-row">
+            <label>澶囨敞锛堝彲閫夛級</label>
+            <input type="text" id="creditNote" placeholder="渚嬶細寰俊鏀舵100鍏?>
+        </div>
+        <button class="btn btn-primary" onclick="generateCode()">鐢熸垚鍏戞崲鐮?/button>
+        <div class="code-display" id="codeDisplay">
+            <div class="code" id="generatedCode"></div>
+            <div class="info" id="codeInfo"></div>
+            <button class="copy-btn" onclick="copyCode()">澶嶅埗鍏戞崲鐮?/button>
+        </div>
+    </div>
+    </div>
+
+    <div id="panelHistory" style="display:none">
+    <div class="card">
+        <h3>&#x1F4CB; 鎿嶄綔璁板綍</h3>
+        <div id="historyList"><p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">鏆傛棤璁板綍</p></div>
+        <button class="btn btn-danger" onclick="clearHistory()" style="margin-top:12px">娓呯┖璁板綍</button>
+    </div>
+    </div>
+
+</div>
+</div>
+
+<script>
+var ADMIN_PWD = '888888';
+var GITHUB_TOKEN = '';
+var GITHUB_OWNER = 'fengzezhang31-hue';
+var GITHUB_REPO = 'panqian-cainiu';
+var PET_NAMES = ['鍐插姩鐗?,'钀岃悓鐔?,'鎭愭儳榫?,'绌轰粨鐚?,'澶х姛椹?,'鎮熼亾楣?];
+var fetchedStocks = null;
+
+var safeStorage = {
+    getItem: function(key) { try { return localStorage.getItem(key); } catch(e) { return null; } },
+    setItem: function(key, val) { try { localStorage.setItem(key, val); } catch(e) {} },
+    removeItem: function(key) { try { localStorage.removeItem(key); } catch(e) {} }
+};
+
+function doLogin() {
+    var pwd = document.getElementById('adminPwd').value.trim();
+    var token = document.getElementById('adminToken').value.trim();
+    if (pwd === ADMIN_PWD) {
+        if (token) GITHUB_TOKEN = token;
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('adminPage').style.display = 'block';
+    } else {
+        alert('瀵嗙爜閿欒');
+    }
+}
+
+function switchTab(tab) {
+    document.getElementById('tabStock').className = tab === 'stock' ? 'tab active' : 'tab';
+    document.getElementById('tabHot').className = tab === 'hot' ? 'tab active' : 'tab';
+    document.getElementById('tabCredit').className = tab === 'credit' ? 'tab active' : 'tab';
+    document.getElementById('tabHistory').className = tab === 'history' ? 'tab active' : 'tab';
+    document.getElementById('panelStock').style.display = tab === 'stock' ? 'block' : 'none';
+    document.getElementById('panelHot').style.display = tab === 'hot' ? 'block' : 'none';
+    document.getElementById('panelCredit').style.display = tab === 'credit' ? 'block' : 'none';
+    document.getElementById('panelHistory').style.display = tab === 'history' ? 'block' : 'none';
+    if (tab === 'history') loadHistory();
+}
+
+// ========== 绛栫暐閫夎偂锛氫唬鐮佽浆涓滄柟璐㈠瘜 secid ==========
+function codeToSecid(code) {
+    // 6寮€澶?娌競(sh), 0/3寮€澶?娣卞競(sz), 68寮€澶?绉戝垱鏉?sh)
+    if (code.startsWith('6')) return '1.' + code;
+    return '0.' + code;
+}
+
+// ========== 绛栫暐閫夎偂锛氭姄鍙栧疄鏃惰鎯?==========
+
+// ========== 股票名称→代码自动识别 ==========
+async function resolveNameToCode(name) {
+    name = name.trim();
+    // 已经是6位数字
+    if (/^\d{6}$/.test(name)) return name;
+    // 去掉常见后缀
+    var clean = name.replace(/[\.\s,，、。;；]+/g, '');
+    try {
+        var resp = await fetch('https://searchapi.eastmoney.com/api/suggest/get?input=' + encodeURIComponent(clean) + '&type=14&token=D43BF722C8E33BDC906FB84D85E326E8&count=5');
+        var data = await resp.json();
+        if (data && data.QuotationCodeTable && data.QuotationCodeTable.Data) {
+            var results = data.QuotationCodeTable.Data.filter(function(d) {
+                return d.SecurityTypeName === 'A股' && (d.Market === 'SH' || d.Market === 'SZ');
+            });
+            if (results.length > 0) {
+                // 精准匹配名称或代码
+                for (var i = 0; i < results.length; i++) {
+                    if (results[i].Name === clean || results[i].Code.indexOf(clean) >= 0) {
+                        return results[i].Code;
+                    }
+                }
+                // 模糊匹配首条
+                return results[0].Code;
+            }
+        }
+    } catch(e) {
+        console.log('名称解析失败: ' + name + ' ' + e.message);
+    }
+    return null;
+}
+async function fetchAndPreview() {
+    var codes = [];
+    var btnFetch = document.getElementById('btnFetch');
+    btnFetch.disabled = true;
+    btnFetch.textContent = '识别中...';
+
+    // Step 1: Resolve all names to codes
+    for (var i = 0; i < 6; i++) {
+        var c = document.getElementById('stk' + i).value.trim();
+        if (!c) {
+            alert('第' + (i+1) + '只股票信息为空');
+            btnFetch.disabled = false;
+            btnFetch.textContent = '抓取实时行情';
+            return;
+        }
+        // 尝试解析：名称 -> 代码
+        if (!/^\d{6}$/.test(c)) {
+            var resolved = await resolveNameToCode(c);
+            if (!resolved) {
+                alert('无法识别: ' + c + '\n请直接输入6位数字代码');
+                btnFetch.disabled = false;
+                btnFetch.textContent = '抓取实时行情';
+                return;
+            }
+            c = resolved;
+        }
+        codes.push(c);
+    }
+
+    btnFetch.textContent = '抓取中...';
+
+    var secids = codes.map(codeToSecid).join(',');
+    var cbName = '_admcb_' + Date.now();
+
+    window[cbName] = function(json) {
+        try { delete window[cbName]; } catch(e) {}
+        var script = document.getElementById('_fetchScript');
+        if (script) script.parentNode.removeChild(script);
+        btnFetch.disabled = false;
+        btnFetch.textContent = '抓取实时行情';
+
+        if (!json || !json.data || !json.data.diff || json.data.diff.length < 6) {
+            alert('行情数据获取不完整，请检查股票代码');
+            return;
+        }
+        var stockMap = {};
+        json.data.diff.forEach(function(s) { stockMap[s.f12] = s; });
+
+        fetchedStocks = [];
+        var html = '<div style="color:#00ccaa;font-weight:700;margin-bottom:8px">抓取成功，请确认：</div>';
+        for (var i = 0; i < codes.length; i++) {
+            var s = stockMap[codes[i]];
+            if (!s) {
+                alert('股票 ' + codes[i] + ' 未找到数据');
+                return;
+            }
+            fetchedStocks.push({
+                name: s.f14,
+                code: s.f12,
+                bidPrice: s.f18,
+                currentPrice: s.f2,
+                openPrice: s.f17,
+                yesterdayClose: s.f18,
+                changePercent: s.f3,
+                entityGain: s.f3
+            });
+            var cls = s.f3 >= 0 ? 'color:#ff4466' : 'color:#44cc88';
+            var sign = s.f3 >= 0 ? '+' : '';
+            html += '<div style="border-bottom:1px solid #1a3a5a;padding:4px 0">' +
+                '<span style="color:#ffd966">' + PET_NAMES[i] + '</span>@' +
+                '<b>' + s.f14 + '</b>(' + s.f12 + ') ' +
+                '昨收:' + s.f18 + ' 现价:<b>' + s.f2 + '</b> ' +
+                '<span style="' + cls + '">' + sign + s.f3 + '%</span></div>';
+        }
+        document.getElementById('previewContent').innerHTML = html;
+        document.getElementById('stockPreview').style.display = 'block';
+        document.getElementById('pushStatus').style.display = 'none';
+    };
+
+    var script = document.createElement('script');
+    script.id = '_fetchScript';
+    script.src = 'https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&secids=' + secids +
+        '&fields=f2,f3,f12,f14,f17,f18&cb=' + cbName;
+    script.onerror = function() {
+        try { delete window[cbName]; } catch(e) {}
+        btnFetch.disabled = false;
+        btnFetch.textContent = '抓取实时行情';
+        alert('网络请求失败，请重试');
+        var s = document.getElementById('_fetchScript');
+        if (s) s.parentNode.removeChild(s);
+    };
+    document.head.appendChild(script);
+}
+
+function pushToApp() {
+    if (!fetchedStocks || fetchedStocks.length !== 6) {
+        alert('璇峰厛鎶撳彇琛屾儏');
+        return;
+    }
+    if (!GITHUB_TOKEN) {
+        alert('璇峰厛鍦ㄧ櫥褰曢〉濉啓 GitHub Token');
+        return;
+    }
+    document.getElementById('btnPush').disabled = true;
+    document.getElementById('btnPush').textContent = '鎺ㄩ€佷腑...';
+    var statusEl = document.getElementById('pushStatus');
+    statusEl.style.display = 'block';
+    statusEl.style.background = '#1a2a40';
+    statusEl.style.color = '#88aacc';
+    statusEl.innerHTML = '姝ｅ湪鎺ㄩ€佸埌 GitHub...';
+
+    var today = new Date();
+    var dateStr = today.getFullYear() + '-' +
+        String(today.getMonth()+1).padStart(2,'0') + '-' +
+        String(today.getDate()).padStart(2,'0');
+
+    var marketData = {
+        date: dateStr,
+        stocks: fetchedStocks.map(function(s) {
+            return {
+                name: s.name,
+                code: s.code,
+                bidPrice: s.bidPrice,
+                currentPrice: s.currentPrice,
+                openPrice: s.openPrice,
+                yesterdayClose: s.yesterdayClose,
+                changePercent: s.changePercent,
+                entityGain: s.entityGain
+            };
+        }),
+        news: [],
+        twitterTrends: []
+    };
+
+    var jsonStr = JSON.stringify(marketData, null, 2);
+    var b64 = btoa(unescape(encodeURIComponent(jsonStr)));
+
+    // 鍏堣幏鍙栧綋鍓嶆枃浠?SHA
+    fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/market-data.json', {
+        headers: { 'Authorization': 'token ' + GITHUB_TOKEN }
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(info) {
+        var body = {
+            message: '绛栫暐閫夎偂 ' + dateStr + ': ' + fetchedStocks.map(function(s){return s.name}).join(','),
+            content: b64,
+            sha: info.sha
+        };
+        return fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/market-data.json', {
+            method: 'PUT',
+            headers: {
+                'Authorization': 'token ' + GITHUB_TOKEN,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(result) {
+        document.getElementById('btnPush').disabled = false;
+        document.getElementById('btnPush').textContent = '纭鎺ㄩ€佸埌APP';
+        if (result.content) {
+            statusEl.style.background = '#0a2a1a';
+            statusEl.style.color = '#44cc88';
+            statusEl.innerHTML = '鎺ㄩ€佹垚鍔燂紒APP灏嗗湪鍑犲垎閽熷唴鏇存柊銆?br><span style="font-size:11px;color:#5a7a99">' +
+                dateStr + ' 路 ' + fetchedStocks.map(function(s){return s.name}).join('銆?) + '</span>';
+            // 淇濆瓨璁板綍
+            var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
+            records.unshift({
+                code: '绛栫暐閫夎偂',
+                phone: '-',
+                pts: 0,
+                note: fetchedStocks.map(function(s){return s.name + '(' + s.changePercent + '%)'}).join(', '),
+                time: new Date().toLocaleString('zh-CN'),
+                ts: Date.now()
+            });
+            safeStorage.setItem('pqcn_admin_records', JSON.stringify(records));
+        } else {
+            statusEl.style.background = '#2a0a0a';
+            statusEl.style.color = '#ff4466';
+            statusEl.innerHTML = '鎺ㄩ€佸け璐? ' + (result.message || '鏈煡閿欒');
+        }
+    })
+    .catch(function(e) {
+        document.getElementById('btnPush').disabled = false;
+        document.getElementById('btnPush').textContent = '纭鎺ㄩ€佸埌APP';
+        statusEl.style.background = '#2a0a0a';
+        statusEl.style.color = '#ff4466';
+        statusEl.innerHTML = '鎺ㄩ€佸け璐? ' + e.message;
+    });
+}
+
+// ========== 鐩樺墠鐑偣鎺ㄩ€?==========
+function pushHotTopics() {
+    var content = document.getElementById('hotContent').value.trim();
+    var note = document.getElementById('hotNote').value.trim();
+    if (!content) { alert('璇疯緭鍏ョ儹鐐瑰唴瀹?); return; }
+    if (!GITHUB_TOKEN) { alert('璇峰厛鍦ㄧ櫥褰曢〉濉啓 GitHub Token'); return; }
+
+    var trends = content.split('\n').map(function(line) {
+        return line.trim();
+    }).filter(function(line) {
+        return line.length > 0;
+    }).map(function(title) {
+        return { title: title, gain: 0, source: 'tgb_manual' };
+    });
+
+    var btn = document.getElementById('btnHotPush');
+    var statusEl = document.getElementById('hotStatus');
+    btn.disabled = true;
+    btn.textContent = '鎺ㄩ€佷腑...';
+    statusEl.style.display = 'block';
+    statusEl.style.background = '#1a2a40';
+    statusEl.style.color = '#88aacc';
+    statusEl.innerHTML = '姝ｅ湪鎺ㄩ€佺儹鐐瑰埌 GitHub...';
+
+    var today = new Date();
+    var dateStr = today.getFullYear() + '-' +
+        String(today.getMonth()+1).padStart(2,'0') + '-' +
+        String(today.getDate()).padStart(2,'0');
+
+    var hotData = {
+        date: dateStr,
+        trends: trends,
+        note: note,
+        updateTime: new Date().toISOString()
+    };
+
+    var jsonStr = JSON.stringify(hotData, null, 2);
+    var b64 = btoa(unescape(encodeURIComponent(jsonStr)));
+
+    fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/hot-topics.json', {
+        headers: { 'Authorization': 'token ' + GITHUB_TOKEN }
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(info) {
+        var body = {
+            message: 'hot: ' + dateStr + ' ' + trends.map(function(t){return t.title}).join(','),
+            content: b64
+        };
+        if (info.sha) body.sha = info.sha;
+        return fetch('https://api.github.com/repos/' + GITHUB_OWNER + '/' + GITHUB_REPO + '/contents/hot-topics.json', {
+            method: 'PUT',
+            headers: { 'Authorization': 'token ' + GITHUB_TOKEN, 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        });
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(result) {
+        btn.disabled = false;
+        btn.textContent = '鎺ㄩ€佺儹鐐瑰埌APP';
+        if (result.content) {
+            statusEl.style.background = '#0a2a1a';
+            statusEl.style.color = '#44cc88';
+            statusEl.innerHTML = '鎺ㄩ€佹垚鍔燂紒APP灏嗗湪鍑犲垎閽熷唴鏇存柊鐑偣銆?br><span style="font-size:11px;color:#5a7a99">' +
+                dateStr + ' 路 ' + trends.length + '鏉＄儹鐐? + (note ? ' 路 ' + note : '') + '</span>';
+            var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
+            records.unshift({
+                code: '鐩樺墠鐑偣', phone: '-', pts: 0,
+                note: trends.map(function(t){return t.title}).join(', ') + (note ? ' | ' + note : ''),
+                time: new Date().toLocaleString('zh-CN'), ts: Date.now()
+            });
+            safeStorage.setItem('pqcn_admin_records', JSON.stringify(records));
+        } else {
+            statusEl.style.background = '#2a0a0a';
+            statusEl.style.color = '#ff4466';
+            statusEl.innerHTML = '鎺ㄩ€佸け璐? ' + (result.message || '鏈煡閿欒');
+        }
+    })
+    .catch(function(e) {
+        btn.disabled = false;
+        btn.textContent = '鎺ㄩ€佺儹鐐瑰埌APP';
+        statusEl.style.background = '#2a0a0a';
+        statusEl.style.color = '#ff4466';
+        statusEl.innerHTML = '鎺ㄩ€佸け璐? ' + e.message;
+    });
+}
+
+// ========== 鍏呭€煎厬鎹㈢爜 ==========
+function generateCode() {
+    var phone = document.getElementById('creditPhone').value.trim();
+    var pts = parseInt(document.getElementById('creditPts').value);
+    var note = document.getElementById('creditNote').value.trim();
+    if (!phone || phone.length < 4) { alert('璇疯緭鍏ユ墜鏈哄彿鍚?浣?); return; }
+    if (!pts || pts <= 0) { alert('璇疯緭鍏ユ纭殑绉垎鏁?); return; }
+    var ts = Date.now();
+    var code = 'PQCN-' + phone + '-' + pts + '-' + ('' + ts).slice(-6);
+    var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
+    records.unshift({ code: code, phone: phone, pts: pts, note: note, time: new Date().toLocaleString('zh-CN'), ts: ts });
+    safeStorage.setItem('pqcn_admin_records', JSON.stringify(records));
+    document.getElementById('generatedCode').textContent = code;
+    document.getElementById('codeInfo').innerHTML = '鎵嬫満灏惧彿 ' + phone + ' 路 ' + pts + '绉垎' + (note ? ' 路 ' + note : '') + '<br>璇峰皢姝ゅ厬鎹㈢爜鍙戠粰鐢ㄦ埛锛屽湪APP"鍏戞崲绉垎"澶勮緭鍏ュ嵆鍙埌璐?;
+    document.getElementById('codeDisplay').style.display = 'block';
+    document.getElementById('creditPhone').value = '';
+    document.getElementById('creditPts').value = '';
+    document.getElementById('creditNote').value = '';
+}
+
+function copyCode() {
+    var code = document.getElementById('generatedCode').textContent;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(function() { alert('宸插鍒? ' + code); });
+    } else {
+        var ta = document.createElement('textarea'); ta.value = code;
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+        alert('宸插鍒? ' + code);
+    }
+}
+
+function loadHistory() {
+    var records = JSON.parse(safeStorage.getItem('pqcn_admin_records') || '[]');
+    var html = '';
+    if (records.length === 0) {
+        html = '<p style="font-size:12px;color:#5a7a99;text-align:center;padding:20px">鏆傛棤璁板綍</p>';
+    } else {
+        for (var i = 0; i < records.length; i++) {
+            var r = records[i];
+            if (r.code === '绛栫暐閫夎偂') {
+                html += '<div class="record-item"><span style="color:#00ccaa;font-weight:700">馃搳 绛栫暐閫夎偂</span><br>' +
+                    r.note + '<br><span class="time">' + r.time + '</span></div>';
+            } else if (r.code === '鐩樺墠鐑偣') {
+                html += '<div class="record-item"><span style="color:#ffaa00;font-weight:700">馃敟 鐩樺墠鐑偣</span><br>' +
+                    r.note + '<br><span class="time">' + r.time + '</span></div>';
+            } else {
+                html += '<div class="record-item">' +
+                    '<span class="pts">+' + r.pts + '绉垎</span> 鈫?鎵嬫満灏惧彿 ' + r.phone +
+                    (r.note ? '<br>澶囨敞: ' + r.note : '') +
+                    '<br>鍏戞崲鐮? <span style="color:#ffd966">' + r.code + '</span>' +
+                    '<br><span class="time">' + r.time + '</span></div>';
+            }
+        }
+    }
+    document.getElementById('historyList').innerHTML = html;
+}
+
+function clearHistory() {
+    if (confirm('纭畾娓呯┖鎵€鏈夋搷浣滆褰曪紵')) {
+        safeStorage.removeItem('pqcn_admin_records');
+        loadHistory();
+    }
+}
+
+document.getElementById('adminPwd').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doLogin();
+});
+
+
+</script>
+</body>
+</html>

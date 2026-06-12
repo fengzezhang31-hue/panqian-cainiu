@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -447,11 +447,11 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
     <div style="text-align:center;font-size:10px;color:#5a7a99;margin-bottom:6px;opacity:0.8" id="dataSourceDate"></div>
     <div class="hero-row">
         <div class="hero-btn" id="btnPig" onclick="doScore()" style="flex:1">
-            <div class="tip">&#x1F449; 点击此处 6支潜在标（每日8:36后免费查看）</div>
+            <div class="tip">&#x1F449; 点击此处 6强现身（每日8:36后可用）</div>
             <div class="progress"><div class="progress-fill" id="progPig"></div></div>
         </div>
     </div>
-    <div class="hint-text" style="font-size:11px;line-height:1.6;padding:6px 10px;margin:4px 8px;background:rgba(255,255,255,0.03);border-radius:6px;text-align:center;color:#5a7a99">⚡ 模式：1-3天超短 | 判优标准：当日竞价/次日收盘有正向即为优 | 核心是止盈止损时机 ⚡</div>
+    <div class="hint-text">&#x26A1; 点击上方按钮加载今日策略6强，9:26后可六进二晋级 &#x26A1;</div>
 
     <!-- 6神兽宠物网格 -->
     <div class="pet-grid" id="petGrid">
@@ -465,7 +465,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
 
     <!-- 6选2晋级 -->
     <div class="hero-btn shenniu-btn" id="btnShenniu" onclick="doSelect2()" style="margin:0 4px 4px;padding:14px 6px">
-        <div class="tip" style="font-size:14px">&#x1F402; 9:26 点击此处 2支潜力标 <span style="color:#ff6688;font-size:11px;margin-left:6px">消耗527积分/次</span></div>
+        <div class="tip" style="font-size:14px">&#x1F402; 9:26 点击此处 六进二晋级看谁强 <span style="color:#ff6688;font-size:11px;margin-left:6px">消耗188积分/次</span></div>
         <div class="progress"><div class="progress-fill" id="progShenniu"></div></div>
     </div>
     <div class="deity-row">
@@ -507,7 +507,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
         <div class="points-display">
             <span class="points-label">&#x2728; 我的积分</span>
             <span class="points-value" id="ptsVal">0</span>
-            <span class="points-hint">1000积分=100元</span>
+            <span class="points-hint">10积分=1元</span>
         </div>
         <div class="reg-row" style="margin-top:8px">
             <span style="font-size:13px">&#x1F3AB;</span>
@@ -515,7 +515,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
             <button onclick="doRedeemCode()">兑换</button>
         </div>
         <div style="text-align:center;margin-top:6px;padding:4px 8px;font-size:10px;color:#5a7a99;line-height:1.5;opacity:0.7">小站运行需要一点"电费补贴"，感谢每位赞助者 &#x1F64F;</div>
-        <div class="points-note">积分作为回馈用户的福利，仅用于运维建设，不可现金兑换或提现。</div>
+        <div class="points-note">所有积分仅用于购买电子宠物和竞猜娱乐，戒除赌性，快乐每一天</div>
     </div>
 
     <!-- 底部警告 -->
@@ -680,7 +680,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
 </div>
 <div class="vip-tier-card" id="vip-card-diamond">
 <div class="vip-tier-title" style="color:#cc88ff">钻石会员</div>
-<div class="vip-tier-desc">每日1次竞猜 + 每日9:26六进二晋级（消耗527积分）<br>高级数据分析报告<br>电子商城消费一次机会<br>专属宠物皮肤特效</div>
+<div class="vip-tier-desc">每日1次竞猜 + 每日9:26六进二晋级（消耗188积分）<br>高级数据分析报告<br>电子商城消费一次机会<br>专属宠物皮肤特效</div>
 <div class="vip-tier-condition">升级条件：累计竞猜100次 + 六进二晋级10次以上 + 盘感级别3级以上</div>
 </div>
 </div>
@@ -820,7 +820,7 @@ background:radial-gradient(ellipse at 50% 30%,rgba(255,204,0,0.08) 0%,rgba(10,18
     <div class="modal" style="max-width:380px;padding:20px">
         <div id="recharge-step1">
             <h3>&#x1F4B0; 友情赞助 · 积分充值</h3>
-            <p style="font-size:12px;color:#5a7a99;margin-bottom:8px">每1000积分 = 100元，积分仅用于购买电子宠物和竞猜娱乐<br>赞助后积分将在确认后到账</p>
+            <p style="font-size:12px;color:#5a7a99;margin-bottom:8px">每10积分 = 1元，积分仅用于购买电子宠物和竞猜娱乐<br>赞助后积分将在确认后到账</p>
             <div style="text-align:center;margin:6px 0 4px;padding:5px 10px;background:rgba(255,204,0,0.06);border:1px dashed rgba(255,204,0,0.15);border-radius:8px">
                 <div style="color:#ffcc00;font-size:11px;line-height:1.5">为了让小站继续陪伴您，我们急需一点"电费补贴"<br><span style="color:#ff6688;font-size:10px">后台开发者因熬夜写代码，快要秃头啦</span></div>
             </div>
@@ -1039,10 +1039,10 @@ async function enterApp() {
     // 从localStorage加载用户积分
     var savedPts = safeStorage.getItem('pqcn_pts_' + appState.inviteCode);
     if (savedPts !== null) {
-        gameUser.points = parseInt(savedPts) || 9527;
+        gameUser.points = parseInt(savedPts) || 1888;
     } else {
-        gameUser.points = 9527;
-        safeStorage.setItem('pqcn_pts_' + appState.inviteCode, '9527');
+        gameUser.points = 1888;
+        safeStorage.setItem('pqcn_pts_' + appState.inviteCode, '1888');
     }
     // 检查是否有待领取的充值积分
     var pendingCredits = safeStorage.getItem('pqcn_credit_' + appState.inviteCode);
@@ -1069,7 +1069,7 @@ async function enterApp() {
 }
 
 // ========== Game State ==========
-let gameUser = { phone: null, points: 9527 };
+let gameUser = { phone: null, points: 1888 };
 let stocks = [];
 let scanDone = true, scoreDone = false; // 暗盘扫描由定时任务自动完成
 let guessIdx = null;
@@ -1088,7 +1088,7 @@ function codeToSecid(code) {
 // 用市场数据中的股票代码，从东方财富刷新实时价格
 function refreshLiveStockPrices() {
     return new Promise(function(resolve) {
-        if (!marketData || !marketData.stocks || marketData.stocks.length < 1) {
+        if (!marketData || !marketData.stocks || marketData.stocks.length < 6) {
             resolve(null); return;
         }
         var codes = marketData.stocks.map(function(s) { return s.code; });
@@ -1163,10 +1163,11 @@ async function loadMarketData() {
     // 第一步：从 market-data.json 加载管理后台策略选定的股票
     // 多源加载：先走本站相对路径，失败则走 jsdelivr CDN
     // 数据源：优先GitHub Pages（部署后即时生效），次选jsdelivr CDN
-    var baseUrl = '';
+    var baseUrl = window.location.hostname === 'localhost' ? '' : 'https://fengzezhang31-hue.github.io/panqian-cainiu';
     var sources = [
-        '/market-data.json?t=' + Date.now(),
-        'https://raw.githubusercontent.com/fengzezhang31-hue/panqian-cainiu/main/market-data.json?t=' + Date.now()
+        baseUrl + '/market-data.json?t=' + Date.now(),
+        'https://fengzezhang31-hue.github.io/panqian-cainiu/market-data.json?t=' + Date.now(),
+        'https://cdn.jsdelivr.net/gh/fengzezhang31-hue/panqian-cainiu@main/market-data.json?t=' + Date.now()
     ];
     // 去重
     sources = sources.filter(function(v, i, a) { return a.indexOf(v) === i; });
@@ -1182,7 +1183,7 @@ async function loadMarketData() {
                 if (resp.ok) {
                     const data = await resp.json();
                     console.log('📊 加载成功 (源' + (si+1) + '/尝试' + attempt + '):', data.date, '股票数:', data.stocks ? data.stocks.length : 0);
-                    if (data.stocks && data.stocks.length >= 1) {
+                    if (data.stocks && data.stocks.length >= 6) {
                         const dataDate = new Date(data.date);
                         const todayDate = new Date(getTodayStr());
                         const daysDiff = Math.floor((todayDate - dataDate) / (1000*60*60*24));
@@ -1213,7 +1214,8 @@ async function loadMarketData() {
     if (marketData && marketData.stocks) {
         try {
             var refreshed = await refreshLiveStockPrices();
-            if (refreshed && refreshed.length >= 1) { marketData.stocks = refreshed;
+            if (refreshed && refreshed.length >= 6) {
+                marketData.stocks = refreshed;
                 console.log('✅ 实时价格已刷新');
             }
         } catch(e) {
@@ -1227,11 +1229,12 @@ var _refreshTimer = null;
 function startLiveRefresh() {
     if (_refreshTimer) clearInterval(_refreshTimer);
     _refreshTimer = setInterval(async function() {
-        if (!marketData || !marketData.stocks || marketData.stocks.length < 1) return;
+        if (!marketData || !marketData.stocks || marketData.stocks.length < 6) return;
         if (!scoreDone) return;
         try {
             var refreshed = await refreshLiveStockPrices();
-            if (refreshed && refreshed.length >= 1) { marketData.stocks = refreshed;
+            if (refreshed && refreshed.length >= 6) {
+                marketData.stocks = refreshed;
                 stocks = generateStocks();
                 renderPetGrid();
                 renderGuessGrid();
@@ -1512,13 +1515,12 @@ function doScore() {
         var ss = document.getElementById('secondStock');
         if(ss) ss.textContent = '— 待晋级 —';
         guessIdx = null;
-        startLiveRefresh();
         if(stocks.length === 0) {
             showModal('今日无顶级机会', '策略严谨筛选后，今日无标的通过全部验证。<br><span style="font-size:11px;color:#5a7a99">宁缺毋滥，建议观望。空仓也是一种策略。</span>');
         } else if(stocks.length < 6) {
             showModal('策略选股完成', '仅' + stocks.length + '只标的通过策略筛选，宁缺毋滥。<br><span style="font-size:11px;color:#5a7a99">数据来自实时行情，等待 9:26 后可点击「六进二晋级」。</span>');
         } else {
-            showModal('潜在标已就绪', '6支潜在标已就绪！（数据来自实时行情）<br>等待 9:26 后可点击「六进二晋级」。');
+            showModal('6强现身完成', '6强已现身！（数据来自实时行情）<br>等待 9:26 后可点击「六进二晋级」。');
         }
     });
 }
@@ -2260,15 +2262,15 @@ function doSelect2() {
         var mins = h * 60 + m;
         if(mins < 9*60+26) { showModal('未开放', '六进二晋级将在 9:26 开放，当前时间 ' + h + ':' + (m<10?'0':'') + m); return; }
         // 检查后台数据是否就绪
-        if(!marketData || !marketData.stocks || marketData.stocks.length < 1) {
+        if(!marketData || !marketData.stocks || marketData.stocks.length < 6) {
             showModal('请稍等', '后台数据正在更新中，请稍候再试...<br><span style="font-size:11px;color:#5a7a99">系统正在获取最新竞价行情数据</span>');
             // 后台自动尝试加载数据
             loadMarketData();
             return;
         }
         document.title = 'S2:pts=' + gameUser.points;
-        if(gameUser.points < 527) { showModal('积分不足', '查看2支潜力标需要527积分，当前积分'+gameUser.points+'！'); return; }
-        gameUser.points -= 527;
+        if(gameUser.points < 188) { showModal('积分不足', '六进二晋级需要188积分，当前积分'+gameUser.points+'！'); return; }
+        gameUser.points -= 188;
         updatePointsUI();
         try {
             var s2key = 'panqian_select2_count_' + (appState.inviteCode || 'anon');
