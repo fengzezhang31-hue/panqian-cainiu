@@ -1,0 +1,22 @@
+{
+  "date": "2026-06-15",
+  "time": "2026-06-15 09:25:02",
+  "top2": [
+    {
+      "name": "����ʱ��",
+      "code": "300750",
+      "finalScore": 129,
+      "changePercent": 1.81,
+      "currentPrice": 402,
+      "rank": 1
+    },
+    {
+      "name": "����ʢ",
+      "code": "300502",
+      "finalScore": 125,
+      "changePercent": 1.69,
+      "currentPrice": 515,
+      "rank": 2
+    }
+  ]
+}

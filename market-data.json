@@ -1,129 +1,175 @@
 {
-  "date": "2026-06-09",
-  "stocks": [
+  "date": "2026-06-15",
+  "phase": "phase2_done",
+  "phaseTime": "2026-06-15 09:25:02",
+  "totalCandidates": 4,
+  "hotTopics": [
     {
-      "name": "华勤技术",
-      "code": "603296",
-      "bidPrice": 107.54,
-      "currentPrice": 99.18,
-      "openPrice": 100.96,
-      "yesterdayClose": 107.54,
-      "changePercent": -7.77,
-      "entityGain": -7.77,
-      "mainInflow": 35156960,
-      "totalMv": 113425472280,
-      "volRatio": 0.56,
-      "high": 102.99,
-      "low": 97.15,
-      "turnover": 3.49,
-      "pe": 26.74,
-      "volume": 199115,
-      "amount": 2003506201
+      "source": "TGB博主",
+      "title": "6月15日&nbsp;盘前早报&nbsp;热点关注"
     },
     {
-      "name": "蓝思科技",
-      "code": "300433",
-      "bidPrice": 45.61,
-      "currentPrice": 42.64,
-      "openPrice": 43.2,
-      "yesterdayClose": 45.61,
-      "changePercent": -6.51,
-      "entityGain": -6.51,
-      "mainInflow": 272844720,
-      "totalMv": 236382016159,
-      "volRatio": 0.98,
-      "high": 45.24,
-      "low": 40.76,
-      "turnover": 4.2,
-      "pe": -395.02,
-      "volume": 2089711,
-      "amount": 9040476953.59
+      "source": "TGB博主",
+      "title": "6月12日&nbsp;晚间复盘"
     },
     {
-      "name": "英力股份",
-      "code": "300956",
-      "bidPrice": 14.85,
-      "currentPrice": 13.66,
-      "openPrice": 14.09,
-      "yesterdayClose": 14.85,
-      "changePercent": -8.01,
-      "entityGain": -8.01,
-      "mainInflow": -15559039,
-      "totalMv": 2850107942,
-      "volRatio": 0.48,
-      "high": 13.89,
-      "low": 13,
-      "turnover": 8.23,
-      "pe": -125.4,
-      "volume": 173203,
-      "amount": 230070258.7
+      "source": "TGB博主",
+      "title": "6月12日&nbsp;盘前早报&nbsp;热点关注"
     },
     {
-      "name": "领益智造",
-      "code": "002600",
-      "bidPrice": 15.08,
-      "currentPrice": 14.34,
-      "openPrice": 14.5,
-      "yesterdayClose": 15.08,
-      "changePercent": -4.91,
-      "entityGain": -4.91,
-      "mainInflow": 232826400,
-      "totalMv": 108599832385,
-      "volRatio": 0.95,
-      "high": 14.9,
-      "low": 14.23,
-      "turnover": 2.59,
-      "pe": 69.32,
-      "volume": 1864447,
-      "amount": 2727366990.74
+      "source": "TGB博主",
+      "title": "6月11日&nbsp;晚间复盘"
     },
     {
-      "name": "华电能源",
-      "code": "600726",
-      "bidPrice": 9.35,
-      "currentPrice": 8.8,
-      "openPrice": 8.42,
-      "yesterdayClose": 9.35,
-      "changePercent": -5.88,
-      "entityGain": -5.88,
-      "mainInflow": -160429380,
-      "totalMv": 71561392701,
-      "volRatio": 0.75,
-      "high": 9.2,
-      "low": 8.43,
-      "turnover": 4.57,
-      "pe": 29.73,
-      "volume": 3419246,
-      "amount": 3026655908
+      "source": "TGB博主",
+      "title": "6月11日&nbsp;盘前早报&nbsp;热点关注"
     },
     {
-      "name": "歌尔股份",
-      "code": "002241",
-      "bidPrice": 24.82,
-      "currentPrice": 23.1,
-      "openPrice": 23.9,
-      "yesterdayClose": 24.82,
-      "changePercent": -6.93,
-      "entityGain": -6.93,
-      "mainInflow": 163692416,
-      "totalMv": 84605645382,
-      "volRatio": 0.64,
-      "high": 23.94,
-      "low": 22.85,
-      "turnover": 3.66,
-      "pe": 42.05,
-      "volume": 1148925,
-      "amount": 2688501364.9
+      "source": "TGB博主",
+      "title": "6月10日&nbsp;晚间复盘"
+    },
+    {
+      "source": "TGB博主",
+      "title": "6月10日&nbsp;盘前早报&nbsp;热点关注"
+    },
+    {
+      "source": "TGB博主",
+      "title": "6月9日&nbsp;晚间复盘"
+    },
+    {
+      "source": "TGB博主",
+      "title": "6月9日&nbsp;盘前早报&nbsp;热点关注"
+    },
+    {
+      "source": "TGB博主",
+      "title": "6月8日&nbsp;晚间复盘"
     }
   ],
-  "news": [],
-  "twitterTrends": [],
-  "v30Scores": {
-    "300433": 124,
-    "300956": 120,
-    "600726": 117,
-    "603296": 129,
-    "002600": 117,
-    "002241": 116
-  }
+  "darkEvents": [],
+  "hotSectors": [
+    {
+      "name": "оƬETF��̩",
+      "change_pct": 1.53
+    },
+    {
+      "name": "�ƴ�50ETF����",
+      "change_pct": 1.48
+    },
+    {
+      "name": "�뵼��ETF������",
+      "change_pct": 1.42
+    },
+    {
+      "name": "�˹�����ETF����",
+      "change_pct": 0.81
+    },
+    {
+      "name": "����ԴETF�Ϸ�",
+      "change_pct": 0.65
+    }
+  ],
+  "stocks": [
+    {
+      "name": "����ʱ��",
+      "code": "300750",
+      "currentPrice": 402,
+      "bidPrice": 402,
+      "changePercent": 1.81,
+      "entityGain": 1.81,
+      "amount": 299047800,
+      "volume": 7439,
+      "high": 402,
+      "low": 402,
+      "prevClose": 394.85,
+      "v6Score": 129,
+      "v3LogicScore": 92,
+      "v4AuctionScore": 37,
+      "eagleExempt": false,
+      "passed": true,
+      "buyStrength": 60,
+      "hotMatch": true,
+      "hotSector": "�ƴ�50ETF����"
+    },
+    {
+      "name": "����ʢ",
+      "code": "300502",
+      "currentPrice": 515,
+      "bidPrice": 515,
+      "changePercent": 1.69,
+      "entityGain": 1.69,
+      "amount": 177572000,
+      "volume": 3448,
+      "high": 515,
+      "low": 515,
+      "prevClose": 506.46,
+      "v6Score": 125,
+      "v3LogicScore": 88,
+      "v4AuctionScore": 37,
+      "eagleExempt": false,
+      "passed": true,
+      "buyStrength": 60,
+      "hotMatch": true,
+      "hotSector": "�ƴ�50ETF����"
+    },
+    {
+      "name": "�м���",
+      "code": "300308",
+      "currentPrice": 1175,
+      "bidPrice": 1175,
+      "changePercent": 2.26,
+      "entityGain": 2.26,
+      "amount": 453550000,
+      "volume": 3860,
+      "high": 1175,
+      "low": 1175,
+      "prevClose": 1149,
+      "v6Score": 112,
+      "v3LogicScore": 75,
+      "v4AuctionScore": 37,
+      "eagleExempt": false,
+      "passed": true,
+      "buyStrength": 60,
+      "hotMatch": true,
+      "hotSector": "�ƴ�50ETF����"
+    },
+    {
+      "name": "�㽭����",
+      "code": "002703",
+      "currentPrice": 15.6,
+      "bidPrice": 15.6,
+      "changePercent": 1.04,
+      "entityGain": 1.04,
+      "amount": 3569279.9999999995,
+      "volume": 2288,
+      "high": 15.6,
+      "low": 15.6,
+      "prevClose": 15.44,
+      "v6Score": 107,
+      "v3LogicScore": 85,
+      "v4AuctionScore": 22,
+      "eagleExempt": false,
+      "passed": true,
+      "buyStrength": 60,
+      "hotMatch": true,
+      "hotSector": "�ƴ�50ETF����"
+    }
+  ],
+  "top2": [
+    {
+      "name": "����ʱ��",
+      "code": "300750",
+      "finalScore": 129,
+      "changePercent": 1.81,
+      "currentPrice": 402,
+      "rank": 1
+    },
+    {
+      "name": "����ʢ",
+      "code": "300502",
+      "finalScore": 125,
+      "changePercent": 1.69,
+      "currentPrice": 515,
+      "rank": 2
+    }
+  ]
 }
