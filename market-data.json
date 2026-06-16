@@ -1,7 +1,7 @@
 {
   "date": "2026-06-17",
-  "phase": "phase1",
-  "phaseTime": "2026-06-17 02:22:15",
+  "phase": "phase2_done",
+  "phaseTime": "2026-06-17 02:39:52",
   "totalCandidates": 24,
   "stocks": [
     {
@@ -253,6 +253,26 @@
       "changePercent": -1.65,
       "amount": 1112105810.63,
       "v3Score": 34
+    }
+  ],
+  "top2": [
+    {
+      "name": "����ͨ��",
+      "code": "300394",
+      "v3Score": 60,
+      "changePercent": 6.45,
+      "currentPrice": 324.71,
+      "amount": 18459969584.19,
+      "rank": 1
+    },
+    {
+      "name": "�����Ƹ�",
+      "code": "300059",
+      "v3Score": 54,
+      "changePercent": 1.22,
+      "currentPrice": 19.12,
+      "amount": 8749339270.17,
+      "rank": 2
     }
   ]
 }
