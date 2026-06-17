@@ -1,7 +1,7 @@
 {
   "date": "2026-06-17",
-  "phase": "phase1",
-  "phaseTime": "2026-06-17 22:10:13",
+  "phase": "phase2_done",
+  "phaseTime": "2026-06-17 22:31:41",
   "totalCandidates": 24,
   "stocks": [
     {
@@ -20,9 +20,7 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20,
-      "yesterdayClose": 1248.09,
-      "openPrice": 1228
+      "v3Fund": 20
     },
     {
       "name": "����ͨ��",
@@ -40,9 +38,7 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20,
-      "yesterdayClose": 324.71,
-      "openPrice": 318
+      "v3Fund": 20
     },
     {
       "name": "����ʢ",
@@ -60,9 +56,7 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20,
-      "yesterdayClose": 549,
-      "openPrice": 545.7
+      "v3Fund": 20
     },
     {
       "name": "����ʱ��",
@@ -80,9 +74,7 @@
       "v3Detail": "I20+P10+F20=50",
       "v3Industry": 20,
       "v3Perf": 10,
-      "v3Fund": 20,
-      "yesterdayClose": 403.53,
-      "openPrice": 400
+      "v3Fund": 20
     },
     {
       "name": "����ę́",
@@ -100,9 +92,7 @@
       "v3Detail": "I20+P10+F20=50",
       "v3Industry": 20,
       "v3Perf": 10,
-      "v3Fund": 20,
-      "yesterdayClose": 1255.67,
-      "openPrice": 1258
+      "v3Fund": 20
     },
     {
       "name": "�Ͻ��ҵ",
@@ -120,9 +110,7 @@
       "v3Detail": "I20+P10+F20=50",
       "v3Industry": 20,
       "v3Perf": 10,
-      "v3Fund": 20,
-      "yesterdayClose": 30.29,
-      "openPrice": 30.5
+      "v3Fund": 20
     }
   ],
   "allCandidates": [
@@ -265,6 +253,26 @@
       "changePercent": -1.07,
       "amount": 1727945965.35,
       "v3Score": 34
+    }
+  ],
+  "top2": [
+    {
+      "name": "�м���",
+      "code": "300308",
+      "v3Score": 54,
+      "changePercent": 2.25,
+      "currentPrice": 1276.11,
+      "amount": 27272022889.13,
+      "rank": 1
+    },
+    {
+      "name": "����ͨ��",
+      "code": "300394",
+      "v3Score": 54,
+      "changePercent": 1.42,
+      "currentPrice": 329.33,
+      "amount": 15113944017.57,
+      "rank": 2
     }
   ]
 }
