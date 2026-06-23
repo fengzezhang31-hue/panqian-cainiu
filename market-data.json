@@ -20,7 +20,9 @@
       "v3Detail": "I20+P16+F20=56",
       "v3Industry": 20,
       "v3Perf": 16,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 1382.33,
+      "openPrice": 1395
     },
     {
       "name": "�Ͻ��ҵ",
@@ -38,7 +40,9 @@
       "v3Detail": "I20+P16+F20=56",
       "v3Industry": 20,
       "v3Perf": 16,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 30.44,
+      "openPrice": 29.95
     },
     {
       "name": "ͬ��˳",
@@ -56,7 +60,9 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 246.7,
+      "openPrice": 244.91
     },
     {
       "name": "����ͨ��",
@@ -74,7 +80,9 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 326.12,
+      "openPrice": 326.12
     },
     {
       "name": "����ʢ",
@@ -92,7 +100,9 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 579.97,
+      "openPrice": 575
     },
     {
       "name": "����ʱ��",
@@ -110,7 +120,9 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 408.98,
+      "openPrice": 411
     }
   ],
   "allCandidates": [
