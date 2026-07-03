@@ -1,23 +1,23 @@
 {
-  "date": "2026-07-02",
-  "time": "2026-07-02 19:20:24",
+  "date": "2026-07-03",
+  "time": "2026-07-03 19:16:24",
   "top2": [
     {
       "name": "�Ͻ��ҵ",
       "code": "601899",
-      "v3Score": 58,
-      "changePercent": 4.74,
-      "currentPrice": 26.3,
-      "amount": 13301647731,
+      "v3Score": 60,
+      "changePercent": 5.78,
+      "currentPrice": 27.82,
+      "amount": 15069982848,
       "rank": 1
     },
     {
-      "name": "���ǵ�",
-      "code": "002594",
-      "v3Score": 58,
-      "changePercent": 3.61,
-      "currentPrice": 83.57,
-      "amount": 6956783955.3,
+      "name": "��Ѷ����",
+      "code": "002475",
+      "v3Score": 60,
+      "changePercent": 5.81,
+      "currentPrice": 64.44,
+      "amount": 13275301051.54,
       "rank": 2
     }
   ]
