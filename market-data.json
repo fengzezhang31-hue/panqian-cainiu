@@ -20,7 +20,9 @@
       "v3Detail": "I20+P20+F20=60",
       "v3Industry": 20,
       "v3Perf": 20,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 85.99,
+      "openPrice": 92
     },
     {
       "name": "����ͨ��",
@@ -38,7 +40,9 @@
       "v3Detail": "I20+P18+F20=58",
       "v3Industry": 20,
       "v3Perf": 18,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 271.5,
+      "openPrice": 281
     },
     {
       "name": "�м���",
@@ -56,7 +60,9 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 1194.9,
+      "openPrice": 1210
     },
     {
       "name": "����ʢ",
@@ -74,7 +80,9 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 545.5,
+      "openPrice": 564
     },
     {
       "name": "����ʱ��",
@@ -92,7 +100,9 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 375.5,
+      "openPrice": 375
     },
     {
       "name": "�Ͻ��ҵ",
@@ -110,7 +120,9 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 27.62,
+      "openPrice": 28
     }
   ],
   "allCandidates": [
