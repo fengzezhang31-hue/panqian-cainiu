@@ -1,75 +1,39 @@
 {
-  "date": "2026-07-14",
-  "phase": "phase2_done",
-  "phaseTime": "2026-07-14 12:19:07",
-  "totalCandidates": 22,
+  "date": "2026-07-15",
+  "phase": "phase1",
+  "phaseTime": "2026-07-15 11:40:48",
+  "totalCandidates": 24,
   "stocks": [
     {
-      "name": "�м���",
-      "code": "300308",
-      "currentPrice": 1142.32,
-      "bidPrice": 1108.53,
-      "changePercent": 3.1,
-      "entityGain": 3.1,
-      "amount": 25653136915.91,
-      "volume": 22611275,
-      "high": 1165.73,
-      "low": 1098,
-      "prevClose": 1108,
+      "name": "����ʱ��",
+      "code": "300750",
+      "currentPrice": 377.9,
+      "bidPrice": 368.01,
+      "changePercent": 3.82,
+      "entityGain": 3.82,
+      "amount": 8870480717.24,
+      "volume": 23644930,
+      "high": 379.99,
+      "low": 363.08,
+      "prevClose": 364.01,
       "v3Score": 58,
       "v3Detail": "I20+P18+F20=58",
       "v3Industry": 20,
       "v3Perf": 18,
-      "v3Fund": 20
-    },
-    {
-      "name": "����ʢ",
-      "code": "300502",
-      "currentPrice": 537.09,
-      "bidPrice": 525,
-      "changePercent": 4.8,
-      "entityGain": 4.8,
-      "amount": 18030468709.39,
-      "volume": 33861590,
-      "high": 548.79,
-      "low": 515.55,
-      "prevClose": 512.5,
-      "v3Score": 58,
-      "v3Detail": "I20+P18+F20=58",
-      "v3Industry": 20,
-      "v3Perf": 18,
-      "v3Fund": 20
-    },
-    {
-      "name": "�˳���Ϣ",
-      "code": "000977",
-      "currentPrice": 79.31,
-      "bidPrice": 88,
-      "changePercent": -7.23,
-      "entityGain": -7.23,
-      "amount": 10119862025.97,
-      "volume": 123809050,
-      "high": 88.38,
-      "low": 77.21,
-      "prevClose": 85.49,
-      "v3Score": 56,
-      "v3Detail": "I20+P16+F20=56",
-      "v3Industry": 20,
-      "v3Perf": 16,
       "v3Fund": 20
     },
     {
       "name": "����ͨ��",
       "code": "300394",
-      "currentPrice": 265,
-      "bidPrice": 257.3,
-      "changePercent": 2.19,
-      "entityGain": 2.19,
-      "amount": 6876831066.1,
-      "volume": 26219803,
-      "high": 270.25,
-      "low": 252,
-      "prevClose": 259.31,
+      "currentPrice": 262,
+      "bidPrice": 275,
+      "changePercent": -4.21,
+      "entityGain": -4.21,
+      "amount": 6335016915.28,
+      "volume": 23850611,
+      "high": 275.96,
+      "low": 261,
+      "prevClose": 273.51,
       "v3Score": 54,
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
@@ -77,17 +41,35 @@
       "v3Fund": 20
     },
     {
-      "name": "����ʱ��",
-      "code": "300750",
-      "currentPrice": 355,
-      "bidPrice": 352.6,
-      "changePercent": -1.13,
-      "entityGain": -1.13,
-      "amount": 7569536159.29,
-      "volume": 21169681,
-      "high": 362.52,
-      "low": 352.49,
-      "prevClose": 359.06,
+      "name": "����ę́",
+      "code": "600519",
+      "currentPrice": 1244.97,
+      "bidPrice": 1203.66,
+      "changePercent": 2.48,
+      "entityGain": 2.48,
+      "amount": 5321562637,
+      "volume": 4314815,
+      "high": 1249.96,
+      "low": 1198.66,
+      "prevClose": 1214.88,
+      "v3Score": 54,
+      "v3Detail": "I20+P14+F20=54",
+      "v3Industry": 20,
+      "v3Perf": 14,
+      "v3Fund": 20
+    },
+    {
+      "name": "����ʢ",
+      "code": "300502",
+      "currentPrice": 560.24,
+      "bidPrice": 565,
+      "changePercent": -1.51,
+      "entityGain": -1.51,
+      "amount": 17226122013.06,
+      "volume": 30542361,
+      "high": 579.42,
+      "low": 551,
+      "prevClose": 568.82,
       "v3Score": 50,
       "v3Detail": "I20+P10+F20=50",
       "v3Industry": 20,
@@ -95,184 +77,182 @@
       "v3Fund": 20
     },
     {
-      "name": "�й�ʯ��",
-      "code": "601857",
-      "currentPrice": 9.97,
-      "bidPrice": 9.8,
-      "changePercent": 3.21,
-      "entityGain": 3.21,
-      "amount": 2135032701,
-      "volume": 216723147,
-      "high": 10.01,
-      "low": 9.72,
-      "prevClose": 9.66,
+      "name": "�� �� Һ",
+      "code": "000858",
+      "currentPrice": 76.16,
+      "bidPrice": 72.44,
+      "changePercent": 3.76,
+      "entityGain": 3.76,
+      "amount": 3182707052.96,
+      "volume": 42430109,
+      "high": 76.47,
+      "low": 72.01,
+      "prevClose": 73.4,
       "v3Score": 50,
       "v3Detail": "I16+P18+F16=50",
       "v3Industry": 16,
       "v3Perf": 18,
       "v3Fund": 16
+    },
+    {
+      "name": "ͬ��˳",
+      "code": "300033",
+      "currentPrice": 221.65,
+      "bidPrice": 218,
+      "changePercent": 1.82,
+      "entityGain": 1.82,
+      "amount": 2355043123.63,
+      "volume": 10594433,
+      "high": 225.76,
+      "low": 216.5,
+      "prevClose": 217.69,
+      "v3Score": 46,
+      "v3Detail": "I16+P14+F16=46",
+      "v3Industry": 16,
+      "v3Perf": 14,
+      "v3Fund": 16
     }
   ],
   "allCandidates": [
     {
-      "name": "�м���",
-      "code": "300308",
-      "changePercent": 3.1,
-      "amount": 25653136915.91,
+      "name": "����ʱ��",
+      "code": "300750",
+      "changePercent": 3.82,
+      "amount": 8870480717.24,
       "v3Score": 58
-    },
-    {
-      "name": "����ʢ",
-      "code": "300502",
-      "changePercent": 4.8,
-      "amount": 18030468709.39,
-      "v3Score": 58
-    },
-    {
-      "name": "�˳���Ϣ",
-      "code": "000977",
-      "changePercent": -7.23,
-      "amount": 10119862025.97,
-      "v3Score": 56
     },
     {
       "name": "����ͨ��",
       "code": "300394",
-      "changePercent": 2.19,
-      "amount": 6876831066.1,
+      "changePercent": -4.21,
+      "amount": 6335016915.28,
       "v3Score": 54
     },
     {
-      "name": "����ʱ��",
-      "code": "300750",
-      "changePercent": -1.13,
-      "amount": 7569536159.29,
+      "name": "����ę́",
+      "code": "600519",
+      "changePercent": 2.48,
+      "amount": 5321562637,
+      "v3Score": 54
+    },
+    {
+      "name": "����ʢ",
+      "code": "300502",
+      "changePercent": -1.51,
+      "amount": 17226122013.06,
       "v3Score": 50
     },
     {
-      "name": "�й�ʯ��",
-      "code": "601857",
-      "changePercent": 3.21,
-      "amount": 2135032701,
+      "name": "�� �� Һ",
+      "code": "000858",
+      "changePercent": 3.76,
+      "amount": 3182707052.96,
       "v3Score": 50
     },
     {
-      "name": "���ļ���",
-      "code": "000333",
-      "changePercent": 1.46,
-      "amount": 2400239183.63,
-      "v3Score": 46
-    },
-    {
-      "name": "���ǵ�",
-      "code": "002594",
-      "changePercent": 1.93,
-      "amount": 2571741060.19,
+      "name": "ͬ��˳",
+      "code": "300033",
+      "changePercent": 1.82,
+      "amount": 2355043123.63,
       "v3Score": 46
     },
     {
       "name": "�����Ƹ�",
       "code": "300059",
-      "changePercent": -2.27,
-      "amount": 3335452671.12,
-      "v3Score": 42
+      "changePercent": 1.07,
+      "amount": 3510937725.48,
+      "v3Score": 46
     },
     {
-      "name": "����ę́",
-      "code": "600519",
-      "changePercent": 0.68,
-      "amount": 3248618256,
-      "v3Score": 42
+      "name": "�м���",
+      "code": "300308",
+      "changePercent": -0.81,
+      "amount": 20317533222.83,
+      "v3Score": 46
     },
     {
       "name": "�й�ƽ��",
       "code": "601318",
-      "changePercent": -1.37,
-      "amount": 2454417155,
-      "v3Score": 42
+      "changePercent": 1.85,
+      "amount": 3605698666,
+      "v3Score": 46
     },
     {
       "name": "�Ͻ��ҵ",
       "code": "601899",
-      "changePercent": 0.91,
-      "amount": 3922801991,
+      "changePercent": -0.31,
+      "amount": 5295263023,
+      "v3Score": 46
+    },
+    {
+      "name": "���ǵ�",
+      "code": "002594",
+      "changePercent": 2.59,
+      "amount": 3455839074.77,
+      "v3Score": 46
+    },
+    {
+      "name": "�����Ͻ�",
+      "code": "000568",
+      "changePercent": 5.99,
+      "amount": 1190317575.44,
+      "v3Score": 44
+    },
+    {
+      "name": "��������",
+      "code": "600900",
+      "changePercent": 0.35,
+      "amount": 2275622507,
+      "v3Score": 42
+    },
+    {
+      "name": "�˳���Ϣ",
+      "code": "000977",
+      "changePercent": -0.05,
+      "amount": 8812253937.31,
       "v3Score": 42
     },
     {
       "name": "��Ѷ����",
       "code": "002475",
-      "changePercent": -0.47,
-      "amount": 4032892234.4,
-      "v3Score": 38
-    },
-    {
-      "name": "ͬ��˳",
-      "code": "300033",
-      "changePercent": -1.74,
-      "amount": 1544335712.33,
-      "v3Score": 34
-    },
-    {
-      "name": "��������",
-      "code": "600900",
-      "changePercent": -0.21,
-      "amount": 2681865022,
-      "v3Score": 34
-    },
-    {
-      "name": "��������",
-      "code": "000651",
-      "changePercent": 0.49,
-      "amount": 993014063.54,
-      "v3Score": 34
+      "changePercent": -2.09,
+      "amount": 3251579505.6,
+      "v3Score": 42
     },
     {
       "name": "��������",
       "code": "600036",
-      "changePercent": -0.56,
-      "amount": 1618388906,
-      "v3Score": 30
+      "changePercent": 1.21,
+      "amount": 1968245222,
+      "v3Score": 38
     },
     {
-      "name": "�� �� Һ",
-      "code": "000858",
-      "changePercent": 0.05,
-      "amount": 1108041030.56,
-      "v3Score": 30
+      "name": "�ƴ�Ѷ��",
+      "code": "002230",
+      "changePercent": 1.31,
+      "amount": 1140140166.17,
+      "v3Score": 38
     },
     {
       "name": "��������",
-      "code": "002142",
-      "changePercent": -0.74,
-      "amount": 750655305.13,
-      "v3Score": 30
+      "code": "002415",
+      "changePercent": 1.67,
+      "amount": 1441339082.19,
+      "v3Score": 38
     },
     {
-      "name": "�㽭����",
-      "code": "002703",
-      "changePercent": -1.61,
-      "amount": 111109536.49,
-      "v3Score": 26
-    }
-  ],
-  "top2": [
-    {
-      "name": "�м���",
-      "code": "300308",
-      "v3Score": 58,
-      "changePercent": 3.1,
-      "currentPrice": 1142.32,
-      "amount": 25653136915.91,
-      "rank": 1
+      "name": "���ļ���",
+      "code": "000333",
+      "changePercent": 1.31,
+      "amount": 1471631616.51,
+      "v3Score": 38
     },
     {
-      "name": "����ʢ",
-      "code": "300502",
-      "v3Score": 58,
-      "changePercent": 4.8,
-      "currentPrice": 537.09,
-      "amount": 18030468709.39,
-      "rank": 2
+      "name": "���˿Ƽ�",
+      "code": "300624",
+      "changePercent": 3.71,
+      "amount": 263467973.64,
+      "v3Score": 34
     }
   ]
 }
