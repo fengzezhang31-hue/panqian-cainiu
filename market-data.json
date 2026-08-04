@@ -1,7 +1,7 @@
 {
   "date": "2026-08-04",
-  "phase": "phase1",
-  "phaseTime": "2026-08-04 11:43:33",
+  "phase": "phase2_done",
+  "phaseTime": "2026-08-04 12:33:53",
   "totalCandidates": 24,
   "stocks": [
     {
@@ -253,6 +253,26 @@
       "changePercent": -1.35,
       "amount": 1794806725.06,
       "v3Score": 34
+    }
+  ],
+  "top2": [
+    {
+      "name": "�м���",
+      "code": "300308",
+      "v3Score": 60,
+      "changePercent": 10.78,
+      "currentPrice": 999.8,
+      "amount": 33881981851.24,
+      "rank": 1
+    },
+    {
+      "name": "����ͨ��",
+      "code": "300394",
+      "v3Score": 60,
+      "changePercent": 14.04,
+      "currentPrice": 205.85,
+      "amount": 9616856080.99,
+      "rank": 2
     }
   ]
 }
