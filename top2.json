@@ -1,23 +1,23 @@
 {
-  "date": "2026-11-02",
-  "time": "2026-11-02 15:45:44",
+  "date": "2026-11-03",
+  "time": "2026-11-03 15:59:25",
   "top2": [
-    {
-      "name": "�����Ƹ�",
-      "code": "300059",
-      "v3Score": 60,
-      "changePercent": 6.31,
-      "currentPrice": 18.71,
-      "amount": 8645601603.33,
-      "rank": 1
-    },
     {
       "name": "����ʱ��",
       "code": "300750",
       "v3Score": 58,
-      "changePercent": 3.12,
-      "currentPrice": 240.19,
-      "amount": 12541168355.21,
+      "changePercent": 3.8,
+      "currentPrice": 249.32,
+      "amount": 15512148431.61,
+      "rank": 1
+    },
+    {
+      "name": "�м���",
+      "code": "300308",
+      "v3Score": 56,
+      "changePercent": -12.69,
+      "currentPrice": 480.2,
+      "amount": 29318684183.62,
       "rank": 2
     }
   ]
