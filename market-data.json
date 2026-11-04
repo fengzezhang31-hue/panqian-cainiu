@@ -7,10 +7,10 @@
     {
       "name": "�м���",
       "code": "300308",
-      "currentPrice": 538.6,
+      "currentPrice": 531.54,
       "bidPrice": 489.89,
-      "changePercent": 12.16,
-      "entityGain": 12.16,
+      "changePercent": 10.69,
+      "entityGain": 10.69,
       "amount": 28712274785.04,
       "volume": 57515966,
       "high": 544,
@@ -20,15 +20,17 @@
       "v3Detail": "I20+P20+F20=60",
       "v3Industry": 20,
       "v3Perf": 20,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 480.2,
+      "openPrice": 489.89
     },
     {
       "name": "����ͨ��",
       "code": "300394",
-      "currentPrice": 137.2,
+      "currentPrice": 135.92,
       "bidPrice": 123.65,
-      "changePercent": 10.99,
-      "entityGain": 10.99,
+      "changePercent": 9.96,
+      "entityGain": 9.96,
       "amount": 8779439741.58,
       "volume": 69174002,
       "high": 138,
@@ -38,15 +40,17 @@
       "v3Detail": "I20+P20+F20=60",
       "v3Industry": 20,
       "v3Perf": 20,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 123.61,
+      "openPrice": 123.65
     },
     {
       "name": "����ʢ",
       "code": "300502",
-      "currentPrice": 198.33,
+      "currentPrice": 195.33,
       "bidPrice": 176,
-      "changePercent": 14.4,
-      "entityGain": 14.4,
+      "changePercent": 12.67,
+      "entityGain": 12.67,
       "amount": 19533860496.56,
       "volume": 106619299,
       "high": 199.98,
@@ -56,15 +60,17 @@
       "v3Detail": "I20+P20+F20=60",
       "v3Industry": 20,
       "v3Perf": 20,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 173.36,
+      "openPrice": 176
     },
     {
       "name": "�Ͻ��ҵ",
       "code": "601899",
-      "currentPrice": 29.34,
+      "currentPrice": 29.19,
       "bidPrice": 27.28,
-      "changePercent": 6.89,
-      "entityGain": 6.89,
+      "changePercent": 6.34,
+      "entityGain": 6.34,
       "amount": 8752886506,
       "volume": 309109411,
       "high": 29.45,
@@ -74,15 +80,17 @@
       "v3Detail": "I20+P20+F20=60",
       "v3Industry": 20,
       "v3Perf": 20,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 27.45,
+      "openPrice": 27.28
     },
     {
       "name": "��Ѷ����",
       "code": "002475",
-      "currentPrice": 49.88,
+      "currentPrice": 49.71,
       "bidPrice": 45.85,
-      "changePercent": 9.75,
-      "entityGain": 9.75,
+      "changePercent": 9.37,
+      "entityGain": 9.37,
       "amount": 5902508134.94,
       "volume": 123741018,
       "high": 49.98,
@@ -92,15 +100,17 @@
       "v3Detail": "I20+P20+F20=60",
       "v3Industry": 20,
       "v3Perf": 20,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 45.45,
+      "openPrice": 45.85
     },
     {
       "name": "�����Ƹ�",
       "code": "300059",
-      "currentPrice": 19.26,
+      "currentPrice": 19.18,
       "bidPrice": 18.85,
-      "changePercent": 2.12,
-      "entityGain": 2.12,
+      "changePercent": 1.7,
+      "entityGain": 1.7,
       "amount": 6654306932.73,
       "volume": 349109487,
       "high": 19.5,
@@ -110,7 +120,9 @@
       "v3Detail": "I20+P14+F20=54",
       "v3Industry": 20,
       "v3Perf": 14,
-      "v3Fund": 20
+      "v3Fund": 20,
+      "yesterdayClose": 18.86,
+      "openPrice": 18.85
     }
   ],
   "allCandidates": [
